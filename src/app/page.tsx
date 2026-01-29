@@ -1,66 +1,61 @@
-import Image from "next/image";
 import styles from "./page.module.css";
+import Image from "next/image";
 
-export default function Home() {
+import panadero from "@/assets/images/panadero2.jpeg";
+import ProductCarousel from "../components/carousel/ProductCarousel";
+import { MainCarousel } from "@/components/carousel/MainCarousel";
+import { mainImages, ProductsItems } from "@/utils/constants";
+
+const elementos = ProductsItems;
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className={styles.page}>
+      <div className={styles.carousel}>
+        <MainCarousel
+          elementos={mainImages}
+          intervalMs={10000}
+          ctaLabel="Ver producto"
         />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      </div>
+
+      <div className={styles.content}>
+        <div className={styles.inner}>
+          <div className={styles.imageContainer}>
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              className={styles.image}
+              src={panadero}
+              width={140}
+              height={30}
+              alt=""
             />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+
+          <div className={styles.mainTextContainer}>
+            <h2 className={styles.title}>ULTRAPAN</h2>
+
+            <p className={styles.subtitle}>
+              ULTRAPAN es una línea de mejorantes para todo tipo de pan, que
+              forma parte del mercado mexicano desde hace más de 40 años, y
+              ahora renueva su imagen.
+            </p>
+
+            <p className={styles.subtitle}>
+              Formulados por ENZIQUIM, empresa 100% mexicana experta en creación
+              de soluciones enzimáticas para diferentes industrias, los
+              mejorantes ULTRAPAN son el mejor aliado de cualquier proceso de
+              panificación, tanto artesanal como industrial.
+            </p>
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+
+      <ProductCarousel
+        title="Nuestros productos"
+        elementos={elementos}
+        intervalMs={10000}
+        ctaLabel="Ver producto"
+      />
+    </main>
   );
 }

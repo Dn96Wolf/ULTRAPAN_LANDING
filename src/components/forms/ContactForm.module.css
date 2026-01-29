@@ -1,0 +1,94 @@
+.wrapper {
+  padding: 2rem;
+  background-color: var(--color-bg);
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 2.5rem;
+  color: var(--color-secondary);
+
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Grid for inputs */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .wrapper {
+    padding: clamp(3rem, 6vw, 5rem) 0;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Fields */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.field input,
+.field textarea {
+  padding: 0.65rem 0.75rem;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-width: 2px;
+  border-color: var(--color-secondary);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.submit {
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 4px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit:hover {
+  background-color: var(--color-primary-dark);
+}

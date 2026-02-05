@@ -7,6 +7,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --font-body: var(--font-nunito);
+    --font-heading: var(--font-montserrat);
   }
 }
 
@@ -19,7 +21,6 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -40,3 +41,5 @@ a {
     color-scheme: dark;
   }
 }
+
+

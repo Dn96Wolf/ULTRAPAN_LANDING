@@ -37,7 +37,7 @@
 }
 
 .header:not(.scrolled) .logo {
-  color: var(--color-white);
+  color: white;
 }
 
 /* Desktop nav */

@@ -5,6 +5,22 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/forms/ContactForm";
 
+import { Nunito_Sans, Montserrat } from "next/font/google";
+
+const nunito = Nunito_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-nunito",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Ultrapan | Panificación industrial",
@@ -46,13 +62,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${nunito.variable} ${montserrat.variable}`}>
       <body>
         <Header />
         <div style={{ overflow: "auto" }}>
           <main className="mainContent">{children}</main>
-        <ContactForm />
-
+          <ContactForm />
         </div>
         <Footer />
       </body>

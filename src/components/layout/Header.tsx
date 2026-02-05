@@ -7,13 +7,9 @@ import { t } from "@/i18n";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import logo from "@/assets/images/logo.png";
+import { NAV_ITEMS } from "@/utils/constants";
 
-const NAV_ITEMS = [
-  { href: "/", labelKey: "nav.home" as const },
-  { href: "/ultrapan", labelKey: "nav.ultrapanLine" as const },
-  { href: "/services", labelKey: "nav.services" as const },
-  { href: "/bread-in-home", labelKey: "nav.breadInHome" as const },
-];
+const navList = NAV_ITEMS;
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -68,7 +64,7 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className={styles.nav} aria-label="Navegación principal">
-          {NAV_ITEMS.map((item, index) => (
+          {navList.map((item, index) => (
             <Link key={index} href={item.href}>
               {t(item.labelKey)}
             </Link>
@@ -99,7 +95,7 @@ export default function Header() {
         aria-label="Menú móvil"
       >
         <div className={styles.mobileMenuInner}>
-          {NAV_ITEMS.map((item) => (
+          {navList.map((item) => (
             <Link
               key={item.href}
               href={item.href}

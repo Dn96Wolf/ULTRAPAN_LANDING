@@ -4,13 +4,15 @@
 }
 
 .inner {
+  display: flex;
+  flex-direction: column;
   padding: 24px;
   margin: 0 auto;
   /* padding: 0 var(--container-padding); */
 }
 
 .title {
-  text-align: center;
+  /* text-align: center; */
   font-size: clamp(1.6rem, 4vw, 2.2rem);
   margin-bottom: 4rem;
   color: var(--color-secondary);
@@ -21,7 +23,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  min-height: 700px;
+  min-height: 600px;
 }
 
 /* Slide alignment */
@@ -35,8 +37,9 @@
   width: min(520px, 100%);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 0 10px 0px rgba(88, 57, 19, 0.632);
   margin: auto;
+  background-color: white;
 }
 
 .imageWrap {
@@ -46,11 +49,11 @@
   background-color: var(--color-surface-alt);
 }
 
-@media (max-width: 640px) {
+/* @media (max-width: 640px) {
   .imageWrap {
     height: 260px;
   }
-}
+} */
 
 .image {
   object-fit: cover;
@@ -73,12 +76,9 @@
 
 .cardSubtitle {
   margin: 0;
-  /* color: var(--color-text-muted); */
   line-height: 1.6;
   font-size: 16px;
 }
-
-
 
 /* Bullets (Swiper los crea automáticamente) */
 .bullet {
@@ -86,8 +86,8 @@
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  border: 1px solid var(--color-border);
-  background: var(--color-border);
+  border: 1px solid var(--primary-100);
+  background: var(--primary-100);
   margin: 0 4px !important;
   opacity: 1 !important;
   cursor: pointer;
@@ -107,18 +107,43 @@
 }
 
 @media (min-width: 640px) {
+  
   .card {
-    width: 726px;
+    /* width: 526px; */
+    /* height: 500px; */
+    height: 500px;
+    max-width: 500px;
+  }
+
+  .cardBody{
+    gap: 8px;
+  }
+
+
+
+  .image {
+    width: 100%;
+    height: 300px;
   }
 
   .imageWrap {
-    max-width: 726px;
-    height: 537px;
+    height: 260px;
+  }
+
+  .imageWrap {
+    /* max-width: 726px; */
+    /* height: 537px; */
   }
 
   .cardTitle {
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+    .cardSubtitle{
+    height: 120px;
+    font-size: 14px;
+    text-align: left;
   }
 
   .button {
@@ -126,6 +151,6 @@
   }
 
   .swiper {
-  min-height: 920px;
-}
+    /* min-height: 920px; */
+  }
 }

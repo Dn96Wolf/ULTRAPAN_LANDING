@@ -4,6 +4,13 @@ import { MainCarouselItem } from "@/components/carousel/MainCarousel";
 import { CarouselItem } from "@/components/carousel/ProductCarousel";
 import { ProductDetailInterface } from "@/interfaces/Product";
 
+export const NAV_ITEMS = [
+  { href: "/", labelKey: "nav.home" as const },
+  // { href: "/ultrapan", labelKey: "nav.ultrapanLine" as const },
+  { href: "/services", labelKey: "nav.services" as const },
+  { href: "/bread-in-home", labelKey: "nav.breadInHome" as const },
+];
+
 export const mainImages: MainCarouselItem[] = [
   {
     image: main1,
@@ -15,7 +22,26 @@ export const mainImages: MainCarouselItem[] = [
   },
 ];
 
-export const ProductsItems: CarouselItem[] = [
+export const HOME_SLIDES = [
+  {
+    title: "ULTRAPAN",
+    subtitle:
+      " Tecnología enzimática diseñada para estandarizar tu calidad, mejorar el volumen y optimizar tus costos, desde el panadero artesano hasta la línea industrial.",
+    backgroundImage: "/assets/images/mesaPan.png",
+    ribbonClass: "page-module___8aEwW__bg-brown-overlay",
+    action: false,
+  },
+  {
+    title: "ULTRAPAN",
+    subtitle:
+      " Tecnología enzimática diseñada para estandarizar tu calidad, mejorar el volumen y optimizar tus costos, desde el panadero artesano hasta la línea industrial.",
+    backgroundImage: "/assets/images/mesaIndustrial.png",
+    ribbonClass: "page-module___8aEwW__bg-neutral-overlay",
+    action: false,
+  },
+];
+
+export const CAROUSEL_PRODUCT_LIST: CarouselItem[] = [
   {
     id: 1,
     title: "Ultrapan Emulsoft H",
@@ -59,157 +85,274 @@ export const ProductsItems: CarouselItem[] = [
 export const PRODUCT_LIST: ProductDetailInterface[] = [
   {
     id: 1,
-    title: "Ultrapan Emulsoft H",
+    title: "Ultrapan 10,000",
+    subtitle: "Resiliencia máxima para líneas de alto volumen.",
+    category: "INDUSTRIAL",
     description:
-      " Mejorante completo que brinda frescura, volumen y suavidad en todo tipo de pan dulce (bizcochería, danés, dona y bollería).",
-    presentation: "Presentación: Bultos de 5 y 25 kg.",
+      "Mejorante robusto diseñado para pan blanco tipo salado en líneas industriales o de gran volumen, capaz de soportar el estrés mecánico.",
     image: "/images/pan-integral.jpg",
     benefits: [
-      "Aumenta el volumen del pan.",
-      "Mejora la frescura y suavidad de la miga.",
-      "Facilita el proceso de amasado y formado.",
-      "Prolonga la vida útil del producto final.",
+      {
+        title: "Fuerza y Tolerancia:",
+        description:
+          "Soporta el mezclado intensivo y variaciones en la harina.",
+      },
+      {
+        title: "Uniformidad:",
+        description:
+          "Miga y color constantes, ideal para pan de caja o líneas automatizadas.",
+      },
     ],
-    advatages: [
-      "Fácil de usar y dosificar.",
-      "Compatible con diferentes tipos de harinas y recetas.",
-      "Mejora la textura y apariencia del pan dulce.",
-      "Aumenta la productividad en la panadería.",
+    instructions: [
+      {
+        title: "Dosis:",
+        description: "132 g por cada 50 kg de harina (2 bultos).",
+      },
     ],
-    moreInfo: [
-      "Composición: Contiene emulsionantes, enzimas y otros aditivos que mejoran las propiedades del pan.",
-      "Modo de uso: Añadir directamente a la harina durante el proceso de mezcla. La dosis recomendada es de 1-2% del peso de la harina.",
-      "Almacenamiento: Conservar en un lugar fresco y seco, protegido de la luz solar directa y la humedad.",
-    ],
+    valueProposal:
+      "Garantiza que tu producción no se detenga por variaciones en la materia prima y mejora la elasticidad de la masa en procesos mecanizados.",
   },
   {
     id: 2,
-    title: "Ultrapan Emulsoft H",
+    title: "Ultrapan Emulsoft Extender",
+    subtitle: "Larga vida, Frescura hasta por 90 días.",
+    category: "INDUSTRIAL",
     description:
-      " Mejorante completo que brinda frescura, volumen y suavidad en todo tipo de pan dulce (bizcochería, danés, dona y bollería). Mejorante completo que brinda frescura, volumen y suavidad en todo tipo de pan dulce (bizcochería, danés, dona y bollería).",
-    presentation: "Presentación: Bultos de 5 y 25 kg.",
+      "Desarrollado para combatir el envejecimiento del pan. Retarda la retrogradación del almidón para mantener el pan suave por meses.",
     image: "/images/pan-integral.jpg",
     benefits: [
-      "Aumenta el volumen del pan.",
-      "Mejora la frescura y suavidad de la miga.",
-      "Facilita el proceso de amasado y formado.",
-      "Prolonga la vida útil del producto final.",
+      {
+        title: "Vida Útil Extendida",
+        description:
+          " Conserva la suavidad hasta por 90 días (según proceso y empaque).",
+      },
+      {
+        title: "Menos Devoluciones:",
+        description: "Reduce drásticamente las mermas por pan duro en anaquel.",
+      },
     ],
-    advatages: [
-      "Fácil de usar y dosificar.",
-      "Compatible con diferentes tipos de harinas y recetas.",
-      "Mejora la textura y apariencia del pan dulce.",
-      "Aumenta la productividad en la panadería.",
+    instructions: [
+      {
+        title: "Dosis:",
+        description: "0.5% a 1% sobre el peso de la harina.",
+      },
     ],
-    moreInfo: [
-      "Composición: Contiene emulsionantes, enzimas y otros aditivos que mejoran las propiedades del pan.",
-      "Modo de uso: Añadir directamente a la harina durante el proceso de mezcla. La dosis recomendada es de 1-2% del peso de la harina.",
-      "Almacenamiento: Conservar en un lugar fresco y seco, protegido de la luz solar directa y la humedad.",
-    ],
+    valueProposal:
+      "Es vital para marcas que distribuyen a nivel nacional o exportan, asegurando que el cliente reciba un producto suave como el primer día.",
   },
-
   {
     id: 3,
-    title: "Ultrapan Emulsoft H",
+    title: "Ultrapan Emulsoft Plus",
+    subtitle: "Suavidad premium para tu pan dulce.",
+    category: "INDUSTRIAL",
     description:
-      " Mejorante completo que brinda frescura, volumen y suavidad en todo tipo de pan dulce (bizcochería, danés, dona y bollería).",
-    presentation: "Presentación: Bultos de 5 y 25 kg.",
+      "La combinación perfecta de enzimas y emulsificantes para masas dulces (conchas, roles, brioche) que buscan una experiencia sensorial superior.",
     image: "/images/pan-integral.jpg",
     benefits: [
-      "Aumenta el volumen del pan.",
-      "Mejora la frescura y suavidad de la miga.",
-      "Facilita el proceso de amasado y formado.",
-      "Prolonga la vida útil del producto final.",
+      {
+        title: "Suavidad Extrema:",
+        description:
+          "Miga húmeda y esponjosa que se siente fresca por más tiempo.",
+      },
+      {
+        title: "Resiliencia:",
+        description: "El pan recupera su forma (rebote) al presionarlo.",
+      },
+      {
+        title: "Volumen:",
+        description:
+          "Incrementa el volumen hasta un 23.9% comparado con recetas estándar.",
+      },
     ],
-    advatages: [
-      "Fácil de usar y dosificar.",
-      "Compatible con diferentes tipos de harinas y recetas.",
-      "Mejora la textura y apariencia del pan dulce.",
-      "Aumenta la productividad en la panadería.",
+    instructions: [
+      {
+        title: "Dosis:",
+        description: "0.5% a 1% sobre el peso de la harina (5 a 10 g por kg).",
+      },
     ],
-    moreInfo: [
-      "Composición: Contiene emulsionantes, enzimas y otros aditivos que mejoran las propiedades del pan.",
-      "Modo de uso: Añadir directamente a la harina durante el proceso de mezcla. La dosis recomendada es de 1-2% del peso de la harina.",
-      "Almacenamiento: Conservar en un lugar fresco y seco, protegido de la luz solar directa y la humedad.",
-    ],
+    valueProposal:
+      "Mejora la percepción de frescura de tu cliente sin alterar el sabor tradicional de tu pan.",
   },
-
   {
-    id: 3,
-    title: "Ultrapan Emulsoft H",
+    id: 4,
+    title: "Ultrapan Congelado",
+    subtitle: "Estabilidad total para la cadena de frío.",
+    category: "INDUSTRIAL",
     description:
-      " Mejorante completo que brinda frescura, volumen y suavidad en todo tipo de pan dulce (bizcochería, danés, dona y bollería).",
-    presentation: "Presentación: Bultos de 5 y 25 kg.",
+      "Formulado para proteger la red de gluten durante la congelación, asegurando que el pan mantenga su estructura al descongelarse y hornearse.",
     image: "/images/pan-integral.jpg",
     benefits: [
-      "Aumenta el volumen del pan.",
-      "Mejora la frescura y suavidad de la miga.",
-      "Facilita el proceso de amasado y formado.",
-      "Prolonga la vida útil del producto final.",
+      {
+        title: "Protección Estructural:",
+        description:
+          "Evita que el pan se colapse o pierda volumen tras el descongelado.",
+      },
+      {
+        title: "Como Recién Horneado:",
+        description:
+          "Garantiza suavidad y excelente presentación en el punto de venta final.",
+      },
     ],
-    advatages: [
-      "Fácil de usar y dosificar.",
-      "Compatible con diferentes tipos de harinas y recetas.",
-      "Mejora la textura y apariencia del pan dulce.",
-      "Aumenta la productividad en la panadería.",
+    instructions: [
+      {
+        title: "Dosis:",
+        description: "0.5% a 1.0% sobre el peso de la harina.",
+      },
     ],
-    moreInfo: [
-      "Composición: Contiene emulsionantes, enzimas y otros aditivos que mejoran las propiedades del pan.",
-      "Modo de uso: Añadir directamente a la harina durante el proceso de mezcla. La dosis recomendada es de 1-2% del peso de la harina.",
-      "Almacenamiento: Conservar en un lugar fresco y seco, protegido de la luz solar directa y la humedad.",
-    ],
+    valueProposal:
+      "Aumenta la eficiencia de líneas de pan precocido o masas congeladas, compatible con tecnologías IQF y fermentación controlada.",
   },
-
   {
-    id: 3,
-    title: "Ultrapan Emulsoft H",
+    id: 5,
+    title: "Ultra Mill Tortilla M1",
+    subtitle: "La solución para la tortilla de harina perfecta",
+    category: "INDUSTRIAL",
     description:
-      " Mejorante completo que brinda frescura, volumen y suavidad en todo tipo de pan dulce (bizcochería, danés, dona y bollería).",
-    presentation: "Presentación: Bultos de 5 y 25 kg.",
+      "Mezcla de enzimas para líneas continuas de tortillas de harina, enfocada en la textura y la 'rollabilidad'",
     image: "/images/pan-integral.jpg",
     benefits: [
-      "Aumenta el volumen del pan.",
-      "Mejora la frescura y suavidad de la miga.",
-      "Facilita el proceso de amasado y formado.",
-      "Prolonga la vida útil del producto final.",
+      {
+        title: "Cero Roturas:",
+        description:
+          "Mejora la elasticidad para que la tortilla se enrolle sin romperse.",
+      },
+      {
+        title: "Anti-Pegado:",
+        description:
+          "Mantiene las tortillas separadas y frescas en el empaque.",
+      },
     ],
-    advatages: [
-      "Fácil de usar y dosificar.",
-      "Compatible con diferentes tipos de harinas y recetas.",
-      "Mejora la textura y apariencia del pan dulce.",
-      "Aumenta la productividad en la panadería.",
+    instructions: [
+      {
+        title: "Dosis ultra-concentrada:",
+        description: "0.5 a 1 g por kg de harina.",
+      },
     ],
-    moreInfo: [
-      "Composición: Contiene emulsionantes, enzimas y otros aditivos que mejoran las propiedades del pan.",
-      "Modo de uso: Añadir directamente a la harina durante el proceso de mezcla. La dosis recomendada es de 1-2% del peso de la harina.",
-      "Almacenamiento: Conservar en un lugar fresco y seco, protegido de la luz solar directa y la humedad.",
-    ],
+    valueProposal:
+      "Reduce mermas por tortillas rotas y mejora la experiencia del consumidor final al evitar que se peguen.",
   },
-
   {
-    id: 3,
-    title: "Ultrapan Emulsoft H",
+    id: 6,
+    title: "Ultrapan C+",
+    subtitle: "La fórmula concentrada para el volumen perfecto.",
+    category: "ARTESANAL",
     description:
-      " Mejorante completo que brinda frescura, volumen y suavidad en todo tipo de pan dulce (bizcochería, danés, dona y bollería).",
-    presentation: "Presentación: Bultos de 5 y 25 kg.",
+      " Es un mejorante de alto rendimiento libre de bromato. Su fórmula concentrada está diseñada para masas que requieren fuerza y estabilidad sin modificar tu proceso tradicional.",
     image: "/images/pan-integral.jpg",
     benefits: [
-      "Aumenta el volumen del pan.",
-      "Mejora la frescura y suavidad de la miga.",
-      "Facilita el proceso de amasado y formado.",
-      "Prolonga la vida útil del producto final.",
+      {
+        title: "Volumen Superior:",
+        description:
+          "Estandariza el tamaño de tus piezas y mejora la estructura de la miga.",
+      },
+      {
+        title: "Cero Bromato:",
+        description: "Pan más limpio y seguro.",
+      },
+      {
+        title: "Versatilidad:",
+        description: "Ideal para pan francés, baguette y masas saladas.",
+      },
     ],
-    advatages: [
-      "Fácil de usar y dosificar.",
-      "Compatible con diferentes tipos de harinas y recetas.",
-      "Mejora la textura y apariencia del pan dulce.",
-      "Aumenta la productividad en la panadería.",
+    instructions: [
+      {
+        title: "",
+        description:
+          "Disuelve 1 sobre de 10g por cada bulto de 25 kg de harina. ¡Así de fácil!",
+      },
     ],
-    moreInfo: [
-      "Composición: Contiene emulsionantes, enzimas y otros aditivos que mejoran las propiedades del pan.",
-      "Modo de uso: Añadir directamente a la harina durante el proceso de mezcla. La dosis recomendada es de 1-2% del peso de la harina.",
-      "Almacenamiento: Conservar en un lugar fresco y seco, protegido de la luz solar directa y la humedad.",
+    valueProposal:
+      "No necesitas cambiar tu receta ni comprar maquinaria nueva; funciona en procesos directos y sin cámaras de fermentación.",
+  },
+  {
+    id: 7,
+    title: "Ultrapan G+",
+    subtitle: "El mejorante 'Todo Terreno' para tu negocio.",
+    category: "ARTESANAL",
+    description:
+      "Diseñado para pan blanco y masas saladas, ofreciendo el equilibrio perfecto entre tecnología y ahorro económico.",
+    image: "/images/pan-integral.jpg",
+    benefits: [
+      {
+        title: "Ahorro Inteligente",
+        description: "Reduce tus costos sin sacrificar la calidad",
+      },
+      {
+        title: "Rendimiento",
+        description:
+          "Obtienes más piezas por bulto gracias a su alta absorción.",
+      },
+      {
+        title: "Consistencia",
+        description:
+          "Logra siempre la misma textura suave y uniforme, lote tras lote.",
+      },
     ],
+    instructions: [
+      {
+        title: "Dosis recomendada",
+        description:
+          "62.5 g (un sobre) por bulto de 25 kg de harina (o 2.5 g por kilo).",
+      },
+    ],
+    valueProposal:
+      "Es ideal para reducir la variabilidad en condiciones artesanales y permite reducir la cantidad de grasa en la receta.",
+  },
+  {
+    id: 8,
+    title: "Ultrapan Dulce Plus",
+    subtitle:
+      "Especializado para pan dulce (roscas, pan de muerto, bollería empacada) que requiere mantenerse fresco en el supermercado.",
+    category: "ARTESANAL",
+    description:
+      "Diseñado para pan blanco y masas saladas, ofreciendo el equilibrio perfecto entre tecnología y ahorro económico.",
+    image: "/images/pan-integral.jpg",
+    benefits: [
+      {
+        title: "Frescura Prolongada",
+        description: "Evita el endurecimiento prematuro",
+      },
+      {
+        title: "Ideal para Empaque",
+        description:
+          "Mantiene la humedad dentro del empaque sin perder textura.",
+      },
+    ],
+    instructions: [
+      {
+        title: "Dosis",
+        description: "0.5% a 1% sobre el peso de la harina.",
+      },
+    ],
+    valueProposal:
+      "Ayuda a reducir tiempos de reposo y permite disminuir el uso de huevo en panes fermentados, mejorando la logística de distribución.",
+  },
+  {
+    id: 9,
+    title: "Ultrapan Emulsoft H",
+    subtitle: "Optimización de costos: Suavidad sin huevo.",
+    category: "ARTESANAL",
+    description:
+      "Mejorante para masas dulces con una potente capacidad emulsificante que permite reducir o sustituir el uso de huevo en la receta.",
+    image: "/images/pan-integral.jpg",
+    benefits: [
+      {
+        title: "Ahorro Directo",
+        description: "Reduce costos de insumos (huevo) manteniendo la calidad",
+      },
+      {
+        title: "Estructura Uniforme",
+        description: "Logra una miga suave y esponjosa similar al brioche",
+      },
+    ],
+    instructions: [
+      {
+        title: "Dosis",
+        description: "0.5% a 1% sobre el peso de la harina (5 a 10 g por kg).",
+      },
+    ],
+    valueProposal:
+      "Es la herramienta perfecta para optimizar tu receta ante la subida de precios de materias primas, catalizando tu rentabilidad.",
   },
 ];
 

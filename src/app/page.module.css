@@ -1,51 +1,209 @@
 .carousel {
   width: 100%;
-  overflow: auto;
   height: 100vh;
-  background-color: black;
+  display: flex;
+  flex-direction: row;
 }
 
-.content {
-  width: 100%;
+.firstScreen,
+.secondScreen {
+  width: 100vw;
   height: 100vh;
-  background-color: var(--color-white);
-}
-
-.inner {
-  width: 100%;
-  margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  background-position: right;
+  background-size: cover;
 }
 
-.inner .imageContainer {
-  width: 100%;
-  height: 450px;
-  border-radius: 8px;
+.secondScreen {
+  height: calc(100vh - 90px);
 }
 
-.imageContainer .image {
+.categoriesStyles {
+  width: 100vw;
+  height: 200px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--neutral-100);
+}
+
+.categoriesTitle {
+  font-size: 28px;
+  color: var(--primary-500);
+}
+
+.firstLayer {
   width: 100%;
   height: 100%;
-  overflow: hidden;
-}
-
-.inner .mainTextContainer {
-  width: 100%;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  background-color: white;
+  flex-direction: column-reverse;
+  z-index: 1;
 }
 
-.title {
-  color: var(--color-secondary);
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  line-height: 1.5;
+.craftLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  background-position: right;
+  background-size: cover;
+  transition: opacity var(--fade-ms, 1000ms) ease;
+}
+
+.thirdLayer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.mainTitleContainer {
+  width: 100%;
+  height: 60%;
+}
+
+.mainTitleRibbon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+}
+
+.bg-brown-overlay {
+  background-color: var(--color-primary-translucid) !important;
+}
+
+.bg-neutral-overlay {
+  background-color: var(--color-neutral-translucid) !important;
+}
+
+.mainTitle {
+  font-size: 48px;
+  margin-bottom: 8px;
+  animation: slideInLeft 2s ease-out both;
+}
+
+.mainSubtitle {
+  font-size: 14px;
   text-align: center;
+  animation: slideInBottom 2s ease-out both;
+}
+
+.presentation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+.titlePresentation {
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+/* SECCION DE CATEGORIAS */
+
+.industrialSection,
+.craftSection {
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.industrialSection {
+  background-image: url("/assets/images/panaderiaArtesanal.png");
+}
+
+.craftSection {
+  background-image: url("/assets/images/panaderiaIndustrial.png");
+}
+
+.industrialOverlay,
+.craftOverlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.192);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 48px;
+  cursor: pointer;
+  transition: all ease-in-out 0.15s;
+}
+
+.craftOverlay {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.industrialOverlay:hover,
+.craftOverlay:hover {
+  transition: all ease-in-out 0.15s;
+  transform: scale(1.01);
+}
+
+.industrialOverlay:hover {
+  background-color: var(--color-neutral-translucid);
+}
+
+.craftOverlay:hover {
+  background-color: var(--color-primary-translucid);
+}
+
+.industrialText,
+.craftText {
+  padding: 24px 32px;
+  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+}
+
+.industrialText {
+  background-color: var(--neutral-600);
+}
+
+.craftText {
+  background-color: var(--primary-600);
+}
+
+.industrialText h2,
+.craftText h2 {
+  font-size: 14px;
+}
+
+.craftText span,
+.industrialText span {
+  font-size: 10px;
+}
+
+.industrialText:hover {
+  background-color: var(--neutral-400);
+}
+
+.craftText:hover {
+  background-color: var(--primary-400);
 }
 
 .subtitle {
@@ -55,57 +213,122 @@
   text-align: center;
 }
 
-.banner {
-  width: 100%;
-  height: 120px;
-  background-color: azure;
+.scrollBtn {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
 }
 
 @media (min-width: 640px) {
-  .content {
-    padding: 48px 24px;
+  .firstLayer,
+  .thirdLayer {
+    display: flex;
+    flex-direction: row;
   }
 
-  .inner {
-    display: block;
-    position: relative;
-    width: 100%;
+  .craftLayer {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .mainTitleContainer {
+    align-items: flex-start;
     height: 100%;
+    /* padding: 0 0 0 48px; */
   }
 
-  .inner .imageContainer {
-    position: absolute;
-    left: 11%;
-    bottom: 10%;
-    width: 40%;
-    height: 600px;
-    /* background-color: lightgray; */
-    z-index: 2;
-    border: 24px solid var(--color-white);
-    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.2);
+  .mainTitleRibbon {
+    width: max-content;
+    height: 100%;
+    /* background-color: var(--color-primary-translucid); */
   }
 
-  .inner .mainTextContainer {
-    position: absolute;
-    left: 50%;
-    width: 40%;
-    margin: auto;
-    padding: 48px;
-    height: 400px;
-    justify-content: center;
-    gap: 24px;
-    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.2);
-    background-color: white;
-    z-index: 1;
+  .mainTitle {
+    font-size: 68px;
+    animation: slideInLeft 2s ease-out both;
   }
 
-  .title {
-    font-size: 24px;
+  .mainSubtitle {
     text-align: left;
+    font-size: 16px;
+    max-width: 500px;
+    font-family: var(--font-nunito);
+    animation: slideInBottom 2s ease-out both;
+    margin-bottom: 40px;
   }
 
-  .subtitle {
-    font-size: 14px;
-    text-align: left;
+  .categoriesTitle {
+    font-size: 38px;
+  }
+
+  .industrialSection {
+    width: 50%;
+    height: 100%;
+    background-image: url("/assets/images/panaderiaIndustrial.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .craftSection {
+    width: 50%;
+    height: 100%;
+    background-image: url("/assets/images/panaderiaArtesanal.png");
+    background-position: center;
+  }
+
+  .industrialText,
+  .craftText {
+    padding: 24px 50px;
+  }
+
+  .industrialText h2,
+  .craftText h2 {
+    font-size: 18px;
+  }
+
+  .industrialText p,
+  .craftText p {
+    font-size: 12px;
+    /* max-width: 250px; */
+  }
+}
+
+/* animations */
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Accesibilidad */
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layer {
+    transition: none;
   }
 }

@@ -26,7 +26,7 @@ export default function CardProduct({
 
         <p className={styles.description}>{product.description}</p>
 
-        <div className={styles.productPresentation}>{product.presentation}</div>
+        <div className={styles.productPresentation}>{product.subtitle}</div>
       </div>
 
       <div className={styles.imageCardContainer}>

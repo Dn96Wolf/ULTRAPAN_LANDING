@@ -9,6 +9,8 @@ export default function Page() {
     <section className={styles.mainContent}>
       <div className={styles.bgUrl}></div>
 
+
+
       <ContactForm
         isMain={true}
         title={CONTACT_PAGE_TEXT.title}
@@ -17,7 +19,7 @@ export default function Page() {
 
 
 
-      <article>
+      <article className={styles.additionalText}>
         <p>
           {CONTACT_PAGE_TEXT.additionalText}
         </p>

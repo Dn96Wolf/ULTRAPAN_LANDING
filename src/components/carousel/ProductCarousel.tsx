@@ -26,7 +26,7 @@ export interface CarouselItem {
   descripcion: string;
   presentation: string;
   path: string;
-  image: string; // URL o ruta en /public
+  image: any; // URL o ruta en /public
 }
 
 type ProductCarouselProps = {

@@ -1,23 +1,41 @@
 .page {
-  width: 100vh;
-  height: 100vw;
+  width: 100vw;
   padding: 4rem 1rem 6rem;
+  background-image: url("/assets/images/mesaPan.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  background-color: rgba(53, 50, 46, 0.783);
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 32px 0px;
 }
 
 .hero {
+  width: 100%;
   max-width: 900px;
-  margin: 0 auto 4rem;
+  margin: auto;
+  margin-bottom: 24px;
+  /* margin: 0 auto 4rem; */
   text-align: center;
 }
 
 .hero h1 {
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
+  color: var(--accent-wheat-500);
+  margin-bottom: 12px;
 }
 
 .hero p {
   margin-top: 1rem;
-  color: var(--color-text-muted);
+  color: var(--neutral-200);
+  width: 90%;
+  margin: auto;
 }
 
 .content {
@@ -26,13 +44,18 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  background-color: aquamarine;
+  padding: 1rem;
 }
 
 .section h2 {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
+  text-align: center;
+  color: var(--accent-wheat-500);
+  /* background-color: #d0c4c46f; */
+  padding: 6px 10px;
+  border-radius: 8px;
 }
 
 /* Ajustes a listas dentro del accordion */
@@ -44,4 +67,19 @@
 .section li {
   list-style: disc;
   margin-bottom: 0.4rem;
+}
+
+@media (min-width: 640px) {
+  .hero h1 {
+    margin-bottom: 12px;
+  }
+
+  .hero p {
+    margin: auto;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+    text-align: left;
+  }
 }

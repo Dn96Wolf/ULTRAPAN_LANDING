@@ -9,9 +9,13 @@ export const metadata = {
 };
 
 export default function Page() {
-  <main className={styles.page}>
+
+  return (
+      <main className={styles.page}>
     {/* Hero */}
-    <section className={styles.hero}>
+
+    <section className={styles.container}>
+     <section className={styles.hero}>
       <h1>Preguntas frecuentes</h1>
       <p>
         Resolvemos las dudas más comunes sobre el uso, aplicación y beneficios
@@ -23,7 +27,7 @@ export default function Page() {
     <section className={styles.content}>
       {FAQ_SECTIONS.map((section) => (
         <div key={section.title} className={styles.section}>
-          <h2>{section.title}</h2>
+          <h2 className={styles.sectionTitle}>{section.title}</h2>
 
           <Accordion
             items={section.items.map((item) => ({
@@ -34,5 +38,9 @@ export default function Page() {
         </div>
       ))}
     </section>
-  </main>;
+    </section>
+   
+  </main>
+  )
+
 }

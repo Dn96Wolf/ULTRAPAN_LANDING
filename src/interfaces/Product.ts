@@ -4,7 +4,7 @@ export interface ProductDetailInterface {
   subtitle: string;
   category: "INDUSTRIAL" | "ARTESANAL";
   description: string;
-  image: string;
+  image: any;
   benefits: { title: string; description: string }[];
   instructions: { title: string; description: string }[];
   valueProposal: string;

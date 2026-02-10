@@ -67,7 +67,7 @@ export default function RootLayout({
         <Header />
         <div style={{ overflow: "auto" }}>
           <main className="mainContent">{children}</main>
-          <ContactForm />
+          {/* <ContactForm /> */}
         </div>
         <Footer />
       </body>

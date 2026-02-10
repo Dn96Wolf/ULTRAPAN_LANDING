@@ -1,6 +1,9 @@
 {
   "nav.home": "Inicio",
-  "nav.ultrapanLine": "Linea Ultrapan",
+  "nav.history": "Historia",
+  "nav.contact": "Contacto",
+  "nav.fqa": "FQA",
+  "nav.Industrias": "Industrias",
   "nav.services": "Servicios",
   "nav.breadInHome": "Pan en casa",
   "hero.title": "Pan artesanal con escala industrial",

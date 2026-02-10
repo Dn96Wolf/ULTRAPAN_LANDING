@@ -219,6 +219,22 @@
   margin: 0 auto;
 }
 
+.videoSection {
+  width: 100%;
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 16px;
+  /* background-color: var(--neutral-100); */
+}
+
+.videoContainer {
+  width: 100%;
+}
+
 @media (min-width: 640px) {
   .firstLayer,
   .thirdLayer {
@@ -289,7 +305,17 @@
   .industrialText p,
   .craftText p {
     font-size: 12px;
-    /* max-width: 250px; */
+  }
+
+  .videoSection {
+    padding: 24px;
+  }
+
+  .videoContainer {
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 8px;
   }
 }
 

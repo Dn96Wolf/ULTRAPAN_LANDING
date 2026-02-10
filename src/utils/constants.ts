@@ -3,12 +3,19 @@ import main2 from "@/assets/images/pan-2.png";
 import { MainCarouselItem } from "@/components/carousel/MainCarousel";
 import { CarouselItem } from "@/components/carousel/ProductCarousel";
 import { ProductDetailInterface } from "@/interfaces/Product";
+import { FAQSection } from "@/interfaces/Questions";
 
 export const NAV_ITEMS = [
   { href: "/", labelKey: "nav.home" as const },
-  // { href: "/ultrapan", labelKey: "nav.ultrapanLine" as const },
-  { href: "/services", labelKey: "nav.services" as const },
-  { href: "/bread-in-home", labelKey: "nav.breadInHome" as const },
+  { href: "#", labelKey: "nav.Industrias" as const },
+  { href: "/historia", labelKey: "nav.history" as const },
+  { href: "/contacto", labelKey: "nav.contact" as const },
+  { href: "/FAQ", labelKey: "nav.fqa" as const },
+];
+
+export const INDUSTRIAS_SUBMENU = [
+  { href: "/artesanal", label: "Artesanal" },
+  { href: "/industrial", label: "Industrial" },
 ];
 
 export const mainImages: MainCarouselItem[] = [
@@ -407,5 +414,77 @@ export const BENEFITS = [
   {
     title: "Aumento en la absorción de agua (mayor rendimiento)",
     icon: "analitics",
+  },
+];
+
+export const CONTACT_PAGE_TEXT = {
+  title: "¿Tienes dudas sobre qué mejorante es ideal para tu proceso?",
+  subtitle:
+    "Nuestro equipo técnico está listo para asesorarte y encontrar la solución exacta para tu panadería o planta industrial.",
+  additionalText: "En Enziquim, catalizamos el éxito de nuestros clientes.",
+};
+
+export const FAQ_SECTIONS: FAQSection[] = [
+  {
+    title: "Sobre el uso y aplicación",
+    items: [
+      {
+        question:
+          "¿Necesito modificar mi receta actual o comprar maquinaria nueva para usar sus mejorantes?",
+        answer: [
+          "No. La mayoría de nuestros productos, como Ultrapan C+ y Ultrapan G+, están diseñados para actuar sobre tu proceso base sin modificarlo. Funcionan perfectamente tanto en procesos artesanales directos como en aquellos sin cámaras de fermentación controlada.",
+        ],
+      },
+      {
+        question:
+          "¿Qué producto me recomiendan para pan tipo francés o bolillo?",
+        answer: [
+          "Para pan francés y masas saladas, recomendamos Ultrapan C+ si buscas un concentrado de alto rendimiento, o Ultrapan G+ si buscas reducir costos en la receta tradicional. Para especialidades rústicas como baguettes o chapatas, Ultrapan Harina Completa MTM ofrece un acabado craquelado en la corteza.",
+        ],
+      },
+      {
+        question: "¿Tienen opciones libres de bromato?",
+        answer: [
+          "Sí. Ultrapan C+ es nuestro primer mejorante concentrado formulado totalmente libre de bromato, garantizando un producto más limpio y seguro.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Sobre ahorro y rendimiento",
+    items: [
+      {
+        question:
+          "¿Cómo puedo reducir mis costos de producción sin bajar la calidad?",
+        answer: [
+          "Ultrapan Dulce Plus sustituye el uso de huevo en masas dulces.",
+          "Ultrapan G+ reduce la cantidad de grasa y mejora el costo-beneficio.",
+          "Ultrapan 10,000 mejora el rendimiento por bulto al permitir mayor absorción de agua.",
+        ],
+      },
+      {
+        question: "¿Cómo evito que mis tortillas de harina se peguen o rompan?",
+        answer: [
+          "Para ello desarrollamos Ultra Mill Tortilla M1. Mejora la rollabilidad, evita que las tortillas se peguen en el empaque y reduce mermas y devoluciones.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Sobre vida de anaquel y conservación",
+    items: [
+      {
+        question: "¿Cuánto tiempo puede durar mi pan suave?",
+        answer: [
+          "Dependiendo del proceso y almacenamiento, con Ultrapan Emulsoft Extender puedes conservar la suavidad de la miga hasta por 90 días. Ideal para pan de caja y productos de larga vida en anaquel.",
+        ],
+      },
+      {
+        question: "¿Tienen soluciones para masa o pan congelado?",
+        answer: [
+          "Sí. Ultrapan Congelado protege la estructura del pan durante la congelación y el descongelado, evitando deformaciones y pérdida de volumen.",
+        ],
+      },
+    ],
   },
 ];

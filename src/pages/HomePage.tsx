@@ -112,12 +112,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* <ProductCarousel
-        title="Nuestros productos"
-        elementos={elementos}
-        intervalMs={10000}
-        ctaLabel="Ver producto"
-      /> */}
+      <section className={styles.categoriesStyles}>
+        <h2 className={`${styles.categoriesTitle}  text-center`}>
+          Conoce más sobre nosotros
+        </h2>
+      </section>
+
+      <section className={styles.videoSection}>
+        <article className={styles.videoContainer}>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/n51f6Me91AY?si=-_I-WvUeNFX-ZYV0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </article>
+      </section>
     </main>
   );
 }

@@ -1,141 +1,360 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
-}
-
-.main {
-  display: flex;
-  min-height: 100vh;
+.carousel {
   width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
+  height: 100vh;
   display: flex;
   flex-direction: row;
+}
+
+.firstScreen,
+.secondScreen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background-position: right;
+  background-size: cover;
+}
+
+.secondScreen {
+  height: calc(100vh - 90px);
+}
+
+.categoriesStyles {
+  width: 100vw;
+  height: 200px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--neutral-100);
+}
+
+.categoriesTitle {
+  font-size: 28px;
+  color: var(--primary-500);
+}
+
+.firstLayer {
   width: 100%;
-  max-width: 440px;
-  gap: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-direction: column-reverse;
+  z-index: 1;
+}
+
+.craftLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  background-position: right;
+  background-size: cover;
+  transition: opacity var(--fade-ms, 1000ms) ease;
+}
+
+.thirdLayer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.mainTitleContainer {
+  width: 100%;
+  height: 60%;
+}
+
+.mainTitleRibbon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+}
+
+.bg-brown-overlay {
+  background-color: var(--color-primary-translucid) !important;
+}
+
+.bg-neutral-overlay {
+  background-color: var(--color-neutral-translucid) !important;
+}
+
+.mainTitle {
+  font-size: 48px;
+  margin-bottom: 8px;
+  animation: slideInLeft 2s ease-out both;
+}
+
+.mainSubtitle {
+  font-size: 14px;
+  text-align: center;
+  animation: slideInBottom 2s ease-out both;
+}
+
+.presentation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+.titlePresentation {
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+/* SECCION DE CATEGORIAS */
+
+.industrialSection,
+.craftSection {
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.industrialSection {
+  background-image: url("/assets/images/panaderiaArtesanal.png");
+}
+
+.craftSection {
+  background-image: url("/assets/images/panaderiaIndustrial.png");
+}
+
+.industrialOverlay,
+.craftOverlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.192);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 48px;
+  cursor: pointer;
+  transition: all ease-in-out 0.15s;
+}
+
+.craftOverlay {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.industrialOverlay:hover,
+.craftOverlay:hover {
+  transition: all ease-in-out 0.15s;
+  transform: scale(1.01);
+}
+
+.industrialOverlay:hover {
+  background-color: var(--color-neutral-translucid);
+}
+
+.craftOverlay:hover {
+  background-color: var(--color-primary-translucid);
+}
+
+.industrialText,
+.craftText {
+  padding: 24px 32px;
+  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+}
+
+.industrialText {
+  background-color: var(--neutral-600);
+}
+
+.craftText {
+  background-color: var(--primary-600);
+}
+
+.industrialText h2,
+.craftText h2 {
   font-size: 14px;
 }
 
-.ctas a {
+.craftText span,
+.industrialText span {
+  font-size: 10px;
+}
+
+.industrialText:hover {
+  background-color: var(--neutral-400);
+}
+
+.craftText:hover {
+  background-color: var(--primary-400);
+}
+
+.subtitle {
+  color: var(--color-text);
+  font-size: 14;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.scrollBtn {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.videoSection {
+  width: 100%;
+  height: calc(100vh - 200px);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  gap: 24px;
+  padding: 16px;
+  /* background-color: var(--neutral-100); */
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.videoContainer {
+  width: 100%;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+@media (min-width: 640px) {
+  .firstLayer,
+  .thirdLayer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .craftLayer {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .mainTitleContainer {
+    align-items: flex-start;
+    height: 100%;
+    /* padding: 0 0 0 48px; */
+  }
+
+  .mainTitleRibbon {
+    width: max-content;
+    height: 100%;
+    /* background-color: var(--color-primary-translucid); */
+  }
+
+  .mainTitle {
+    font-size: 68px;
+    animation: slideInLeft 2s ease-out both;
+  }
+
+  .mainSubtitle {
+    text-align: left;
+    font-size: 16px;
+    max-width: 500px;
+    font-family: var(--font-nunito);
+    animation: slideInBottom 2s ease-out both;
+    margin-bottom: 40px;
+  }
+
+  .categoriesTitle {
+    font-size: 38px;
+  }
+
+  .industrialSection {
+    width: 50%;
+    height: 100%;
+    background-image: url("/assets/images/panaderiaIndustrial.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .craftSection {
+    width: 50%;
+    height: 100%;
+    background-image: url("/assets/images/panaderiaArtesanal.png");
+    background-position: center;
+  }
+
+  .industrialText,
+  .craftText {
+    padding: 24px 50px;
+  }
+
+  .industrialText h2,
+  .craftText h2 {
+    font-size: 18px;
+  }
+
+  .industrialText p,
+  .craftText p {
+    font-size: 12px;
+  }
+
+  .videoSection {
+    padding: 24px;
+  }
+
+  .videoContainer {
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
+/* animations */
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-1000px);
+    opacity: 0;
   }
-}
-
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+@keyframes slideInBottom {
+  from {
+    transform: translateY(1000px);
+    opacity: 0;
   }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
-  .page {
-    --background: #000;
-    --foreground: #000;
+/* Accesibilidad */
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+.show {
+  opacity: 1;
+}
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+.hide {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layer {
+    transition: none;
   }
 }

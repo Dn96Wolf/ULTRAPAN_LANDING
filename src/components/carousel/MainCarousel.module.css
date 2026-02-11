@@ -1,0 +1,40 @@
+.wrapper {
+  background-color: var(--color-bg-dark);
+}
+
+.inner {
+  margin: 0 auto;
+}
+
+/* Swiper container */
+.swiper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* Slide alignment */
+.slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* Card */
+.card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.image {
+  object-fit: cover;
+}
+
+

@@ -1,0 +1,179 @@
+/* =========================
+   CSS RESET (MODERNO)
+========================= */
+@import "./tokens.css";
+@import "./colors.css";
+@import "./text.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
+
+  font-family: "Arial", sans-serif;
+
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* =========================
+   MEDIA DEFAULTS
+========================= */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* =========================
+   FORMS
+========================= */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* =========================
+   LISTS
+========================= */
+ul,
+ol {
+  padding-left: 1.25rem;
+}
+
+li {
+  line-height: 1.6;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* =========================
+   LAYOUT HELPERS
+========================= */
+main {
+  display: block;
+}
+
+/* =========================
+   SELECTION
+========================= */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.mainContent {
+  width: 100%;
+  min-height: 768px;
+  overflow: scroll;
+}
+
+@media (min-width: 640px) {
+  .mainContent {
+    min-height: 100vh;
+  }
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.bg-url {
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/mesaPan.png");
+}

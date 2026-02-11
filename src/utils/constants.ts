@@ -48,47 +48,6 @@ export const HOME_SLIDES = [
   },
 ];
 
-export const CAROUSEL_PRODUCT_LIST: CarouselItem[] = [
-  {
-    id: 1,
-    title: "Ultrapan Emulsoft H",
-    descripcion:
-      " Mejorante completo que brinda frescura, volumen y suavidad en todo tipo de pan dulce (bizcochería, danés, dona y bollería).",
-    presentation: "Presentación: Bultos de 5 y 25 kg.",
-    path: "/productos/pan-dulce",
-    image: main1,
-  },
-  {
-    id: 2,
-    title: "Ultrapan C",
-    descripcion:
-      " Un sobrecito de 10 g para 44 kg de harina (bulto).	Para su uso en menos de 44 kg, basta con mezclar un sobre con 430 g de harina y usar 10 g de esta mezcla por kilo de harina. ",
-    presentation: "Presentación: Caja de 100 sobres con 10 g c/u.",
-    path: "/productos/bolleria",
-    image: main1,
-  },
-  {
-    id: 3,
-    title: "ULTRAPAN 2,000",
-    descripcion:
-      "Mejorante para pan blanco, formulado especialmente para potenciar las características sensoriales del producto, tales como aroma, sabor y color. Proporciona excelente greñado y miga suave. Se recomienda su uso en procesos tradicionales e industriales. ",
-    presentation: "Presentación: Bultos de 5 y 25 kg.",
-
-    path: "/productos/pan-blanco",
-    image: main1,
-  },
-  {
-    id: 4,
-    title: "ULTRAPAN 3,000",
-    descripcion:
-      "Mejorante completo recomendado para la elaboración de especialidades de pan tipo francés como baguette, pistolet o panes tipo europeo como chapata, pan integral, de centeno o con hierbas finas. ",
-    presentation: "Presentación: Bultos de 5 kg y 25 kg.",
-
-    path: "/productos/especialidades",
-    image: main1,
-  },
-];
-
 export const PRODUCT_LIST: ProductDetailInterface[] = [
   {
     id: 1,
@@ -101,11 +60,14 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Fuerza y Tolerancia:",
+        icon: "force",
         description:
           "Soporta el mezclado intensivo y variaciones en la harina.",
       },
       {
         title: "Uniformidad:",
+        icon: "mix",
+
         description:
           "Miga y color constantes, ideal para pan de caja o líneas automatizadas.",
       },
@@ -118,6 +80,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     ],
     valueProposal:
       "Garantiza que tu producción no se detenga por variaciones en la materia prima y mejora la elasticidad de la masa en procesos mecanizados.",
+    colorPalette: "BLUE",
   },
   {
     id: 2,
@@ -130,11 +93,15 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Vida Útil Extendida",
+        icon: "check",
+
         description:
           " Conserva la suavidad hasta por 90 días (según proceso y empaque).",
       },
       {
         title: "Menos Devoluciones:",
+        icon: "check",
+
         description: "Reduce drásticamente las mermas por pan duro en anaquel.",
       },
     ],
@@ -146,6 +113,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     ],
     valueProposal:
       "Es vital para marcas que distribuyen a nivel nacional o exportan, asegurando que el cliente reciba un producto suave como el primer día.",
+    colorPalette: "BROWN",
   },
   {
     id: 3,
@@ -158,15 +126,20 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Suavidad Extrema:",
+        icon: "check",
+
         description:
           "Miga húmeda y esponjosa que se siente fresca por más tiempo.",
       },
       {
         title: "Resiliencia:",
+        icon: "check",
+
         description: "El pan recupera su forma (rebote) al presionarlo.",
       },
       {
         title: "Volumen:",
+        icon: "check",
         description:
           "Incrementa el volumen hasta un 23.9% comparado con recetas estándar.",
       },
@@ -179,6 +152,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     ],
     valueProposal:
       "Mejora la percepción de frescura de tu cliente sin alterar el sabor tradicional de tu pan.",
+    colorPalette: "BLUE",
   },
   {
     id: 4,
@@ -191,11 +165,15 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Protección Estructural:",
+        icon: "check",
+
         description:
           "Evita que el pan se colapse o pierda volumen tras el descongelado.",
       },
       {
         title: "Como Recién Horneado:",
+        icon: "check",
+
         description:
           "Garantiza suavidad y excelente presentación en el punto de venta final.",
       },
@@ -208,6 +186,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     ],
     valueProposal:
       "Aumenta la eficiencia de líneas de pan precocido o masas congeladas, compatible con tecnologías IQF y fermentación controlada.",
+    colorPalette: "BLUE",
   },
   {
     id: 5,
@@ -220,11 +199,15 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Cero Roturas:",
+        icon: "check",
+
         description:
           "Mejora la elasticidad para que la tortilla se enrolle sin romperse.",
       },
       {
         title: "Anti-Pegado:",
+        icon: "check",
+
         description:
           "Mantiene las tortillas separadas y frescas en el empaque.",
       },
@@ -237,6 +220,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     ],
     valueProposal:
       "Reduce mermas por tortillas rotas y mejora la experiencia del consumidor final al evitar que se peguen.",
+    colorPalette: "BLUE",
   },
   {
     id: 6,
@@ -249,15 +233,21 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Volumen Superior:",
+        icon: "check",
+
         description:
           "Estandariza el tamaño de tus piezas y mejora la estructura de la miga.",
       },
       {
         title: "Cero Bromato:",
+        icon: "check",
+
         description: "Pan más limpio y seguro.",
       },
       {
         title: "Versatilidad:",
+        icon: "check",
+
         description: "Ideal para pan francés, baguette y masas saladas.",
       },
     ],
@@ -270,6 +260,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     ],
     valueProposal:
       "No necesitas cambiar tu receta ni comprar maquinaria nueva; funciona en procesos directos y sin cámaras de fermentación.",
+    colorPalette: "BLUE",
   },
   {
     id: 7,
@@ -282,15 +273,21 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Ahorro Inteligente",
+        icon: "check",
+
         description: "Reduce tus costos sin sacrificar la calidad",
       },
       {
         title: "Rendimiento",
+        icon: "check",
+
         description:
           "Obtienes más piezas por bulto gracias a su alta absorción.",
       },
       {
         title: "Consistencia",
+        icon: "check",
+
         description:
           "Logra siempre la misma textura suave y uniforme, lote tras lote.",
       },
@@ -304,6 +301,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     ],
     valueProposal:
       "Es ideal para reducir la variabilidad en condiciones artesanales y permite reducir la cantidad de grasa en la receta.",
+    colorPalette: "BLUE",
   },
   {
     id: 8,
@@ -317,10 +315,14 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Frescura Prolongada",
+        icon: "check",
+
         description: "Evita el endurecimiento prematuro",
       },
       {
         title: "Ideal para Empaque",
+        icon: "check",
+
         description:
           "Mantiene la humedad dentro del empaque sin perder textura.",
       },
@@ -333,6 +335,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     ],
     valueProposal:
       "Ayuda a reducir tiempos de reposo y permite disminuir el uso de huevo en panes fermentados, mejorando la logística de distribución.",
+    colorPalette: "BLUE",
   },
   {
     id: 9,
@@ -345,10 +348,13 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Ahorro Directo",
+        icon: "check",
+
         description: "Reduce costos de insumos (huevo) manteniendo la calidad",
       },
       {
         title: "Estructura Uniforme",
+        icon: "check",
         description: "Logra una miga suave y esponjosa similar al brioche",
       },
     ],
@@ -360,6 +366,8 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     ],
     valueProposal:
       "Es la herramienta perfecta para optimizar tu receta ante la subida de precios de materias primas, catalizando tu rentabilidad.",
+
+    colorPalette: "BLUE",
   },
 ];
 

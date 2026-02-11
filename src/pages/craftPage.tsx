@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./IndustrialPage.module.css";
+import styles from "./craftPage.module.css";
 import ProductCarousel from "../components/carousel/ProductCarousel";
 import { PRODUCT_LIST } from "@/utils/constants";
 import { useRouter } from "next/navigation";
@@ -8,9 +8,9 @@ import { ProductDetailInterface } from "@/interfaces/Product";
 
 const productos = PRODUCT_LIST;
 
-const titleCarousel = "Productos de Panificación Industrial";
+const titleCarousel = "Productos de Panificación Artesanal";
 
-export default function IndustrialPage() {
+export default function CraftPage() {
   const router = useRouter();
 
   function onHandlingRoute(element: ProductDetailInterface) {
@@ -23,11 +23,10 @@ export default function IndustrialPage() {
         <div className={styles.firstContent}>
           <div className={styles.mainOverlay}>
             <h1 className={`${styles.mainTitle} text-color-white`}>
-              PANIFICACIÓN INDUSTRIAL
+              PANIFICACIÓN ARTESANAL
             </h1>
             <p className={`${styles.mainSubtitle} text-color-white`}>
-              Soluciones de alto rendimiento para líneas continuas, larga vida y
-              cadenas de frío.
+                   Calidad y frescura que acompañan tu proceso artesanal.
             </p>
           </div>
         </div>
@@ -37,7 +36,7 @@ export default function IndustrialPage() {
         <ProductCarousel
           title={titleCarousel}
           elementos={productos}
-          category={"INDUSTRIAL"}
+          category={"ARTESANAL"}
           intervalMs={5000}
           onActionElement={(element: ProductDetailInterface) =>
             onHandlingRoute(element)

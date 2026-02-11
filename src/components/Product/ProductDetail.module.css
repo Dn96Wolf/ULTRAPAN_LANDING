@@ -54,6 +54,14 @@
 .listColor {
   color: white;
   margin-bottom: 4px;
+
+  
+}
+
+.iconContainer{
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 

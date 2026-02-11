@@ -7,6 +7,15 @@ import Image from "next/image";
 import main2 from "@/assets/images/pan-2.png";
 
 import { ProductDetailInterface } from "@/interfaces/Product";
+import { Pill } from "lucide-react";
+
+
+const icons = [
+  `<BicepsFlexed />`,
+  `<Blend />`,
+  ``
+  
+]
 
 export default function ProductDetail({
   item,
@@ -32,9 +41,7 @@ export default function ProductDetail({
 
           <div className={`${styles.contentProduct} ${styles.fadeInRight}`}>
             <h3 className={`${styles.productTitle}`}>{item.title}</h3>
-            <p
-              className={`${styles.productDescription} text-align-center`}
-            >
+            <p className={`${styles.productDescription} text-align-center`}>
               &quot;{item.subtitle}&quot;
             </p>
 
@@ -49,15 +56,19 @@ export default function ProductDetail({
 
               <ul>
                 {item.benefits.map((element, index) => (
-                  <li key={index} className={styles.listColor}>
-                    <p>
-                      <b>{element.title}</b>
-                    </p>
+                  <p key={index} className={styles.listColor}>
+                    <div className={styles.iconContainer}>
+                      <Pill className={styles.listColor} />
+
+                      <p>
+                        <b>{element.title}</b>
+                      </p>
+                    </div>
 
                     <ul>
                       <span> {element.description} </span>
                     </ul>
-                  </li>
+                  </p>
                 ))}
               </ul>
             </div>
@@ -67,12 +78,14 @@ export default function ProductDetail({
 
               <ul>
                 {item.instructions.map((element, index) => (
-                  <li key={index} className={styles.listColor}>
-                    <p>
+                  <div key={index} className={styles.iconContainer}>
+                    <Pill className={styles.listColor} />
+
+                    <p className={styles.listColor}>
                       <b>{element.title}</b>
                       <span> {element.description} </span>
                     </p>
-                  </li>
+                  </div>
                 ))}
               </ul>
             </div>

@@ -106,6 +106,14 @@
   border-color: var(--color-secondary);
 }
 
+.artesanal {
+  color: var(--color-primary);
+}
+
+.industrial {
+  color: var(--neutral-600);
+}
+
 @media (min-width: 640px) {
   
   .card {

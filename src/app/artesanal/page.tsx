@@ -1,3 +1,6 @@
+import CraftPage from "@/pages/craftPage";
+
 export default function Page(){
-    return <p>Pagina de ultrapan artesanal</p>
+    return       <CraftPage />
+    
 }

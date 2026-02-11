@@ -81,6 +81,7 @@ export default function ContactForm({
             />
           </label>
           <ButtonComponent
+            colorPalette="BROWN"
             title={"Enviar mensaje"}
             onAction={() => onHandlingClick()}
           />

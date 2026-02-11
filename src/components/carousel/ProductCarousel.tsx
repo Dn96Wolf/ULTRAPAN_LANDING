@@ -61,7 +61,11 @@ export default function ProductCarousel({
   return (
     <section className={styles.wrapper} aria-label={title}>
       <div className={styles.inner}>
-        <h2 className={styles.title}>{title}</h2>
+        <h2
+          className={`${styles.title} ${category === "ARTESANAL" ? styles.artesanal : styles.industrial} `}
+        >
+          {title}
+        </h2>
 
         <Swiper
           className={styles.swiper}
@@ -117,19 +121,13 @@ export default function ProductCarousel({
 
                 <div className={styles.cardBody}>
                   <h3 className={styles.cardTitle}>{item.title}</h3>
-                  <p
-                    className={`${styles.cardSubtitle} text-center`}
-                  >
+                  <p className={`${styles.cardSubtitle} text-center`}>
                     {item.description}
                   </p>
 
-                  {/* <ButtonComponent
-                    title={ctaLabel}
-                    onAction={() => onHandlingClick(item.id)}
-                  /> */}
-
                   <ButtonComponent
                     title={ctaLabel}
+                    colorPalette={item.colorPalette}
                     onAction={() => onActionElement(item)}
                   />
                 </div>

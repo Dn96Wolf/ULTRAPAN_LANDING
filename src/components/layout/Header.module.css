@@ -53,7 +53,7 @@
 }
 
 .nav a:hover {
-  color: var(--color-secondary);
+  color: var(--accent-wheat-500);
   transition: 0.3s ease;
 }
 
@@ -254,6 +254,17 @@
   background: var(--neutral-300);
 }
 
+  .navItem {
+    width:  max-content;
+    padding: 6px 10px;
+    border-radius: 4px;
+  }
+
+  .navItem:hover {
+    background-color: var(--primary-200)
+
+  }
+
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .mobileChevron,
@@ -261,6 +272,7 @@
     transition: none;
   }
 }
+/* 35322ee8 */
 
 /* Responsive rules */
 @media (max-width: 639px) {
@@ -275,4 +287,6 @@
   .dropdownMenu {
     display: block;
   }
+
+
 }

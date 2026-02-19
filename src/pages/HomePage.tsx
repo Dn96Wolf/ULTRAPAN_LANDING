@@ -3,12 +3,14 @@ import styles from "../app/page.module.css";
 import { useEffect, useState } from "react";
 
 import { useRouter } from "next/navigation";
-import { HOME_SLIDES } from "@/utils/constants";
+import { HOME_SLIDES, PRODUCT_LIST } from "@/utils/constants";
+import ProductCarousel from "@/components/carousel/ProductCarousel";
 
 const intervalMs = 5000;
 const fadeMs = 2000;
 
 const imagesFade = HOME_SLIDES;
+const productos = PRODUCT_LIST;
 
 export default function HomePage() {
   const router = useRouter();
@@ -118,17 +120,25 @@ export default function HomePage() {
         </h2>
       </section>
 
-      <section className={styles.videoSection}>
-        <article className={styles.videoContainer}>
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/n51f6Me91AY?si=-_I-WvUeNFX-ZYV0"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          ></iframe>
-        </article>
-      </section>
+      {/* <section className={styles.videoSection}>
+
+          <ProductCarousel
+          title={""}
+          elementos={productos}
+          category={"ARTESANAL"}
+          intervalMs={5000}
+        />
+       
+      </section> */}
+
+      <div className={styles.secondContent}>
+        <ProductCarousel
+          title={""}
+          elementos={productos}
+          category={"ARTESANAL"}
+          intervalMs={5000}
+        />
+      </div>
     </main>
   );
 }

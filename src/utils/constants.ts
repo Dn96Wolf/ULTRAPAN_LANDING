@@ -1,9 +1,31 @@
 import main1 from "@/assets/images/pan-1.png";
 import main2 from "@/assets/images/pan-2.png";
 import { MainCarouselItem } from "@/components/carousel/MainCarousel";
-import { CarouselItem } from "@/components/carousel/ProductCarousel";
 import { ProductDetailInterface } from "@/interfaces/Product";
 import { FAQSection } from "@/interfaces/Questions";
+
+
+export const EMAIL_CONTACT = "ventas@enziquim.com"
+export const SLOGAN = "En Enziquim, catalizamos el éxito de nuestros clientes";
+
+export const EMAILREGEX =
+  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+
+export const SOCIAL_MEDIA = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/enziquim/",  
+    
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/Enziquim",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/enziquim/",
+  },
+]
 
 export const NAV_ITEMS = [
   { href: "/", labelKey: "nav.home" as const },
@@ -66,8 +88,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       },
       {
         title: "Uniformidad:",
-        icon: "mix",
-
+        icon: "blend",
         description:
           "Miga y color constantes, ideal para pan de caja o líneas automatizadas.",
       },
@@ -93,14 +114,13 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Vida Útil Extendida",
-        icon: "check",
-
+        icon: "health",
         description:
           " Conserva la suavidad hasta por 90 días (según proceso y empaque).",
       },
       {
         title: "Menos Devoluciones:",
-        icon: "check",
+        icon: "down",
 
         description: "Reduce drásticamente las mermas por pan duro en anaquel.",
       },
@@ -126,20 +146,20 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Suavidad Extrema:",
-        icon: "check",
+        icon: "cloud",
 
         description:
           "Miga húmeda y esponjosa que se siente fresca por más tiempo.",
       },
       {
         title: "Resiliencia:",
-        icon: "check",
+        icon: "resistance",
 
         description: "El pan recupera su forma (rebote) al presionarlo.",
       },
       {
         title: "Volumen:",
-        icon: "check",
+        icon: "boxes",
         description:
           "Incrementa el volumen hasta un 23.9% comparado con recetas estándar.",
       },
@@ -165,15 +185,13 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Protección Estructural:",
-        icon: "check",
-
+        icon: "shield",
         description:
           "Evita que el pan se colapse o pierda volumen tras el descongelado.",
       },
       {
         title: "Como Recién Horneado:",
-        icon: "check",
-
+        icon: "oven",
         description:
           "Garantiza suavidad y excelente presentación en el punto de venta final.",
       },
@@ -199,7 +217,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Cero Roturas:",
-        icon: "check",
+        icon: "resistance",
 
         description:
           "Mejora la elasticidad para que la tortilla se enrolle sin romperse.",
@@ -229,24 +247,23 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     category: "ARTESANAL",
     description:
       " Es un mejorante de alto rendimiento libre de bromato. Su fórmula concentrada está diseñada para masas que requieren fuerza y estabilidad sin modificar tu proceso tradicional.",
-    image: "/images/pan-integral.jpg",
+    image: "/assets/images/ultrapanc1.webp",
     benefits: [
       {
         title: "Volumen Superior:",
-        icon: "check",
-
+        icon: "boxes",
         description:
           "Estandariza el tamaño de tus piezas y mejora la estructura de la miga.",
       },
       {
         title: "Cero Bromato:",
-        icon: "check",
+        icon: "chemistry",
 
         description: "Pan más limpio y seguro.",
       },
       {
         title: "Versatilidad:",
-        icon: "check",
+        icon: "versatility",
 
         description: "Ideal para pan francés, baguette y masas saladas.",
       },
@@ -273,20 +290,20 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Ahorro Inteligente",
-        icon: "check",
+        icon: "save",
 
         description: "Reduce tus costos sin sacrificar la calidad",
       },
       {
         title: "Rendimiento",
-        icon: "check",
+        icon: "performance",
 
         description:
           "Obtienes más piezas por bulto gracias a su alta absorción.",
       },
       {
         title: "Consistencia",
-        icon: "check",
+        icon: "consistency",
 
         description:
           "Logra siempre la misma textura suave y uniforme, lote tras lote.",
@@ -315,13 +332,13 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Frescura Prolongada",
-        icon: "check",
+        icon: "fresh",
 
         description: "Evita el endurecimiento prematuro",
       },
       {
         title: "Ideal para Empaque",
-        icon: "check",
+        icon: "packaging",
 
         description:
           "Mantiene la humedad dentro del empaque sin perder textura.",
@@ -348,13 +365,12 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     benefits: [
       {
         title: "Ahorro Directo",
-        icon: "check",
-
+        icon: "save",
         description: "Reduce costos de insumos (huevo) manteniendo la calidad",
       },
       {
         title: "Estructura Uniforme",
-        icon: "check",
+        icon: "consistency",
         description: "Logra una miga suave y esponjosa similar al brioche",
       },
     ],
@@ -366,7 +382,6 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     ],
     valueProposal:
       "Es la herramienta perfecta para optimizar tu receta ante la subida de precios de materias primas, catalizando tu rentabilidad.",
-
     colorPalette: "BLUE",
   },
 ];

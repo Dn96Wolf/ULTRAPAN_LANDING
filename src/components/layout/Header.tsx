@@ -93,9 +93,9 @@ export default function Header() {
 
             if (!isIndustries) {
               return (
-                <Link key={item.href} href={item.href}>
-                  {t(item.labelKey)}
-                </Link>
+                <div className={styles.navItem} key={item.href}>
+                  <Link href={item.href}>{t(item.labelKey)}</Link>
+                </div>
               );
             }
 

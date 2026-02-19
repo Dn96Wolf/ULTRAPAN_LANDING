@@ -14,7 +14,9 @@ export default function CraftPage() {
   const router = useRouter();
 
   function onHandlingRoute(element: ProductDetailInterface) {
-    return router.push(`/productos/${element.id}`);
+    return router.push(
+      `/productos/${element.title.toLowerCase().replace(/\s+/g, "-")}`,
+    );
   }
 
   return (
@@ -26,7 +28,7 @@ export default function CraftPage() {
               PANIFICACIÓN ARTESANAL
             </h1>
             <p className={`${styles.mainSubtitle} text-color-white`}>
-                   Calidad y frescura que acompañan tu proceso artesanal.
+              Calidad y frescura que acompañan tu proceso artesanal.
             </p>
           </div>
         </div>

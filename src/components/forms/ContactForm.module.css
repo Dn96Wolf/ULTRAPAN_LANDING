@@ -1,6 +1,6 @@
 .wrapper {
+  width: 100%;
   padding: 2rem;
-  /* background-color: var(--neutral-100); */
 }
 
 .inner {
@@ -38,9 +38,18 @@
   gap: 1.25rem;
 }
 
+
+.fieldLabel{
+  /* font-size: 0.85rem; */
+  font-weight: 700;
+  /* color: var(--color-text-muted); */
+}
+
+
 @media (min-width: 640px) {
   .wrapper {
-    padding: clamp(3rem, 6vw, 5rem) 0;
+    padding: 16px 0;
+    /* padding: clamp(3rem, 6vw, 5rem) 0; */
   }
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -54,17 +63,13 @@
   gap: 0.35rem;
 }
 
-.field span {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
-}
+
 
 .field input,
 .field textarea {
   padding: 0.65rem 0.75rem;
   font-size: 0.95rem;
-  border-radius: 4px;
+  border-radius: 8px;
   border: 1px solid var(--color-border);
   background-color: var(--color-white);
 }
@@ -72,9 +77,11 @@
 .field input:focus,
 .field textarea:focus {
   outline: none;
-  border-width: 2px;
+  border-width: 3px;
   border-color: var(--color-secondary);
 }
+
+
 
 /* Actions */
 .actions {

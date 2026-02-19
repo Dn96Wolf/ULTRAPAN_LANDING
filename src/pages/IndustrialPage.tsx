@@ -14,7 +14,7 @@ export default function IndustrialPage() {
   const router = useRouter();
 
   function onHandlingRoute(element: ProductDetailInterface) {
-    return router.push(`/productos/${element.id}`);
+    return router.push(`/productos/${element.title.toLowerCase().replace(/\s+/g, "-")}`);
   }
 
   return (

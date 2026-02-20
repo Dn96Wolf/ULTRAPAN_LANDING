@@ -1,3 +1,4 @@
+import NotFound from "@/app/not-found";
 import ProductDetail from "@/components/Product/ProductDetail";
 import { getProductBySlug } from "@/utils/helpers";
 import type { Metadata } from "next";
@@ -43,12 +44,8 @@ export default async function Page({ params }: PageProps) {
   const product = getProductBySlug(decodeURIComponent(slug));
 
   if (!product) {
-    return {
-      title: "Producto no encontrado",
-    };
+    return <NotFound />;
   }
 
-  return (
-      <ProductDetail item={product} />
-  );
+  return <ProductDetail item={product} />;
 }

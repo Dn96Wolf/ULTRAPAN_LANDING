@@ -1,38 +1,165 @@
 .mainContent {
   width: 100vw;
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
-  background-color: var(--neutral-200);
+  min-height: 100vh;
+  padding: 90px 0;
+  background-image: url("/assets/images/cintillo-artesanal.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.bgUrl {
+
+
+.container {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 250px;
-  background-image: url("/assets/images/mesaPan.png");
-  background-position: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* z-index: 2; */
+}
+
+.textContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .formContainer {
   display: flex;
   flex-direction: column;
   width: 50%;
-  margin: auto;
-  border-radius: 8px;
-  padding: 24px;
-  background-color: var(--color-neutral-translucid);
+  border-radius: 18px;
+  background-color: var(--neutral-200);
 }
 
-.additionalText{
+.textContainer,
+.formContainer {
+  width: 90%;
+  margin: auto;
+  background-color: var(--neutral-100);
+  padding: 16px;
+  border-radius: 18px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.formContainer {
+  padding: 12px;
+}
+
+.additionalText {
   width: 100%;
   height: 200px;
 }
 
-.additionalText p{
+.additionalText p {
   width: 90%;
   margin: auto;
   color: var(--primary-900);
   line-height: 1.6;
   text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 2.5rem;
+  color: var(--color-primary);
+}
+
+.subtitle {
+  color: var(--neutral-600);
+  margin-bottom: 32px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.emailTitle {
+  color: var(--color-primary-soft);
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.contactInfoContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.emailContactContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactSocialMediaContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.contactSocialContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.slogan {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--neutral-600);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .mainContent {
+    flex-direction: row;
+    /* align-items: center ; */
+    align-items: start;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 30px;
+    /* text-align: left; */
+  }
+
+  .subtitle {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .contactInfoContainer {
+    align-items: center;
+  }
+
+  .textContainer,
+  .formContainer {
+    width: 700px;
+    padding: 24px;
+    margin: 0;
+    gap: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    /* align-items: center; */
+  }
+
+  .container {
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .emailTitle {
+    text-align: center;
+  }
 }

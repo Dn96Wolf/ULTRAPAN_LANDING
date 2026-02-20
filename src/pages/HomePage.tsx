@@ -3,16 +3,23 @@ import styles from "../app/page.module.css";
 import { useEffect, useState } from "react";
 
 import { useRouter } from "next/navigation";
-import { HOME_SLIDES } from "@/utils/constants";
+import { HOME_SLIDES, PRODUCT_LIST } from "@/utils/constants";
+import ProductCarousel from "@/components/carousel/ProductCarousel";
+import ButtonComponent from "../components/buttons/Button";
+import { createSlug } from "@/utils/helpers";
+import { t } from "@/i18n";
+import { ProductDetailInterface } from "@/interfaces/Product";
 
 const intervalMs = 5000;
 const fadeMs = 2000;
-
 const imagesFade = HOME_SLIDES;
+const productos = PRODUCT_LIST;
+
+const breakpoint = 640;
 
 export default function HomePage() {
   const router = useRouter();
-
+  const [isMobile, setIsMobile] = useState(false);
   const [active, setActive] = useState<number>(0);
 
   function onHandlingClick(id: string) {
@@ -29,33 +36,61 @@ export default function HomePage() {
     return () => window.clearInterval(id);
   }, []);
 
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < breakpoint);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, [breakpoint]);
+
+  function handlingProduct(id: number) {
+    const nameProduct = productos.find(
+      (e: ProductDetailInterface) => e.id === id,
+    );
+
+    if (!nameProduct) return;
+
+    return router.push(`/productos/${createSlug(nameProduct.route)}`);
+  }
+
   return (
     <main className={styles.page}>
       <section
         className={` ${styles.firstScreen} `}
         style={{ ["--fade-ms" as any]: `${fadeMs}ms` }}
       >
-        {imagesFade.length && (
+        {!!imagesFade.length && (
           <>
             {imagesFade.map((element, index) => (
               <div
-                key={index}
+                key={element.idProduct}
                 className={` ${styles.craftLayer} ${active === index ? styles.show : styles.hide}`}
                 style={{
-                  backgroundImage: `url(${imagesFade[index].backgroundImage})`,
+                  backgroundImage: `url(${!isMobile ? element.backgroundImage : element.backgroundImageResponsive})`,
                 }}
-                aria-hidden="true"
               >
-                <div className={styles.mainTitleContainer}>
-                  <div
-                    className={`${styles.mainTitleRibbon} ${imagesFade[index].ribbonClass}`}
-                  >
-                    <h1 className={`text-color-white ${styles.mainTitle}`}>
-                      {element.title}
-                    </h1>
-                    <p className={`text-color-white  ${styles.mainSubtitle}`}>
-                      {element.subtitle}
-                    </p>
+                <div className={styles.craftContent}>
+                  <div className={styles.mainTitleContainer}>
+                    <div
+                      className={`${styles.mainTitleRibbon} ${imagesFade[index].ribbonClass}`}
+                    >
+                      <h1 className={`text-color-white ${styles.mainTitle}`}>
+                        {element.title}
+                      </h1>
+                      <p className={`text-color-white  ${styles.mainSubtitle}`}>
+                        {element.subtitle}
+                      </p>
+
+                      {element.action && (
+                        <div className={styles.buttonStyle}>
+                          <ButtonComponent
+                            colorPalette={element.colorPalette}
+                            title="Saber más"
+                            onAction={() => handlingProduct(element.idProduct)}
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -84,11 +119,11 @@ export default function HomePage() {
           >
             <div className={styles.industrialText}>
               <h2 className="text-color-white text-center">
-                Panificación Industrial
+                {t("main.industrial")}
               </h2>
 
               <p className="text-color-white text-center ">
-                Formulaciones especializadas para procesos estandarizados.
+                {t("main.industrialSubtitle")}
               </p>
             </div>
           </div>
@@ -99,13 +134,13 @@ export default function HomePage() {
           >
             <div className={styles.craftText}>
               <h2 className="text-color-white text-center">
-                Panificación Artesanal
+                {t("main.craftMaker")}
               </h2>
 
               <p
                 className={`${styles.subTextSection} text-color-white text-center`}
               >
-                Calidad y frescura que acompañan tu proceso artesanal.
+                {t("main.craftMakerSubtitle")}
               </p>
             </div>
           </div>
@@ -114,21 +149,13 @@ export default function HomePage() {
 
       <section className={styles.categoriesStyles}>
         <h2 className={`${styles.categoriesTitle}  text-center`}>
-          Conoce más sobre nosotros
+          {t("main.knowAboutUs")}
         </h2>
       </section>
 
-      <section className={styles.videoSection}>
-        <article className={styles.videoContainer}>
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/n51f6Me91AY?si=-_I-WvUeNFX-ZYV0"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          ></iframe>
-        </article>
-      </section>
+      <div className={styles.secondContent}>
+        <ProductCarousel title={""} elementos={productos} intervalMs={5000} />
+      </div>
     </main>
   );
 }

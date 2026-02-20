@@ -5,6 +5,7 @@ import ProductCarousel from "../components/carousel/ProductCarousel";
 import { PRODUCT_LIST } from "@/utils/constants";
 import { useRouter } from "next/navigation";
 import { ProductDetailInterface } from "@/interfaces/Product";
+import { t } from "@/i18n";
 
 const productos = PRODUCT_LIST;
 
@@ -14,7 +15,9 @@ export default function CraftPage() {
   const router = useRouter();
 
   function onHandlingRoute(element: ProductDetailInterface) {
-    return router.push(`/productos/${element.id}`);
+    return router.push(
+      `/productos/${element.route.toLowerCase().replace(/\s+/g, "-")}`,
+    );
   }
 
   return (
@@ -26,9 +29,16 @@ export default function CraftPage() {
               PANIFICACIÓN ARTESANAL
             </h1>
             <p className={`${styles.mainSubtitle} text-color-white`}>
-                   Calidad y frescura que acompañan tu proceso artesanal.
+              Calidad y frescura que acompañan tu proceso artesanal.
             </p>
           </div>
+        </div>
+      </div>
+
+      <div className={styles.ribbonProducts}>
+        <div className={styles.ribbonLayer1}></div>
+        <div className={styles.ribbonLayer2}>
+          <h2 className={styles.titleRibbon}>{t("craftmaker.listPorduct")}</h2>
         </div>
       </div>
 

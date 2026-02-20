@@ -1,8 +1,10 @@
 import styles from "./Footer.module.css";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import Image from "next/image";
 
 interface FooterElement {
   title: string;
+  image: string;
   text: string;
   textColor: string;
   link: string | null;
@@ -20,14 +22,17 @@ const socialIconMap: Record<string, React.ComponentType> = {
 
 const footerElements: FooterElement[] = [
   {
-    title: "ENZIQUIM",
+    title: "",
+    image: "/assets/images/logo.png",
     text: "Visitanos para concer más acerca de nosotros y del resto de las lineas de productos",
     textColor: "",
-    link: "https://enziquim.com.mx/",
+    link: "https://enziquim.com",
     icons: [],
   },
   {
     title: "Derechos reservados",
+    image: "",
+
     text: `Copyright ©${new Date().getFullYear()}`,
     textColor: "Enzimas y Productos Químicos S.A. de C.V.",
     link: null,
@@ -35,6 +40,8 @@ const footerElements: FooterElement[] = [
   },
   {
     title: "Síguenos",
+    image: "",
+
     text: "Redes sociales",
     textColor: "",
     link: null,
@@ -47,10 +54,10 @@ const footerElements: FooterElement[] = [
         name: "LinkedIn",
         url: "https://www.linkedin.com/company/enziquim/",
       },
-      {
-        name: "Instagram",
-        url: "https://www.instagram.com/enziquim/",
-      },
+      // {
+      //   name: "Instagram",
+      //   url: "https://www.instagram.com/enziquim/",
+      // },
     ],
   },
 ];
@@ -61,7 +68,18 @@ export default function Footer() {
       <div className={styles.inner}>
         {footerElements.map((item, index) => (
           <div key={index} className={styles.footerItem}>
-            <h2 className={styles.footerItemTitle}>{item.title}</h2>
+            {item.image !== "" ? (
+              <Image
+                className={styles.image}
+                src={item.image}
+                width={140}
+                height={30}
+                alt=""
+              />
+            ) : (
+              <h2 className={styles.footerItemTitle}>{item.title}</h2>
+            )}
+
             <p className={styles.footerItemText}>
               {item.text}
               {item.textColor ? (

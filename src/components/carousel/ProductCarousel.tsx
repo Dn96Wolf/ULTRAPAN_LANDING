@@ -11,130 +11,140 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Swiper modules
 import { Autoplay, Pagination, A11y } from "swiper/modules";
 
-// import { useRouter } from "next/navigation";
-
 // Swiper styles (globales del paquete)
 import "swiper/css";
 import "swiper/css/pagination";
-import { ProductDetailInterface } from "@/interfaces/Product";
+import { useRouter } from "next/navigation";
+import { createSlug } from "@/utils/helpers";
+import { ProductCarouselProps } from "@/interfaces/Carousel.interface";
 
-import main1 from "@/assets/images/pan-1.png";
-
-export interface CarouselItem {
-  id: number;
-  title: string;
-  descripcion: string;
-  presentation: string;
-  path: string;
-  image: any; // URL o ruta en /public
-}
-
-type ProductCarouselProps = {
-  title: string;
-  elementos: ProductDetailInterface[];
-  category: "INDUSTRIAL" | "ARTESANAL";
-  intervalMs?: number; // default 1000
-  ctaLabel?: string; // default "Ver más"
-  onActionElement?: any;
-};
+import { t } from "@/i18n";
+import { useRef } from "react";
 
 export default function ProductCarousel({
   title,
   elementos,
   intervalMs = 1000,
-  category = "INDUSTRIAL",
-  ctaLabel = "Ver más",
-  onActionElement,
+  category,
 }: ProductCarouselProps) {
-  const filteredProducts = elementos.filter((e) => e.category === category);
+  const swiperRef = useRef<any>(null);
 
-  // const router = useRouter();
+  let filteredProducts = elementos;
+
+  if (category) {
+    filteredProducts = elementos.filter((e) => e.category === category);
+  }
+
+  const router = useRouter();
 
   if (!elementos?.length) return null;
 
-  // function onHandlingClick(id: number) {
-  //   if (!id) return;
+  function onHandlingClick(name: string) {
+    if (!name) return;
 
-  //   return router.push(`/productos/${id}`);
-  // }
+    swiperRef.current?.autoplay?.stop();
+
+    router.push(`/productos/${createSlug(name)}`);
+  }
 
   return (
     <section className={styles.wrapper} aria-label={title}>
       <div className={styles.inner}>
-        <h2
-          className={`${styles.title} ${category === "ARTESANAL" ? styles.artesanal : styles.industrial} `}
-        >
-          {title}
-        </h2>
+        <div className={` ${styles.carouselWrap}`}>
+          <Swiper
+            className={styles.swiperLayout}
+            modules={[Autoplay, Pagination, A11y]}
+            slidesPerView={1}
+            spaceBetween={16}
+            breakpoints={{
+              630: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 12,
+              },
+              1920: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+            }}
+            loop={elementos.length > 1}
+            autoplay={
+              elementos.length > 1
+                ? { delay: intervalMs, disableOnInteraction: false }
+                : false
+            }
+            pagination={{
+              clickable: true,
+              bulletClass: styles.bullet,
+              bulletActiveClass: styles.bulletActive,
+            }}
+            a11y={{
+              enabled: true,
+            }}
+          >
+            {filteredProducts.map((item, idx) => (
+              <SwiperSlide
+                key={`${item.title}-${idx}`}
+                className={styles.slide}
+              >
+                <article className={styles.card}>
+                  <div className={styles.imageWrap}>
+                    <div className={styles.imageOverlay}></div>
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className={styles.image}
+                      sizes="(min-width: 640px) 100vw, 520px"
+                      priority={idx === 0}
+                    />
+                  </div>
 
-        <Swiper
-          className={styles.swiper}
-          modules={[Autoplay, Pagination, A11y]}
-          freeMode={{
-            enabled: true,
-            sticky: true,
-          }}
-          slidesPerView={1}
-          spaceBetween={16}
-          breakpoints={{
-            630: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 4,
-              spaceBetween: 20,
-            },
-            1920: {
-              slidesPerView: 5,
-              spaceBetween: 20,
-            },
-          }}
-          loop={elementos.length > 1}
-          autoplay={
-            elementos.length > 1
-              ? { delay: intervalMs, disableOnInteraction: false }
-              : false
-          }
-          pagination={{
-            clickable: true,
-            bulletClass: styles.bullet,
-            bulletActiveClass: styles.bulletActive,
-          }}
-          a11y={{
-            enabled: true,
-          }}
-        >
-          {filteredProducts.map((item, idx) => (
-            <SwiperSlide key={`${item.title}-${idx}`} className={styles.slide}>
-              <article className={styles.card}>
-                <div className={styles.imageWrap}>
-                  <Image
-                    src={main1}
-                    alt={item.title}
-                    fill
-                    className={styles.image}
-                    sizes="(min-width: 640px) 100vw, 520px"
-                    priority={idx === 0}
-                  />
-                </div>
+                  <div className={styles.cardBody}>
+                    {item.colorPalette === "BROWN" && (
+                      <h3 className={`${styles.cardTitle} ${styles.brown}`}>
+                        {item.title}
+                      </h3>
+                    )}
 
-                <div className={styles.cardBody}>
-                  <h3 className={styles.cardTitle}>{item.title}</h3>
-                  <p className={`${styles.cardSubtitle} text-center`}>
-                    {item.description}
-                  </p>
+                    {item.colorPalette === "MUSTARD" && (
+                      <h3 className={`${styles.cardTitle} ${styles.mustard}`}>
+                        {item.title}
+                      </h3>
+                    )}
 
-                  <ButtonComponent
-                    title={ctaLabel}
-                    colorPalette={item.colorPalette}
-                    onAction={() => onActionElement(item)}
-                  />
-                </div>
-              </article>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                    {item.colorPalette === "BLUE" && (
+                      <h3 className={`${styles.cardTitle} ${styles.blue}`}>
+                        {item.title}
+                      </h3>
+                    )}
+
+                    {item.colorPalette === "SOFTBLUE" && (
+                      <h3 className={`${styles.cardTitle} ${styles.softBlue}`}>
+                        {item.title}
+                      </h3>
+                    )}
+
+                    <p className={`${styles.cardSubtitle} text-center`}>
+                      {item.description}
+                    </p>
+
+                    <div className={styles.ctaWrap}>
+                      <ButtonComponent
+                        title={t(`btn.knowMore`)}
+                        colorPalette={item.colorPalette}
+                        onAction={() => onHandlingClick(item.route)}
+                      />
+                    </div>
+                  </div>
+                </article>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );

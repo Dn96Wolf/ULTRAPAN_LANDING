@@ -36,7 +36,7 @@
 .footerItemLink,
 .footerItemTextColor {
   margin-left: 4px;
-  color: var(--color-secondary);
+  color: var(--accent-wheat-300);
   cursor: pointer;
 }
 
@@ -60,19 +60,27 @@
 
   border-radius: 50%;
   background-color: var(--color-surface-alt);
-  color: var(--color-text-muted);
+  color: var(--accent-wheat-300);
 
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .socialIcon:hover {
-  background-color: var(--color-primary);
+  background-color: var(--color-blue);
   color: var(--color-white);
 }
 
 .socialIcon svg {
   width: 14px;
   height: 14px;
+}
+
+/* .image{
+  width: 200pc;
+} */
+
+.image:first-child{
+  margin-left: -10px;
 }
 
 /* =========================

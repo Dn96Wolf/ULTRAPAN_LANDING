@@ -28,10 +28,10 @@
 .mainOverlay {
   width: 100%;
   height: 100%;
-  background-color: var(--color-neutral-translucid);
+  background-color: rgba(65, 34, 5, 0.327);
   position: absolute;
   top: 0;
-  right:  0;
+  right: 0;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,8 @@
 }
 
 .mainTitle {
-  width: max-content;
+  font-size: 40px;
+  width: 90%;
   margin: 0 auto;
   text-align: center;
   margin-bottom: 12px;
@@ -49,33 +50,67 @@
 }
 
 .mainSubtitle {
+  font-size: 18px;
   text-align: center;
   animation: slideInBottom 2s ease-out both;
 }
 
-.secondContent,
-.productDetailContent {
+.secondContent {
   width: 100vw;
-  background-color: var(--neutral-100);
+  /* background: var(--bg-gradient); */
 }
 
-.productDetailContent {
-  background-color: white;
+.ribbonProducts {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-image: url("/assets/images/cintillo-industrial.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 24px;
+}
+
+.ribbonLayer1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(212, 210, 194, 0.532);
+  z-index: 1;
+}
+
+.ribbonLayer2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleRibbon {
+  font-size: 28px;
+  text-align: center;
+  color: var(--neutral-700);
 }
 
 @media (min-width: 640px) {
-
-
   .mainOverlay {
-    width: 50%;
+    /* width: 50%; */
   }
 
-
-  .mainTitle{
+  .mainTitle {
+    width: 100%;
     font-size: 48px;
   }
 
-  .mainSubtitle{
+  .mainSubtitle {
     font-size: 20px;
     text-align: center;
     max-width: 500px;
@@ -83,6 +118,17 @@
 
   .firstContent {
     background-size: cover;
+  }
+
+  .ribbonProducts {
+    height: 400px;
+    padding: 24px;
+  }
+
+  .titleRibbon {
+    width: 80%;
+    margin: auto;
+    font-size: 48px;
   }
 }
 

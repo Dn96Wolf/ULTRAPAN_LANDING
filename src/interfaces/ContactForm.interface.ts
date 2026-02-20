@@ -7,6 +7,7 @@ export type ContactFormProps = {
 
 export type ContactFormData = {
   name: string;
+  lastName: string;
   email: string;
   phone: string;
   company: string;

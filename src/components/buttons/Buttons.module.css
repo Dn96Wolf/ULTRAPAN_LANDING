@@ -19,11 +19,27 @@
 }
 
 .btnBlue {
-  background-color: var(--color-blue);
+  background-color: var(--color-ultrapan-dulce-plus);
 }
 
 .btnBlue:hover {
-  background-color: var(--color-blue-hovered);
+  background-color: var(--color-ultrapan-dulce-plus-hover);
+}
+
+.btnMustard {
+  background-color: var(--color-ultrapan-g);
+}
+
+.btnMustard:hover {
+  background-color: var(--color-ultrapan-g-hover);
+}
+
+.btnSoftBlue {
+  background-color: var(--color-ultrapan-c-plus);
+}
+
+.btnSoftBlue:hover {
+  background-color: var(--color-ultrapan-c-plus-hover);
 }
 
 .buttonText {

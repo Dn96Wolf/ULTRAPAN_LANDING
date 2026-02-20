@@ -2,15 +2,24 @@
   width: 100vw;
   min-height: 100vh;
   padding: 90px 0;
-  background-image: url("/assets/images/fondoPan.webp");
+  background-image: url("/assets/images/cintillo-artesanal.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
+
+
 .container {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  /* z-index: 2; */
 }
 
 .textContainer {

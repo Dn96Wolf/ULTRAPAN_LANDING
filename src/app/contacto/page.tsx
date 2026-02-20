@@ -17,6 +17,9 @@ const socialIconMap: Record<string, React.ComponentType> = {
 export default function Page() {
   return (
     <section className={styles.mainContent}>
+      <div className={styles.opacityLayer}>
+
+      </div>
       <div className={styles.container}>
         <div className={styles.textContainer}>
           <div>

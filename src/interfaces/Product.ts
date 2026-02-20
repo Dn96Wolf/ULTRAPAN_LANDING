@@ -4,9 +4,16 @@ export interface ProductDetailInterface {
   subtitle: string;
   category: "INDUSTRIAL" | "ARTESANAL";
   description: string;
-  image: any;
-  benefits: { title: string; description: string, icon: string }[];
+  image: string;
+  benefits: { title: string; description: string; icon: string }[];
   instructions: { title: string; description: string }[];
   valueProposal: string;
-  colorPalette: any
+  colorPalette: ProductColorPalette;
 }
+
+export type ProductColorPalette =
+  | "SOFTBLUE"
+  | "BLUE"
+  | "BROWN"
+  | "MUSTARD"
+  | "SOFTBROWN";

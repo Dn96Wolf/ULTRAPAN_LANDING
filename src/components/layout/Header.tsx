@@ -6,7 +6,7 @@ import styles from "./Header.module.css";
 import { t } from "@/i18n";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import logo from "@/assets/images/logo.png";
+// import logo from "@/assets/images/logo.png";
 import { NAV_ITEMS, INDUSTRIAS_SUBMENU } from "@/utils/constants";
 
 const navList = NAV_ITEMS;
@@ -77,7 +77,7 @@ export default function Header() {
       <div className={styles.inner}>
         <Link href="/" className={styles.logo} onClick={closeMobile}>
           <Image
-            src={logo}
+            src={"/assets/images/banner-white.png"}
             alt="Enziquim"
             width={140}
             height={32}

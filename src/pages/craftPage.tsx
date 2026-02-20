@@ -5,6 +5,7 @@ import ProductCarousel from "../components/carousel/ProductCarousel";
 import { PRODUCT_LIST } from "@/utils/constants";
 import { useRouter } from "next/navigation";
 import { ProductDetailInterface } from "@/interfaces/Product";
+import { t } from "@/i18n";
 
 const productos = PRODUCT_LIST;
 
@@ -31,6 +32,13 @@ export default function CraftPage() {
               Calidad y frescura que acompañan tu proceso artesanal.
             </p>
           </div>
+        </div>
+      </div>
+
+      <div className={styles.ribbonProducts}>
+        <div className={styles.ribbonLayer1}></div>
+        <div className={styles.ribbonLayer2}>
+          <h2 className={styles.titleRibbon}>{t("craftmaker.listPorduct")}</h2>
         </div>
       </div>
 

@@ -8,10 +8,8 @@
   --color-primary-soft: #74522b;
   --color-primary-dark: #372015;
 
-
   --color-blue: #5cd6ca;
   --color-blue-hovered: #50d3c6;
-
 
   --primary-900: #431f13;
   --primary-800: #532d1d;
@@ -44,6 +42,14 @@
   --color-primary-translucid: #61392488;
   --color-neutral-translucid: #6b6662a2;
 
+  --color-ultrapan-g: #b5a106;
+  --color-ultrapan-g-hover: #c9b30b;
+
+  --color-ultrapan-dulce-plus: #0a2880;
+  --color-ultrapan-dulce-plus-hover: #143ec6;
+
+  --color-ultrapan-c-plus: #328e98;
+  --color-ultrapan-c-plus-hover: #40a8b4;
 
   --color-white: white;
 
@@ -60,7 +66,12 @@
 
   --hover-section: #39858162;
 
+
+  --gray-overlay: rgba(203, 201, 182, 0.199);
+
   /* forms */
 
   --color-border: var(--primary-400);
+
+  /* swiper */
 }

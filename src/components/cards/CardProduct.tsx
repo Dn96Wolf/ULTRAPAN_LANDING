@@ -16,7 +16,7 @@ export default function CardProduct({
   const router = useRouter();
 
   function onHandlingRoute() {
-    return router.push(`/productos/${product.id}`);
+    return router.push(`/productos/${product.title}`);
   }
 
   return (
@@ -30,6 +30,9 @@ export default function CardProduct({
       </div>
 
       <div className={styles.imageCardContainer}>
+        <div className={styles.overlay}>
+
+        </div>
         <div>
           <Image
             className={`${styles.image}`}

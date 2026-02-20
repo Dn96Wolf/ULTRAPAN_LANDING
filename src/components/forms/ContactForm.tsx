@@ -4,6 +4,7 @@ import styles from "./ContactForm.module.css";
 import ButtonComponent from "../buttons/Button";
 import { useState, FormEvent, useRef } from "react";
 import { EMAILREGEX } from "@/utils/constants";
+import { t } from "@/i18n";
 
 import ReCAPTCHA from "react-google-recaptcha";
 import {
@@ -14,6 +15,7 @@ import {
 export default function ContactForm({ titleBtn }: ContactFormProps) {
   const initialState: ContactFormData = {
     name: "",
+    lastName: "",
     email: "",
     phone: "",
     company: "",
@@ -162,7 +164,7 @@ export default function ContactForm({ titleBtn }: ContactFormProps) {
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.grid}>
             <label className={styles.field}>
-              <span className={styles.fieldLabel}>Nombre</span>
+              <span className={styles.fieldLabel}>{t("form.name")}</span>
               <input
                 type="text"
                 name="name"
@@ -173,9 +175,21 @@ export default function ContactForm({ titleBtn }: ContactFormProps) {
                 required
               />
             </label>
+            <label className={styles.field}>
+              <span className={styles.fieldLabel}>{t("form.lastName")}</span>
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Tu apellido"
+                value={formData.lastName}
+                onChange={(e) => handleFieldChange(e, "lastName")}
+                pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
+                required
+              />
+            </label>
 
             <label className={styles.field}>
-              <span className={styles.fieldLabel}>Email</span>
+              <span className={styles.fieldLabel}>{t("form.email")}</span>
               <input
                 type="email"
                 name="email"
@@ -187,7 +201,7 @@ export default function ContactForm({ titleBtn }: ContactFormProps) {
             </label>
 
             <label className={styles.field}>
-              <span className={styles.fieldLabel}>Teléfono</span>
+              <span className={styles.fieldLabel}>{t("form.phone")}</span>
               <input
                 type="tel"
                 name="phone"
@@ -201,7 +215,7 @@ export default function ContactForm({ titleBtn }: ContactFormProps) {
             </label>
 
             <label className={styles.field}>
-              <span className={styles.fieldLabel}>Empresa</span>
+              <span className={styles.fieldLabel}>{t("form.company")}</span>
               <input
                 type="text"
                 name="company"
@@ -212,7 +226,7 @@ export default function ContactForm({ titleBtn }: ContactFormProps) {
             </label>
 
             <label className={styles.field}>
-              <span className={styles.fieldLabel}>Asunto</span>
+              <span className={styles.fieldLabel}>{t("form.subject")}</span>
               <input
                 type="text"
                 name="subject"
@@ -224,7 +238,7 @@ export default function ContactForm({ titleBtn }: ContactFormProps) {
           </div>
 
           <label className={styles.field}>
-            <span className={styles.fieldLabel}>Mensaje</span>
+            <span className={styles.fieldLabel}>{t("form.message")}</span>
             <textarea
               name="message"
               rows={5}

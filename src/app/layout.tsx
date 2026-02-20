@@ -3,9 +3,8 @@ import "@/styles/globals.css";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ContactForm from "@/components/forms/ContactForm";
 
-import { Nunito_Sans, Montserrat } from "next/font/google";
+import { Nunito_Sans, Montserrat, Roboto } from "next/font/google";
 
 const nunito = Nunito_Sans({
   subsets: ["latin"],
@@ -19,6 +18,13 @@ const montserrat = Montserrat({
   weight: ["500", "600", "700"],
   display: "swap",
   variable: "--font-montserrat",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -62,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${nunito.variable} ${montserrat.variable}`}>
+    <html lang="es" className={`${nunito.variable} ${montserrat.variable} ${roboto.variable}`}>
       <body>
         <Header />
         <div style={{ overflow: "auto" }}>

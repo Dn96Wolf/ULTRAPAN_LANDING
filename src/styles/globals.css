@@ -22,9 +22,7 @@ body {
 
   background-color: var(--color-bg);
   color: var(--color-text);
-
-  font-family: "Arial", sans-serif;
-
+  font-family:var(--font-roboto);
   line-height: 1.5;
   font-size: 14px;
 }
@@ -177,3 +175,4 @@ main {
   height: 100%;
   background-image: url("/assets/images/mesaPan.png");
 }
+

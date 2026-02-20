@@ -136,7 +136,7 @@ export default function ProductCarousel({
                       <ButtonComponent
                         title={t(`btn.knowMore`)}
                         colorPalette={item.colorPalette}
-                        onAction={() => onHandlingClick(item.title)}
+                        onAction={() => onHandlingClick(item.route)}
                       />
                     </div>
                   </div>

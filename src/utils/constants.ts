@@ -19,10 +19,10 @@ export const SOCIAL_MEDIA = [
     name: "Facebook",
     url: "https://www.facebook.com/Enziquim",
   },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/enziquim/",
-  },
+  // {
+  //   name: "Instagram",
+  //   url: "https://www.instagram.com/enziquim/",
+  // },
 ];
 
 export const NAV_ITEMS = [
@@ -38,7 +38,7 @@ export const INDUSTRIAS_SUBMENU = [
   { href: "/industrial", label: "Industrial" },
 ];
 
-export const HOME_SLIDES:HomeSlide[] = [
+export const HOME_SLIDES: HomeSlide[] = [
   {
     title: "ULTRAPAN",
     idProduct: 0,
@@ -49,6 +49,17 @@ export const HOME_SLIDES:HomeSlide[] = [
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: false,
     colorPalette: "BROWN",
+  },
+  {
+    title: "ULTRAPAN",
+    idProduct: 1000,
+    subtitle:
+      "Tecnología enzimática diseñada para estandarizar tu calidad, mejorar el volumen y optimizar tus costos, desde el panadero artesano hasta la línea industrial.",
+    backgroundImage: "/assets/images/mesaIndustrial.png",
+    backgroundImageResponsive: "/assets/images/mesaIndustrial.png",
+    ribbonClass: "page-module___8aEwW__bg-neutral-overlay",
+    action: false,
+    colorPalette: "BROWN" as ProductColorPalette,
   },
   {
     title: "ULTRAPAN C+",
@@ -70,23 +81,13 @@ export const HOME_SLIDES:HomeSlide[] = [
     action: true,
     colorPalette: "MUSTARD" as ProductColorPalette,
   },
-  {
-    title: "ULTRAPAN",
-    idProduct: 0,
-    subtitle:
-      "Tecnología enzimática diseñada para estandarizar tu calidad, mejorar el volumen y optimizar tus costos, desde el panadero artesano hasta la línea industrial.",
-    backgroundImage: "/assets/images/mesaIndustrial.png",
-    backgroundImageResponsive: "/assets/images/mesaIndustrial.png",
-    ribbonClass: "page-module___8aEwW__bg-neutral-overlay",
-    action: false,
-    colorPalette: "BROWN" as ProductColorPalette,
-  },
 ];
 
 export const PRODUCT_LIST: ProductDetailInterface[] = [
   {
     id: 1,
     title: "Ultrapan 10,000",
+    route: "Ultrapan-diez-mill",
     subtitle: "Resiliencia máxima para líneas de alto volumen.",
     category: "INDUSTRIAL",
     description:
@@ -116,15 +117,17 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     valueProposal:
       "Garantiza que tu producción no se detenga por variaciones en la materia prima y mejora la elasticidad de la masa en procesos mecanizados.",
     colorPalette: "BROWN",
+    keywords: [],
   },
   {
     id: 2,
     title: "Ultrapan Emulsoft Extender",
+    route: "Ultrapan Emulsoft Extender",
     subtitle: "Larga vida, Frescura hasta por 90 días.",
     category: "INDUSTRIAL",
     description:
       "Desarrollado para combatir el envejecimiento del pan. Retarda la retrogradación del almidón para mantener el pan suave por meses.",
-    image: "/assets/images/industrial-mockup.webp",
+    image: "/assets/images/emulsoftextender.png",
     benefits: [
       {
         title: "Vida Útil Extendida",
@@ -148,15 +151,17 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     valueProposal:
       "Es vital para marcas que distribuyen a nivel nacional o exportan, asegurando que el cliente reciba un producto suave como el primer día.",
     colorPalette: "BROWN",
+    keywords: [],
   },
   {
     id: 3,
     title: "Ultrapan Emulsoft Plus",
+    route: "Ultrapan Emulsoft Plus",
     subtitle: "Suavidad premium para tu pan dulce.",
     category: "INDUSTRIAL",
     description:
       "La combinación perfecta de enzimas y emulsificantes para masas dulces (conchas, roles, brioche) que buscan una experiencia sensorial superior.",
-    image: "/assets/images/industrial-mockup.webp",
+    image: "/assets/images/emulsoftpuls.png",
     benefits: [
       {
         title: "Suavidad Extrema:",
@@ -187,15 +192,17 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     valueProposal:
       "Mejora la percepción de frescura de tu cliente sin alterar el sabor tradicional de tu pan.",
     colorPalette: "BROWN",
+    keywords: [],
   },
   {
     id: 4,
     title: "Ultrapan Congelado",
+    route: "Ultrapan Congelado",
     subtitle: "Estabilidad total para la cadena de frío.",
     category: "INDUSTRIAL",
     description:
       "Formulado para proteger la red de gluten durante la congelación, asegurando que el pan mantenga su estructura al descongelarse y hornearse.",
-    image: "/assets/images/industrial-mockup.webp",
+    image: "/assets/images/congelado.png",
     benefits: [
       {
         title: "Protección Estructural:",
@@ -219,15 +226,17 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     valueProposal:
       "Aumenta la eficiencia de líneas de pan precocido o masas congeladas, compatible con tecnologías IQF y fermentación controlada.",
     colorPalette: "BROWN",
+    keywords: [],
   },
   {
     id: 5,
     title: "Ultra Mill Tortilla M1",
+    route: "Ultra Mill Tortilla M1",
     subtitle: "La solución para la tortilla de harina perfecta",
     category: "INDUSTRIAL",
     description:
       "Mezcla de enzimas para líneas continuas de tortillas de harina, enfocada en la textura y la 'rollabilidad'",
-    image: "/assets/images/industrial-mockup.webp",
+    image: "/assets/images/tortilla.png",
     benefits: [
       {
         title: "Cero Roturas:",
@@ -253,10 +262,12 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     valueProposal:
       "Reduce mermas por tortillas rotas y mejora la experiencia del consumidor final al evitar que se peguen.",
     colorPalette: "BROWN",
+    keywords: [],
   },
   {
     id: 6,
     title: "Ultrapan C+",
+    route: "ultrapan c plus",
     subtitle: "La fórmula concentrada para el volumen perfecto.",
     category: "ARTESANAL",
     description:
@@ -292,10 +303,12 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     valueProposal:
       "No necesitas cambiar tu receta ni comprar maquinaria nueva; funciona en procesos directos y sin cámaras de fermentación.",
     colorPalette: "SOFTBLUE",
+    keywords: [],
   },
   {
     id: 7,
     title: "Ultrapan G+",
+    route: "ultrapan g plus",
     subtitle: "El mejorante todo terreno para tu negocio.",
     category: "ARTESANAL",
     description:
@@ -333,10 +346,12 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     valueProposal:
       "Es ideal para reducir la variabilidad en condiciones artesanales y permite reducir la cantidad de grasa en la receta.",
     colorPalette: "MUSTARD",
+    keywords: [],
   },
   {
     id: 8,
     title: "Ultrapan Dulce Plus",
+    route: "Ultrapan Dulce Plus",
     subtitle:
       "Especializado para pan dulce (roscas, pan de muerto, bollería empacada) que requiere mantenerse fresco en el supermercado.",
     category: "ARTESANAL",
@@ -367,10 +382,12 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     valueProposal:
       "Ayuda a reducir tiempos de reposo y permite disminuir el uso de huevo en panes fermentados, mejorando la logística de distribución.",
     colorPalette: "BLUE",
+    keywords: [],
   },
   {
     id: 9,
     title: "Ultrapan Emulsoft H",
+    route: "Ultrapan Emulsoft H",
     subtitle: "Optimización de costos: Suavidad sin huevo.",
     category: "ARTESANAL",
     description:
@@ -397,6 +414,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     valueProposal:
       "Es la herramienta perfecta para optimizar tu receta ante la subida de precios de materias primas, catalizando tu rentabilidad.",
     colorPalette: "BLUE",
+    keywords: [],
   },
 ];
 

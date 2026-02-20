@@ -16,7 +16,7 @@ export default function CraftPage() {
 
   function onHandlingRoute(element: ProductDetailInterface) {
     return router.push(
-      `/productos/${element.title.toLowerCase().replace(/\s+/g, "-")}`,
+      `/productos/${element.route.toLowerCase().replace(/\s+/g, "-")}`,
     );
   }
 

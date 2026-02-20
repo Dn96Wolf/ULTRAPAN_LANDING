@@ -1,6 +1,7 @@
 export interface ProductDetailInterface {
   id: number;
   title: string;
+  route:string;
   subtitle: string;
   category: "INDUSTRIAL" | "ARTESANAL";
   description: string;
@@ -9,6 +10,7 @@ export interface ProductDetailInterface {
   instructions: { title: string; description: string }[];
   valueProposal: string;
   colorPalette: ProductColorPalette;
+  keywords:string[];
 }
 
 export type ProductColorPalette =

@@ -17,9 +17,7 @@ const socialIconMap: Record<string, React.ComponentType> = {
 export default function Page() {
   return (
     <section className={styles.mainContent}>
-      <div className={styles.opacityLayer}>
-
-      </div>
+      <div className={styles.opacityLayer}></div>
       <div className={styles.container}>
         <div className={styles.textContainer}>
           <div>
@@ -45,7 +43,11 @@ export default function Page() {
 
             <div className={styles.contactSocialContainer}>
               <IoIosMail />
-              <p className={styles.contactInfo}>{EMAIL_CONTACT}</p>
+              <p className={styles.contactInfo}>
+                <a href={`mailto:${EMAIL_CONTACT}`}>
+                  {EMAIL_CONTACT}
+                </a>
+              </p>
             </div>
           </div>
 
@@ -59,7 +61,9 @@ export default function Page() {
                 <div key={index} className={styles.contactSocialContainer}>
                   <IconComponent />
 
-                  <p className={styles.contactInfo}>{element.name}</p>
+                  <p className={styles.contactInfo}>
+                    <a href={element.url}>{element.name}</a>
+                  </p>
                 </div>
               );
             })}

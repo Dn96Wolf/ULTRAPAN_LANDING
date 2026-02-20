@@ -11,12 +11,32 @@ export default function ProductDetail({
 }: {
   item: ProductDetailInterface;
 }) {
-  // console.log('desde el componente', item)
 
-  // Aquí puedes usar el slug para obtener los detalles del producto
   return (
     <div className={styles.content}>
-      <div
+
+      <div className={styles.first}>
+
+        <div>
+{/* 
+          <h1>
+            { item.title}
+          </h1>
+           */}
+        </div>
+
+        <div>
+
+        </div>
+
+      </div>
+
+          <div className={styles.second}>
+
+      </div>
+
+    
+      {/* <div
         className={styles.inner}
         style={{
           backgroundImage: `url(${item.image})`,
@@ -87,7 +107,7 @@ export default function ProductDetail({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

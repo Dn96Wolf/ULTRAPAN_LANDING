@@ -8,6 +8,7 @@ import ProductCarousel from "@/components/carousel/ProductCarousel";
 import ButtonComponent from "../components/buttons/Button";
 import { createSlug } from "@/utils/helpers";
 import { t } from "@/i18n";
+import { ProductDetailInterface } from "@/interfaces/Product";
 
 const intervalMs = 5000;
 const fadeMs = 2000;
@@ -43,13 +44,13 @@ export default function HomePage() {
   }, [breakpoint]);
 
   function handlingProduct(id: number) {
-    const nameProduct = productos.find((e) => e.id === id);
-
-    console.log("??", nameProduct);
+    const nameProduct = productos.find(
+      (e: ProductDetailInterface) => e.id === id,
+    );
 
     if (!nameProduct) return;
 
-    return router.push(`/productos/${createSlug(nameProduct.title)}`);
+    return router.push(`/productos/${createSlug(nameProduct.route)}`);
   }
 
   return (
@@ -58,39 +59,38 @@ export default function HomePage() {
         className={` ${styles.firstScreen} `}
         style={{ ["--fade-ms" as any]: `${fadeMs}ms` }}
       >
-        {imagesFade.length && (
+        {!!imagesFade.length && (
           <>
             {imagesFade.map((element, index) => (
               <div
-                key={index}
+                key={element.idProduct}
                 className={` ${styles.craftLayer} ${active === index ? styles.show : styles.hide}`}
                 style={{
-                  backgroundImage: `url(${!isMobile ? imagesFade[index].backgroundImage : imagesFade[index].backgroundImageResponsive})`,
+                  backgroundImage: `url(${!isMobile ? element.backgroundImage : element.backgroundImageResponsive})`,
                 }}
-                aria-hidden="true"
               >
-                <div className={styles.mainTitleContainer}>
-                  <div
-                    className={`${styles.mainTitleRibbon} ${imagesFade[index].ribbonClass}`}
-                  >
-                    <h1 className={`text-color-white ${styles.mainTitle}`}>
-                      {element.title}
-                    </h1>
-                    <p className={`text-color-white  ${styles.mainSubtitle}`}>
-                      {element.subtitle}
-                    </p>
+                <div className={styles.craftContent}>
+                  <div className={styles.mainTitleContainer}>
+                    <div
+                      className={`${styles.mainTitleRibbon} ${imagesFade[index].ribbonClass}`}
+                    >
+                      <h1 className={`text-color-white ${styles.mainTitle}`}>
+                        {element.title}
+                      </h1>
+                      <p className={`text-color-white  ${styles.mainSubtitle}`}>
+                        {element.subtitle}
+                      </p>
 
-                    {imagesFade[index].action && (
-                      <div className={styles.buttonStyle}>
-                        <ButtonComponent
-                          colorPalette={imagesFade[index].colorPalette}
-                          title={"Conoce más"}
-                          onAction={() =>
-                            handlingProduct(imagesFade[index].idProduct)
-                          }
-                        />
-                      </div>
-                    )}
+                      {element.action && (
+                        <div className={styles.buttonStyle}>
+                          <ButtonComponent
+                            colorPalette={element.colorPalette}
+                            title="Saber más"
+                            onAction={() => handlingProduct(element.idProduct)}
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

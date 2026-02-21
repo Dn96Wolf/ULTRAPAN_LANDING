@@ -24,7 +24,7 @@ const footerElements: FooterElement[] = [
   {
     title: "",
     image: "/assets/images/logo.png",
-    text: "Visitanos para concer más acerca de nosotros y del resto de las lineas de productos",
+    text: "Nuestra calidad tiene un origen. Visita Eziquim para conocer la ciencia y el respaldo técnico detrás de cada uno de nuestros productos",
     textColor: "",
     link: "https://enziquim.com",
     icons: [],

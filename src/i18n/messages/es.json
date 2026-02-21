@@ -47,15 +47,17 @@
   "form.company": "Empresa",
   "form.subject": "Asunto",
   "form.messaje": "Mensaje",
-  "main.solutions": "Soluciones formuladas para procesos artesanales e industriales",
+  "main.solutions": "Identifica el flujo que mejor se adapta a tus necesidades y potencializa tus resultados con Ultrapan",
   "main.industrial": "Panificación Industrial",
   "main.industrialSubtitle": "Formulaciones especializadas para procesos estandarizados.",
   "main.craftMaker": "Panificación Artesanal",
   "main.craftMakerSubtitle": "Calidad y frescura que acompañan tu proceso artesanal.",
-  "main.knowAboutUs": "Conoce nuestra linea de productos",
+  "main.knowAboutUs": "Explora nuestra gama de mejorantes de alto rendimiento y encuentra el aliado perfecto para cada una de tus creaciones",
   "craftmaker.listPorduct": "Conoce nuestros mejorantes enfocados en procesos artesanales y sus grandes beneficios.",
   "btn.knowMore": "Conoce más",
   "industrial.title": "PANIFICACIÓN INDUSTRIAL",
   "industrial.subtitle": " Soluciones de alto rendimiento para líneas continuas, larga vida y cadenas de frío.",
-  "industrial.listPorduct": "Conoce nuestros mejorantes enfocados en procesos industriales y sus grandes beneficios."
+  "industrial.listPorduct": "Conoce nuestros mejorantes enfocados en procesos industriales y sus grandes beneficios.",
+  "fqa.title": "Preguntas Frecuentes",
+  "fqa.subtitle": "Despeja tus dudas sobre el uso de nuestros productos y descubre cómo obtener el máximo rendimiento en tu producción con el respaldo de Ultrapan"
 }

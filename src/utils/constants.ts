@@ -487,7 +487,7 @@ export const FAQ_SECTIONS: FAQSection[] = [
         question:
           "¿Necesito modificar mi receta actual o comprar maquinaria nueva para usar sus mejorantes?",
         answer: [
-          "No. La mayoría de nuestros productos, como Ultrapan C+ y Ultrapan G+, están diseñados para actuar sobre tu proceso base sin modificarlo. Funcionan perfectamente tanto en procesos artesanales directos como en aquellos sin cámaras de fermentación controlada.",
+          "Nuestros mejorantes están diseñados para actuar sobre tu proceso base sin modificarlo. Funcionan perfectamente tanto en procesos artesanales directos como en aquellos sin cámaras de fermentación controlada.",
         ],
       },
       {

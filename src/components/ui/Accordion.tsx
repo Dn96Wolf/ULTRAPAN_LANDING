@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useId, useState } from 'react';
-import styles from './Accordion.module.css';
+import { useId, useState } from "react";
+import styles from "./Accordion.module.css";
 
 export type AccordionItem = {
   title: string;
-  content: React.ReactNode;
+  content: string[];
 };
 
 type AccordionProps = {
@@ -17,12 +17,12 @@ type AccordionProps = {
 export default function Accordion({
   items,
   allowMultipleOpen = false,
-  defaultOpenIndex = -1
+  defaultOpenIndex = -1,
 }: AccordionProps) {
   const baseId = useId();
 
   const [openIndexes, setOpenIndexes] = useState<number[]>(
-    defaultOpenIndex >= 0 ? [defaultOpenIndex] : []
+    defaultOpenIndex >= 0 ? [defaultOpenIndex] : [],
   );
 
   const isOpen = (index: number) => openIndexes.includes(index);
@@ -32,7 +32,9 @@ export default function Accordion({
       const currentlyOpen = prev.includes(index);
 
       if (allowMultipleOpen) {
-        return currentlyOpen ? prev.filter((i) => i !== index) : [...prev, index];
+        return currentlyOpen
+          ? prev.filter((i) => i !== index)
+          : [...prev, index];
       }
 
       // Solo uno abierto
@@ -59,7 +61,10 @@ export default function Accordion({
                 onClick={() => toggle(index)}
               >
                 <span className={styles.title}>{item.title}</span>
-                <span className={`${styles.chevron} ${open ? styles.chevronOpen : ''}`} aria-hidden="true">
+                <span
+                  className={`${styles.chevron} ${open ? styles.chevronOpen : ""}`}
+                  aria-hidden="true"
+                >
                   ▾
                 </span>
               </button>
@@ -69,9 +74,13 @@ export default function Accordion({
               id={panelId}
               role="region"
               aria-labelledby={buttonId}
-              className={`${styles.panel} ${open ? styles.panelOpen : ''}`}
+              className={`${styles.panel} ${open ? styles.panelOpen : ""}`}
             >
-              <div className={styles.content}>{item.content}</div>
+              <div className={styles.content}>
+                {item.content.map((e) => (
+                  <p key={e}>{e}</p>
+                ))}
+              </div>
             </div>
           </div>
         );

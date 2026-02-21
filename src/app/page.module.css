@@ -21,6 +21,12 @@
   height: calc(100vh - 90px);
 }
 
+.whiteSpace {
+  width: 100vw;
+  height: 250px;
+  background-color: white;
+}
+
 .categoriesStyles {
   width: 100vw;
   height: 200px;
@@ -30,14 +36,11 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.799);
-  /* background-color: var(--neutral-100); */
-  /* background-image: url('/assets/images/cintillo-principal.png'); */
   background-position: top center;
 }
 
 .categoriesTitle {
   font-size: 28px;
-  /* color: var(--primary-500); */
   color: white;
 }
 

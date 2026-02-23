@@ -66,7 +66,6 @@
 
   --hover-section: #39858162;
 
-
   --gray-overlay: rgba(203, 201, 182, 0.199);
 
   /* forms */
@@ -74,4 +73,43 @@
   --color-border: var(--primary-400);
 
   /* swiper */
+
+  /* blue */
+
+  --blue-900: #265758;
+  --blue-800: #2e7a81;
+  --blue-700: #328e98;
+  --blue-600: #37a3b1;
+  --blue-500: #3ab2c3;
+  --blue-400: #44bdcb;
+  --blue-300: #5bc9d4;
+  --blue-200: #85d9e1;
+  --blue-100: #b4e8ec;
+  --blue-50: #e0f6f8;
+
+  /* yellow */
+
+  --yellow-900: #977a00;
+  --yellow-800: #b5a106;
+  --yellow-700: #c8b70f;
+  --yellow-600: #dbce18;
+  --yellow-500: #e9e01d;
+  --yellow-400: #ede448;
+  --yellow-300: #f2ea6c;
+  --yellow-200: #f7f096;
+  --yellow-100: #fbf5c0;
+  --yellow-50: #fefbe6;
+
+  /* Darkblue */
+
+  --dark-blue-900: #0a2780;
+  --dark-blue-800: #1c3995;
+  --dark-blue-700: #2543a1;
+  --dark-blue-600: #2f4dad;
+  --dark-blue-500: #3655b7;
+  --dark-blue-400: #576ec2;
+  --dark-blue-300: #7689cc;
+  --dark-blue-200: #9daadb;
+  --dark-blue-100: #c4cbe9;
+  --dark-blue-50: #e8eaf6;
 }

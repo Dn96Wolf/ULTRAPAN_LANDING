@@ -3,111 +3,130 @@
 import styles from "./ProductDetail.module.css";
 
 import { ProductDetailInterface } from "@/interfaces/Product";
+import Image from "next/image";
+import Icon from "../icon/Icon";
 import { Pill } from "lucide-react";
-import Icon from "@/components/icon/Icon";
+
+import { t } from "@/i18n";
+import ContactForm from "../forms/ContactForm";
 
 export default function ProductDetail({
   item,
 }: {
   item: ProductDetailInterface;
 }) {
-
   return (
-    <div className={styles.content}>
+    <div
+      className={`${styles.sectionContent}  ${item.category === "INDUSTRIAL" ? styles.sectionContentIndustrial : styles.sectionContentCraftMaker}`}
+    >
+      <div className={styles.main}>
+        <div className={styles.first}>
+          <div className={styles.productData}>
+            <h1 className={styles.productTitle}>{item.title.toUpperCase()}</h1>
+            <span className={styles.productSubtitle}>{item.subtitle}</span>
 
-      <div className={styles.first}>
+            <p className={styles.productDesktopDescription}>
+              {item.description}
+            </p>
+          </div>
 
-        <div>
-{/* 
-          <h1>
-            { item.title}
-          </h1>
-           */}
+          <div className={styles.productImage}>
+            <Image
+              src={item.image}
+              alt={item.title}
+              width={100}
+              height={100}
+              className={styles.image}
+              sizes="(max-width: 640px) 100vw, 520px"
+            />
+          </div>
         </div>
 
-        <div>
+        <div className={styles.productDetailContent}>
+          <p className={styles.productDescription}>{item.description}</p>
 
-        </div>
+          <div className={styles.productBenefits}>
+            <h2 className={`${styles.productBenefitsTitle}`}>
+              {t("product.benefits")}
+            </h2>
 
-      </div>
+            <div className={styles.listBenefitContainer}>
+              {item.benefits.map((element, index) => (
+                <div
+                  key={index}
+                  className={styles.listBenefit}
+                  style={{ backgroundColor: element.bgColor }}
+                >
+                  <div className={styles.listTitle}>
+                    <h3 className={styles.benefitTitle}>{element.title}</h3>
 
-          <div className={styles.second}>
-
-      </div>
-
-    
-      {/* <div
-        className={styles.inner}
-        style={{
-          backgroundImage: `url(${item.image})`,
-        }}
-      >
-        <div className={styles.productContainer}>
-          <div className={`${styles.contentProduct} ${styles.fadeInRight}`}>
-            <div className={styles.productDescriptionContainer}>
-              <h3 className={`${styles.productTitle}`}>{item.title}</h3>
-              <p className={`${styles.productDescription} text-align-center`}>
-                &quot;{item.subtitle}&quot;
-              </p>
-
-              <div className={styles.productBenefits}>
-                <p className={styles.productDescription}>{item.description}</p>
-              </div>
-
-              <div className={styles.productBenefits}>
-                <h3 className={`${styles.subtitle}`}>
-                  Beneficios y Promesa Única
-                </h3>
-
-                <ul>
-                  {item.benefits.map((element, index) => (
-                    <p key={index} className={styles.listColor}>
-                      <div className={styles.iconContainer}>
-                        <Icon name={element.icon} />
-
-                        <p>
-                          <b>{element.title}</b>
-                        </p>
-                      </div>
-
-                      <ul>
-                        <span> {element.description} </span>
-                      </ul>
+                    <p className={styles.benefitDescription}>
+                      {" "}
+                      {element.description}{" "}
                     </p>
-                  ))}
-                </ul>
-              </div>
+                  </div>
 
-              <div className={styles.productBenefits}>
-                <h3 className={`${styles.subtitle}`}>¿Cómo se usa?</h3>
+                  <p className={styles.iconElement}>
+                    <Icon name={element.icon} className={styles.icon} />
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-                <ul>
-                  {item.instructions.map((element, index) => (
-                    <div key={index} className={styles.iconContainer}>
-                      <Pill className={styles.listColor} />
+          <div className={styles.instructions}>
+            <h2 className={`${styles.productBenefitsTitle}`}>
+              {t("product.usage")}
+            </h2>
 
-                      <p className={styles.listColor}>
-                        <b>{element.title}</b>
-                        <span> {element.description} </span>
-                      </p>
-                    </div>
-                  ))}
-                </ul>
-              </div>
+            <div className={styles.listBenefitContainer}>
+              {item.instructions.map((element, index) => (
+                <div
+                  key={index}
+                  className={styles.listBenefit}
+                  style={{ backgroundColor: element.bgColor }}
+                >
+                  <p className={styles.iconElement}>
+                    <Pill className={styles.icon} />
+                  </p>
 
-              <div className={styles.productBenefits}>
-                <h3 className={`${styles.subtitle} text-color-white`}>
-                  ¿Por qué elegirlo?
-                </h3>
+                  <div className={styles.listTitle}>
+                    <h3 className={styles.benefitTitle}>{element.title}</h3>
 
-                <ul>
-                  <p className={`text-color-white`}>{item.valueProposal}</p>
-                </ul>
-              </div>
+                    <p className={styles.benefitDescription}>
+                      {" "}
+                      {element.description}{" "}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.productChosen}>
+            <h2 className={`${styles.productBenefitsTitle}`}>
+              {t("product.whyChooseIt")}
+            </h2>
+
+            <div
+              className={styles.listBenefit}
+              style={{ backgroundColor: item.valueProposal.bgColor }}
+            >
+              <p className={styles.textProposal}>{item.valueProposal.title}</p>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
+
+      <div className={styles.contactFormContent}>
+        <h2
+          className={styles.contactFormTitle}
+          style={{ color: item.valueProposal.bgColor }}
+        >
+          ¿Buscas información de éste producto?
+        </h2>
+        <ContactForm />
+      </div>
     </div>
   );
 }

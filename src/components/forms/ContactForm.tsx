@@ -12,7 +12,8 @@ import {
   ContactFormProps,
 } from "@/interfaces/ContactForm.interface";
 
-export default function ContactForm({ titleBtn }: ContactFormProps) {
+export default function ContactForm({ titleBtn, element }: ContactFormProps) {
+  
   const initialState: ContactFormData = {
     name: "",
     lastName: "",

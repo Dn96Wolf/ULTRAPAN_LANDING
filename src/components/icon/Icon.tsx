@@ -17,40 +17,50 @@ import {
   Wind,
 } from "lucide-react";
 
-export default function Icon({ name }: { name: string }) {
+export default function Icon({
+  name,
+  className,
+}: {
+  name: string;
+  className: string;
+}) {
   return (
     <>
-      {(name === "force" || name === "resistance") && <BicepsFlexed />}
+      {(name === "force" || name === "resistance") && (
+        <BicepsFlexed className={`${className}`} />
+      )}
 
-      {name === "blend" && <Blend />}
+      {name === "blend" && <Blend className={`${className}`} />}
 
-      {name === "health" && <HeartPulse />}
+      {name === "health" && <HeartPulse className={`${className}`} />}
 
-      {name === "down" && <TrendingDown />}
+      {name === "down" && <TrendingDown className={`${className}`} />}
 
-      {name === "cloud" && <Cloud />}
+      {name === "cloud" && <Cloud className={`${className}`} />}
 
-      {name === "boxes" && <Boxes />}
+      {name === "boxes" && <Boxes className={`${className}`} />}
 
-      {name === "shield" && <ShieldPlus />}
+      {name === "shield" && <ShieldPlus className={`${className}`} />}
 
-      {name === "oven" && <Microwave />}
+      {name === "oven" && <Microwave className={`${className}`} />}
 
-      {name === "chemistry" && <FlaskRound />}
+      {name === "chemistry" && <FlaskRound className={`${className}`} />}
 
-      {name === "versatility" && <RefreshCcwDot />}
+      {name === "versatility" && <RefreshCcwDot className={`${className}`} />}
 
-      {name === "performance" && <ArrowUpNarrowWide />}
+      {name === "performance" && (
+        <ArrowUpNarrowWide className={`${className}`} />
+      )}
 
-      {name === "save" && <HandCoins />}
+      {name === "save" && <HandCoins className={`${className}`} />}
 
-      {name === "consistency" && <Stone />}
+      {name === "consistency" && <Stone className={`${className}`} />}
 
-      {name === "fresh" && <Wind />}
+      {name === "fresh" && <Wind className={`${className}`} />}
 
-      {name === "packaging" && <Package />}
+      {name === "packaging" && <Package className={`${className}`} />}
 
-      {name === "check" && <Pill />}
+      {name === "check" && <Pill className={`${className}`} />}
     </>
   );
 }

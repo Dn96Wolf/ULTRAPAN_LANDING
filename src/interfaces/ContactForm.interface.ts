@@ -3,6 +3,7 @@ export type ContactFormProps = {
   title?: string;
   subtitle?: string;
   titleBtn?: string;
+  element?: string;
 };
 
 export type ContactFormData = {
@@ -13,4 +14,5 @@ export type ContactFormData = {
   company: string;
   subject: string;
   message: string;
+  element?: string;
 };

@@ -100,22 +100,29 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         icon: "force",
         description:
           "Soporta el mezclado intensivo y variaciones en la harina.",
+        bgColor: "#431f13",
       },
       {
         title: "Uniformidad:",
         icon: "blend",
         description:
           "Miga y color constantes, ideal para pan de caja o líneas automatizadas.",
+        bgColor: "#613924",
       },
     ],
     instructions: [
       {
         title: "Dosis:",
         description: "132 g por cada 50 kg de harina (2 bultos).",
+        bgColor: "#7c4f33",
       },
     ],
-    valueProposal:
-      "Garantiza que tu producción no se detenga por variaciones en la materia prima y mejora la elasticidad de la masa en procesos mecanizados.",
+    valueProposal: {
+      title:
+        "Garantiza que tu producción no se detenga por variaciones en la materia prima y mejora la elasticidad de la masa en procesos mecanizados.",
+      bgColor: "#a9826b",
+    },
+
     colorPalette: "BROWN",
     keywords: [],
   },
@@ -134,22 +141,29 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         icon: "health",
         description:
           " Conserva la suavidad hasta por 90 días (según proceso y empaque).",
+        bgColor: "#431f13",
       },
       {
         title: "Menos Devoluciones:",
         icon: "down",
 
         description: "Reduce drásticamente las mermas por pan duro en anaquel.",
+        bgColor: "#532d1d",
       },
     ],
     instructions: [
       {
         title: "Dosis:",
         description: "0.5% a 1% sobre el peso de la harina.",
+        bgColor: "#613924",
       },
     ],
-    valueProposal:
-      "Es vital para marcas que distribuyen a nivel nacional o exportan, asegurando que el cliente reciba un producto suave como el primer día.",
+    valueProposal: {
+      title:
+        "Es vital para marcas que distribuyen a nivel nacional o exportan, asegurando que el cliente reciba un producto suave como el primer día.",
+      bgColor: "#e6dfd9",
+    },
+
     colorPalette: "BROWN",
     keywords: [],
   },
@@ -169,28 +183,36 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
 
         description:
           "Miga húmeda y esponjosa que se siente fresca por más tiempo.",
+        bgColor: "#431f13",
       },
       {
         title: "Resiliencia:",
         icon: "resistance",
 
         description: "El pan recupera su forma (rebote) al presionarlo.",
+        bgColor: "#71452d",
       },
       {
         title: "Volumen:",
         icon: "boxes",
         description:
           "Incrementa el volumen hasta un 23.9% comparado con recetas estándar.",
+        bgColor: "#a9826b",
       },
     ],
     instructions: [
       {
         title: "Dosis:",
         description: "0.5% a 1% sobre el peso de la harina (5 a 10 g por kg).",
+        bgColor: "#71452d",
       },
     ],
-    valueProposal:
-      "Mejora la percepción de frescura de tu cliente sin alterar el sabor tradicional de tu pan.",
+    valueProposal: {
+      title:
+        "Mejora la percepción de frescura de tu cliente sin alterar el sabor tradicional de tu pan.",
+      bgColor: "#c7a491",
+    },
+
     colorPalette: "BROWN",
     keywords: [],
   },
@@ -209,22 +231,29 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         icon: "shield",
         description:
           "Evita que el pan se colapse o pierda volumen tras el descongelado.",
+        bgColor: "#431f13",
       },
       {
         title: "Como Recién Horneado:",
         icon: "oven",
         description:
           "Garantiza suavidad y excelente presentación en el punto de venta final.",
+        bgColor: "#613924",
       },
     ],
     instructions: [
       {
         title: "Dosis:",
         description: "0.5% a 1.0% sobre el peso de la harina.",
+        bgColor: "#613924",
       },
     ],
-    valueProposal:
-      "Aumenta la eficiencia de líneas de pan precocido o masas congeladas, compatible con tecnologías IQF y fermentación controlada.",
+    valueProposal: {
+      title:
+        "Aumenta la eficiencia de líneas de pan precocido o masas congeladas, compatible con tecnologías IQF y fermentación controlada.",
+      bgColor: "#613924",
+    },
+
     colorPalette: "BROWN",
     keywords: [],
   },
@@ -244,6 +273,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
 
         description:
           "Mejora la elasticidad para que la tortilla se enrolle sin romperse.",
+        bgColor: "#431f13",
       },
       {
         title: "Anti-Pegado:",
@@ -251,16 +281,22 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
 
         description:
           "Mantiene las tortillas separadas y frescas en el empaque.",
+        bgColor: "#613924",
       },
     ],
     instructions: [
       {
         title: "Dosis ultra-concentrada:",
         description: "0.5 a 1 g por kg de harina.",
+        bgColor: "#7c4f33",
       },
     ],
-    valueProposal:
-      "Reduce mermas por tortillas rotas y mejora la experiencia del consumidor final al evitar que se peguen.",
+    valueProposal: {
+      title:
+        "Reduce mermas por tortillas rotas y mejora la experiencia del consumidor final al evitar que se peguen.",
+      bgColor: "#613924",
+    },
+
     colorPalette: "BROWN",
     keywords: [],
   },
@@ -279,29 +315,37 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         icon: "boxes",
         description:
           "Estandariza el tamaño de tus piezas y mejora la estructura de la miga.",
+        bgColor: "#328e98",
       },
       {
         title: "Cero Bromato:",
         icon: "chemistry",
 
         description: "Pan más limpio y seguro.",
+        bgColor: "#37a3b1",
       },
       {
         title: "Versatilidad:",
         icon: "versatility",
 
         description: "Ideal para pan francés, baguette y masas saladas.",
+        bgColor: "#44bdcb",
       },
     ],
     instructions: [
       {
-        title: "",
+        title: "Modo de empleo:",
         description:
           "Disuelve 1 sobre de 10g por cada bulto de 25 kg de harina. ¡Así de fácil!",
+        bgColor: "#37a3b1",
       },
     ],
-    valueProposal:
-      "No necesitas cambiar tu receta ni comprar maquinaria nueva; funciona en procesos directos y sin cámaras de fermentación.",
+    valueProposal: {
+      title:
+        "No necesitas cambiar tu receta ni comprar maquinaria nueva; funciona en procesos directos y sin cámaras de fermentación.",
+      bgColor: "#37a3b1",
+    },
+
     colorPalette: "SOFTBLUE",
     keywords: [],
   },
@@ -320,6 +364,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         icon: "save",
 
         description: "Reduce tus costos sin sacrificar la calidad",
+        bgColor: "#dbce18",
       },
       {
         title: "Rendimiento",
@@ -327,6 +372,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
 
         description:
           "Obtienes más piezas por bulto gracias a su alta absorción.",
+        bgColor: "#c8b70f",
       },
       {
         title: "Consistencia",
@@ -334,6 +380,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
 
         description:
           "Logra siempre la misma textura suave y uniforme, lote tras lote.",
+        bgColor: "#b5a106",
       },
     ],
     instructions: [
@@ -341,10 +388,15 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         title: "Dosis recomendada",
         description:
           "62.5 g (un sobre) por bulto de 25 kg de harina (o 2.5 g por kilo).",
+        bgColor: "#977a00",
       },
     ],
-    valueProposal:
-      "Es ideal para reducir la variabilidad en condiciones artesanales y permite reducir la cantidad de grasa en la receta.",
+    valueProposal: {
+      title:
+        "Es ideal para reducir la variabilidad en condiciones artesanales y permite reducir la cantidad de grasa en la receta.",
+      bgColor: "#977a00",
+    },
+
     colorPalette: "MUSTARD",
     keywords: [],
   },
@@ -364,6 +416,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         icon: "fresh",
 
         description: "Evita el endurecimiento prematuro",
+        bgColor: "#0a2780",
       },
       {
         title: "Ideal para Empaque",
@@ -371,16 +424,22 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
 
         description:
           "Mantiene la humedad dentro del empaque sin perder textura.",
+        bgColor: "#2543a1",
       },
     ],
     instructions: [
       {
         title: "Dosis",
         description: "0.5% a 1% sobre el peso de la harina.",
+        bgColor: "#2f4dad",
       },
     ],
-    valueProposal:
-      "Ayuda a reducir tiempos de reposo y permite disminuir el uso de huevo en panes fermentados, mejorando la logística de distribución.",
+    valueProposal: {
+      title:
+        "Ayuda a reducir tiempos de reposo y permite disminuir el uso de huevo en panes fermentados, mejorando la logística de distribución.",
+      bgColor: "#2f4dad",
+    },
+
     colorPalette: "BLUE",
     keywords: [],
   },
@@ -398,21 +457,28 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         title: "Ahorro Directo",
         icon: "save",
         description: "Reduce costos de insumos (huevo) manteniendo la calidad",
+        bgColor: "#431f13",
       },
       {
         title: "Estructura Uniforme",
         icon: "consistency",
         description: "Logra una miga suave y esponjosa similar al brioche",
+        bgColor: "#613924",
       },
     ],
     instructions: [
       {
         title: "Dosis",
         description: "0.5% a 1% sobre el peso de la harina (5 a 10 g por kg).",
+        bgColor: "#71452d",
       },
     ],
-    valueProposal:
-      "Es la herramienta perfecta para optimizar tu receta ante la subida de precios de materias primas, catalizando tu rentabilidad.",
+    valueProposal: {
+      title:
+        "Es la herramienta perfecta para optimizar tu receta ante la subida de precios de materias primas, catalizando tu rentabilidad.",
+      bgColor: "#71452d",
+    },
+
     colorPalette: "BLUE",
     keywords: [],
   },

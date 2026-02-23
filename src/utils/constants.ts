@@ -1,0 +1,611 @@
+import { HomeSlide } from "@/interfaces/HomeSlides.interface";
+import {
+  ProductColorPalette,
+  ProductDetailInterface,
+} from "@/interfaces/Product";
+import { FAQSection } from "@/interfaces/Questions";
+
+export const EMAIL_CONTACT = "ventas@enziquim.com";
+export const SLOGAN = "En Enziquim, catalizamos el éxito de nuestros clientes";
+
+export const EMAILREGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+
+export const SOCIAL_MEDIA = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/enziquim/",
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/Enziquim",
+  },
+  // {
+  //   name: "Instagram",
+  //   url: "https://www.instagram.com/enziquim/",
+  // },
+];
+
+export const NAV_ITEMS = [
+  { href: "/", labelKey: "nav.home" as const },
+  { href: "#", labelKey: "nav.Industrias" as const },
+  { href: "/historia", labelKey: "nav.history" as const },
+  { href: "/contacto", labelKey: "nav.contact" as const },
+  { href: "/FAQ", labelKey: "nav.fqa" as const },
+];
+
+export const INDUSTRIAS_SUBMENU = [
+  { href: "/artesanal", label: "Artesanal" },
+  { href: "/industrial", label: "Industrial" },
+];
+
+export const HOME_SLIDES: HomeSlide[] = [
+  {
+    title: "ULTRAPAN",
+    idProduct: 0,
+    subtitle:
+      " Tecnología enzimática diseñada para estandarizar tu calidad, mejorar el volumen y optimizar tus costos, desde el panadero artesano hasta la línea industrial.",
+    backgroundImage: "/assets/images/ultrapan-line.png",
+    backgroundImageResponsive: "/assets/images/ultrapan-line.webp",
+    ribbonClass: "page-module___8aEwW__bg-brown-overlay",
+    action: false,
+    colorPalette: "BROWN",
+  },
+  {
+    title: "ULTRAPAN",
+    idProduct: 1000,
+    subtitle:
+      "Tecnología enzimática diseñada para estandarizar tu calidad, mejorar el volumen y optimizar tus costos, desde el panadero artesano hasta la línea industrial.",
+    backgroundImage: "/assets/images/mesaIndustrial.png",
+    backgroundImageResponsive: "/assets/images/mesaIndustrial.png",
+    ribbonClass: "page-module___8aEwW__bg-neutral-overlay",
+    action: false,
+    colorPalette: "BROWN" as ProductColorPalette,
+  },
+  {
+    title: "ULTRAPAN C+",
+    idProduct: 6,
+    subtitle: "La fórmula concentrada para el volumen perfecto.",
+    backgroundImage: "/assets/images/ultrapan-c-main.png",
+    backgroundImageResponsive: "/assets/images/sobre-ultrapan-c-plus.webp",
+    ribbonClass: "page-module___8aEwW__bg-brown-overlay",
+    action: true,
+    colorPalette: "SOFTBLUE" as ProductColorPalette,
+  },
+  {
+    title: "ULTRAPAN G+",
+    idProduct: 7,
+    subtitle: "El mejorante todo terreno para tu negocio.",
+    backgroundImage: "/assets/images/ultrapan-g-main.png",
+    backgroundImageResponsive: "/assets/images/sobre-ultrapan-g-plus.webp",
+    ribbonClass: "page-module___8aEwW__bg-brown-overlay",
+    action: true,
+    colorPalette: "MUSTARD" as ProductColorPalette,
+  },
+];
+
+export const PRODUCT_LIST: ProductDetailInterface[] = [
+  {
+    id: 1,
+    title: "Ultrapan 10,000",
+    route: "Ultrapan-diez-mill",
+    subtitle: "Resiliencia máxima para líneas de alto volumen.",
+    category: "INDUSTRIAL",
+    description:
+      "Mejorante robusto diseñado para pan blanco tipo salado en líneas industriales o de gran volumen, capaz de soportar el estrés mecánico.",
+    image: "/assets/images/ultrapan-10000.webp",
+
+    benefits: [
+      {
+        title: "Fuerza y Tolerancia:",
+        icon: "force",
+        description:
+          "Soporta el mezclado intensivo y variaciones en la harina.",
+        bgColor: "#431f13",
+      },
+      {
+        title: "Uniformidad:",
+        icon: "blend",
+        description:
+          "Miga y color constantes, ideal para pan de caja o líneas automatizadas.",
+        bgColor: "#613924",
+      },
+    ],
+    instructions: [
+      {
+        title: "Dosis:",
+        description: "132 g por cada 50 kg de harina (2 bultos).",
+        bgColor: "#7c4f33",
+      },
+    ],
+    valueProposal: {
+      title:
+        "Garantiza que tu producción no se detenga por variaciones en la materia prima y mejora la elasticidad de la masa en procesos mecanizados.",
+      bgColor: "#a9826b",
+    },
+
+    colorPalette: "BROWN",
+    keywords: [],
+  },
+  {
+    id: 2,
+    title: "Ultrapan Emulsoft Extender",
+    route: "Ultrapan Emulsoft Extender",
+    subtitle: "Larga vida, Frescura hasta por 90 días.",
+    category: "INDUSTRIAL",
+    description:
+      "Desarrollado para combatir el envejecimiento del pan. Retarda la retrogradación del almidón para mantener el pan suave por meses.",
+    image: "/assets/images/emulsoftextender.png",
+    benefits: [
+      {
+        title: "Vida Útil Extendida",
+        icon: "health",
+        description:
+          " Conserva la suavidad hasta por 90 días (según proceso y empaque).",
+        bgColor: "#431f13",
+      },
+      {
+        title: "Menos Devoluciones:",
+        icon: "down",
+
+        description: "Reduce drásticamente las mermas por pan duro en anaquel.",
+        bgColor: "#532d1d",
+      },
+    ],
+    instructions: [
+      {
+        title: "Dosis:",
+        description: "0.5% a 1% sobre el peso de la harina.",
+        bgColor: "#613924",
+      },
+    ],
+    valueProposal: {
+      title:
+        "Es vital para marcas que distribuyen a nivel nacional o exportan, asegurando que el cliente reciba un producto suave como el primer día.",
+      bgColor: "#e6dfd9",
+    },
+
+    colorPalette: "BROWN",
+    keywords: [],
+  },
+  {
+    id: 3,
+    title: "Ultrapan Emulsoft Plus",
+    route: "Ultrapan Emulsoft Plus",
+    subtitle: "Suavidad premium para tu pan dulce.",
+    category: "INDUSTRIAL",
+    description:
+      "La combinación perfecta de enzimas y emulsificantes para masas dulces (conchas, roles, brioche) que buscan una experiencia sensorial superior.",
+    image: "/assets/images/emulsoftpuls.png",
+    benefits: [
+      {
+        title: "Suavidad Extrema:",
+        icon: "cloud",
+
+        description:
+          "Miga húmeda y esponjosa que se siente fresca por más tiempo.",
+        bgColor: "#431f13",
+      },
+      {
+        title: "Resiliencia:",
+        icon: "resistance",
+
+        description: "El pan recupera su forma (rebote) al presionarlo.",
+        bgColor: "#71452d",
+      },
+      {
+        title: "Volumen:",
+        icon: "boxes",
+        description:
+          "Incrementa el volumen hasta un 23.9% comparado con recetas estándar.",
+        bgColor: "#a9826b",
+      },
+    ],
+    instructions: [
+      {
+        title: "Dosis:",
+        description: "0.5% a 1% sobre el peso de la harina (5 a 10 g por kg).",
+        bgColor: "#71452d",
+      },
+    ],
+    valueProposal: {
+      title:
+        "Mejora la percepción de frescura de tu cliente sin alterar el sabor tradicional de tu pan.",
+      bgColor: "#c7a491",
+    },
+
+    colorPalette: "BROWN",
+    keywords: [],
+  },
+  {
+    id: 4,
+    title: "Ultrapan Congelado",
+    route: "Ultrapan Congelado",
+    subtitle: "Estabilidad total para la cadena de frío.",
+    category: "INDUSTRIAL",
+    description:
+      "Formulado para proteger la red de gluten durante la congelación, asegurando que el pan mantenga su estructura al descongelarse y hornearse.",
+    image: "/assets/images/congelado.png",
+    benefits: [
+      {
+        title: "Protección Estructural:",
+        icon: "shield",
+        description:
+          "Evita que el pan se colapse o pierda volumen tras el descongelado.",
+        bgColor: "#431f13",
+      },
+      {
+        title: "Como Recién Horneado:",
+        icon: "oven",
+        description:
+          "Garantiza suavidad y excelente presentación en el punto de venta final.",
+        bgColor: "#613924",
+      },
+    ],
+    instructions: [
+      {
+        title: "Dosis:",
+        description: "0.5% a 1.0% sobre el peso de la harina.",
+        bgColor: "#613924",
+      },
+    ],
+    valueProposal: {
+      title:
+        "Aumenta la eficiencia de líneas de pan precocido o masas congeladas, compatible con tecnologías IQF y fermentación controlada.",
+      bgColor: "#613924",
+    },
+
+    colorPalette: "BROWN",
+    keywords: [],
+  },
+  {
+    id: 5,
+    title: "Ultra Mill Tortilla M1",
+    route: "Ultra Mill Tortilla M1",
+    subtitle: "La solución para la tortilla de harina perfecta",
+    category: "INDUSTRIAL",
+    description:
+      "Mezcla de enzimas para líneas continuas de tortillas de harina, enfocada en la textura y la 'rollabilidad'",
+    image: "/assets/images/tortilla.png",
+    benefits: [
+      {
+        title: "Cero Roturas:",
+        icon: "resistance",
+
+        description:
+          "Mejora la elasticidad para que la tortilla se enrolle sin romperse.",
+        bgColor: "#431f13",
+      },
+      {
+        title: "Anti-Pegado:",
+        icon: "check",
+
+        description:
+          "Mantiene las tortillas separadas y frescas en el empaque.",
+        bgColor: "#613924",
+      },
+    ],
+    instructions: [
+      {
+        title: "Dosis ultra-concentrada:",
+        description: "0.5 a 1 g por kg de harina.",
+        bgColor: "#7c4f33",
+      },
+    ],
+    valueProposal: {
+      title:
+        "Reduce mermas por tortillas rotas y mejora la experiencia del consumidor final al evitar que se peguen.",
+      bgColor: "#613924",
+    },
+
+    colorPalette: "BROWN",
+    keywords: [],
+  },
+  {
+    id: 6,
+    title: "Ultrapan C+",
+    route: "ultrapan c plus",
+    subtitle: "La fórmula concentrada para el volumen perfecto.",
+    category: "ARTESANAL",
+    description:
+      " Es un mejorante de alto rendimiento libre de bromato. Su fórmula concentrada está diseñada para masas que requieren fuerza y estabilidad sin modificar tu proceso tradicional.",
+    image: "/assets/images/sobre-ultrapan-c-plus.webp",
+    benefits: [
+      {
+        title: "Volumen Superior:",
+        icon: "boxes",
+        description:
+          "Estandariza el tamaño de tus piezas y mejora la estructura de la miga.",
+        bgColor: "#328e98",
+      },
+      {
+        title: "Cero Bromato:",
+        icon: "chemistry",
+
+        description: "Pan más limpio y seguro.",
+        bgColor: "#37a3b1",
+      },
+      {
+        title: "Versatilidad:",
+        icon: "versatility",
+
+        description: "Ideal para pan francés, baguette y masas saladas.",
+        bgColor: "#44bdcb",
+      },
+    ],
+    instructions: [
+      {
+        title: "Modo de empleo:",
+        description:
+          "Disuelve 1 sobre de 10g por cada bulto de 25 kg de harina. ¡Así de fácil!",
+        bgColor: "#37a3b1",
+      },
+    ],
+    valueProposal: {
+      title:
+        "No necesitas cambiar tu receta ni comprar maquinaria nueva; funciona en procesos directos y sin cámaras de fermentación.",
+      bgColor: "#37a3b1",
+    },
+
+    colorPalette: "SOFTBLUE",
+    keywords: [],
+  },
+  {
+    id: 7,
+    title: "Ultrapan G+",
+    route: "ultrapan g plus",
+    subtitle: "El mejorante todo terreno para tu negocio.",
+    category: "ARTESANAL",
+    description:
+      "Diseñado para pan blanco y masas saladas, ofreciendo el equilibrio perfecto entre tecnología y ahorro económico.",
+    image: "/assets/images/sobre-ultrapan-g-plus.webp",
+    benefits: [
+      {
+        title: "Ahorro Inteligente",
+        icon: "save",
+
+        description: "Reduce tus costos sin sacrificar la calidad",
+        bgColor: "#dbce18",
+      },
+      {
+        title: "Rendimiento",
+        icon: "performance",
+
+        description:
+          "Obtienes más piezas por bulto gracias a su alta absorción.",
+        bgColor: "#c8b70f",
+      },
+      {
+        title: "Consistencia",
+        icon: "consistency",
+
+        description:
+          "Logra siempre la misma textura suave y uniforme, lote tras lote.",
+        bgColor: "#b5a106",
+      },
+    ],
+    instructions: [
+      {
+        title: "Dosis recomendada",
+        description:
+          "62.5 g (un sobre) por bulto de 25 kg de harina (o 2.5 g por kilo).",
+        bgColor: "#977a00",
+      },
+    ],
+    valueProposal: {
+      title:
+        "Es ideal para reducir la variabilidad en condiciones artesanales y permite reducir la cantidad de grasa en la receta.",
+      bgColor: "#977a00",
+    },
+
+    colorPalette: "MUSTARD",
+    keywords: [],
+  },
+  {
+    id: 8,
+    title: "Ultrapan Dulce Plus",
+    route: "Ultrapan Dulce Plus",
+    subtitle:
+      "Especializado para pan dulce (roscas, pan de muerto, bollería empacada) que requiere mantenerse fresco en el supermercado.",
+    category: "ARTESANAL",
+    description:
+      "Diseñado para pan blanco y masas saladas, ofreciendo el equilibrio perfecto entre tecnología y ahorro económico.",
+    image: "/assets/images/sobre-dulce-plus.webp",
+    benefits: [
+      {
+        title: "Frescura Prolongada",
+        icon: "fresh",
+
+        description: "Evita el endurecimiento prematuro",
+        bgColor: "#0a2780",
+      },
+      {
+        title: "Ideal para Empaque",
+        icon: "packaging",
+
+        description:
+          "Mantiene la humedad dentro del empaque sin perder textura.",
+        bgColor: "#2543a1",
+      },
+    ],
+    instructions: [
+      {
+        title: "Dosis",
+        description: "0.5% a 1% sobre el peso de la harina.",
+        bgColor: "#2f4dad",
+      },
+    ],
+    valueProposal: {
+      title:
+        "Ayuda a reducir tiempos de reposo y permite disminuir el uso de huevo en panes fermentados, mejorando la logística de distribución.",
+      bgColor: "#2f4dad",
+    },
+
+    colorPalette: "BLUE",
+    keywords: [],
+  },
+  {
+    id: 9,
+    title: "Ultrapan Emulsoft H",
+    route: "Ultrapan Emulsoft H",
+    subtitle: "Optimización de costos: Suavidad sin huevo.",
+    category: "ARTESANAL",
+    description:
+      "Mejorante para masas dulces con una potente capacidad emulsificante que permite reducir o sustituir el uso de huevo en la receta.",
+    image: "/assets/images/artesanal-mockup.webp",
+    benefits: [
+      {
+        title: "Ahorro Directo",
+        icon: "save",
+        description: "Reduce costos de insumos (huevo) manteniendo la calidad",
+        bgColor: "#431f13",
+      },
+      {
+        title: "Estructura Uniforme",
+        icon: "consistency",
+        description: "Logra una miga suave y esponjosa similar al brioche",
+        bgColor: "#613924",
+      },
+    ],
+    instructions: [
+      {
+        title: "Dosis",
+        description: "0.5% a 1% sobre el peso de la harina (5 a 10 g por kg).",
+        bgColor: "#71452d",
+      },
+    ],
+    valueProposal: {
+      title:
+        "Es la herramienta perfecta para optimizar tu receta ante la subida de precios de materias primas, catalizando tu rentabilidad.",
+      bgColor: "#71452d",
+    },
+
+    colorPalette: "BLUE",
+    keywords: [],
+  },
+];
+
+export const SERVICES = [
+  {
+    id: 1,
+    title: "Mejorantes para pan ¿qué son?",
+    descripton:
+      "Es una mezcla de enzimas, agentes oxidantes y emulsificantes que, adicionados en cantidades suficientes, permiten obtener resultados de primera aun cuando haya variaciones durante el proceso de fabricación (temperatura, humedad, tipo de harina).",
+    image: "",
+    list: [],
+    className: "Services-module__A_tMzG__improvers",
+  },
+  {
+    id: 2,
+    title: "Enzimas",
+    descripton:
+      "Son proteínas capaces de acelerar reacciones químicas específicas. Las enzimas más utilizadas en panificación son:",
+    image: "",
+    list: ["Amilasas", "Oxidasas", "Lipasas", "Hemicelulasas", "Pentosanasas"],
+    className: "Services-module__A_tMzG__enzimas",
+  },
+  {
+    id: 3,
+    title: "Emulsificantes",
+    descripton:
+      "Son compuestos que ayudan a la elaboración de productos alimenticios. Su uso en panificación vuelve la masa más tolerante a los esfuerzos a los que se somete hasta su horneado, favoreciendo la retención de gas, y como consecuencia, obteniendo productos de mayor volumen con una miga más fina y uniforme, además de con mayor suavidad y flexibilidad.",
+    image: "",
+    list: [],
+    className: "Services-module__A_tMzG__emul",
+  },
+  {
+    id: 4,
+    title: "Agentes oxidantes",
+    descripton:
+      "El uso de agentes oxidantes mejora las propiedades de la masa y la calidad del pan. Uno de los oxidantes más utilizados en panificación es el ácido ascórbico, también conocido como vitamina C, que ayuda al incremento en la elasticidad de la masa, aumentando así la retención de gas durante la fermentación, y por tanto, brindando un mayor volumen al pan.",
+    image: "",
+    list: [],
+    className: "Services-module__A_tMzG__antiOx",
+  },
+];
+
+export const BENEFITS = [
+  {
+    title: "Mejor tolerancia a la fermentación",
+    icon: "clock",
+  },
+  {
+    title: "Reducción en el tiempo de amasado",
+    icon: "check",
+  },
+  {
+    title: "Aumento en la absorción de agua (mayor rendimiento)",
+    icon: "analitics",
+  },
+];
+
+export const CONTACT_PAGE_TEXT = {
+  title: "¿Tienes dudas sobre qué mejorante es ideal para tu proceso?",
+  subtitle:
+    "Nuestro equipo técnico está listo para asesorarte y encontrar la solución exacta para tu panadería o planta industrial.",
+  additionalText: "En Enziquim, catalizamos el éxito de nuestros clientes.",
+};
+
+export const FAQ_SECTIONS: FAQSection[] = [
+  {
+    title: "Sobre el uso y aplicación",
+    items: [
+      {
+        question:
+          "¿Necesito modificar mi receta actual o comprar maquinaria nueva para usar sus mejorantes?",
+        answer: [
+          "Nuestros mejorantes están diseñados para actuar sobre tu proceso base sin modificarlo. Funcionan perfectamente tanto en procesos artesanales directos como en aquellos sin cámaras de fermentación controlada.",
+        ],
+      },
+      {
+        question:
+          "¿Qué producto me recomiendan para pan tipo francés o bolillo?",
+        answer: [
+          "Para pan francés y masas saladas, recomendamos Ultrapan C+ si buscas un concentrado de alto rendimiento, o Ultrapan G+ si buscas reducir costos en la receta tradicional. Para especialidades rústicas como baguettes o chapatas, Ultrapan Harina Completa MTM ofrece un acabado craquelado en la corteza.",
+        ],
+      },
+      {
+        question: "¿Tienen opciones libres de bromato?",
+        answer: [
+          "Sí. Ultrapan C+ es nuestro primer mejorante concentrado formulado totalmente libre de bromato, garantizando un producto más limpio y seguro.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Sobre ahorro y rendimiento",
+    items: [
+      {
+        question:
+          "¿Cómo puedo reducir mis costos de producción sin bajar la calidad?",
+        answer: [
+          "Ultrapan Dulce Plus sustituye el uso de huevo en masas dulces.",
+          "Ultrapan G+ reduce la cantidad de grasa y mejora el costo-beneficio.",
+          "Ultrapan 10,000 mejora el rendimiento por bulto al permitir mayor absorción de agua.",
+        ],
+      },
+      {
+        question: "¿Cómo evito que mis tortillas de harina se peguen o rompan?",
+        answer: [
+          "Para ello desarrollamos Ultra Mill Tortilla M1. Mejora la rollabilidad, evita que las tortillas se peguen en el empaque y reduce mermas y devoluciones.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Sobre vida de anaquel y conservación",
+    items: [
+      {
+        question: "¿Cuánto tiempo puede durar mi pan suave?",
+        answer: [
+          "Dependiendo del proceso y almacenamiento, con Ultrapan Emulsoft Extender puedes conservar la suavidad de la miga hasta por 90 días. Ideal para pan de caja y productos de larga vida en anaquel.",
+        ],
+      },
+      {
+        question: "¿Tienen soluciones para masa o pan congelado?",
+        answer: [
+          "Sí. Ultrapan Congelado protege la estructura del pan durante la congelación y el descongelado, evitando deformaciones y pérdida de volumen.",
+        ],
+      },
+    ],
+  },
+];

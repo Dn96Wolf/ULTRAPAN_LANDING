@@ -1,19 +1,18 @@
 "use client";
-
 import Image from "next/image";
 import styles from "./ProductCarousel.module.css";
-
 import ButtonComponent from "../buttons/Button";
-
 // Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Swiper modules
-import { Autoplay, Pagination, A11y } from "swiper/modules";
+import { Autoplay, Pagination, A11y, Navigation } from "swiper/modules";
 
 // Swiper styles (globales del paquete)
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 import { useRouter } from "next/navigation";
 import { createSlug } from "@/utils/helpers";
 import { ProductCarouselProps } from "@/interfaces/Carousel.interface";
@@ -29,31 +28,32 @@ export default function ProductCarousel({
 }: ProductCarouselProps) {
   const swiperRef = useRef<any>(null);
 
+  const router = useRouter();
+
+  if (!elementos?.length) return null;
+
   let filteredProducts = elementos;
 
   if (category) {
     filteredProducts = elementos.filter((e) => e.category === category);
   }
 
-  const router = useRouter();
-
-  if (!elementos?.length) return null;
-
   function onHandlingClick(name: string) {
     if (!name) return;
-
     swiperRef.current?.autoplay?.stop();
-
     router.push(`/productos/${createSlug(name)}`);
   }
 
   return (
-    <section className={styles.wrapper} aria-label={title}>
+    <section className={`${styles.wrapper} swiperLayout`} aria-label={title}>
       <div className={styles.inner}>
         <div className={` ${styles.carouselWrap}`}>
           <Swiper
             className={styles.swiperLayout}
-            modules={[Autoplay, Pagination, A11y]}
+            modules={[Autoplay, Pagination, A11y, Navigation]}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
             slidesPerView={1}
             spaceBetween={16}
             breakpoints={{
@@ -84,6 +84,9 @@ export default function ProductCarousel({
             a11y={{
               enabled: true,
             }}
+            navigation={{
+              enabled: true,
+            }}
           >
             {filteredProducts.map((item, idx) => (
               <SwiperSlide
@@ -91,10 +94,13 @@ export default function ProductCarousel({
                 className={styles.slide}
               >
                 <article className={styles.card}>
-                  <div className={styles.imageWrap}>
+                  <div
+                    className={styles.imageWrap}
+                    onClick={() => onHandlingClick(item.route)}
+                  >
                     <div className={styles.imageOverlay}></div>
                     <Image
-                      src={item.image}
+                      src={item.carouselImage}
                       alt={item.title}
                       fill
                       className={styles.image}
@@ -128,9 +134,15 @@ export default function ProductCarousel({
                       </h3>
                     )}
 
-                    <p className={`${styles.cardSubtitle} text-center`}>
-                      {item.description}
-                    </p>
+                    {item.description.length > 200 ? (
+                      <p className={`${styles.cardSubtitle} text-center`}>
+                        {item.description.slice(0, 200)} ...
+                      </p>
+                    ) : (
+                      <p className={`${styles.cardSubtitle} text-center`}>
+                        {item.description}
+                      </p>
+                    )}
 
                     <div className={styles.ctaWrap}>
                       <ButtonComponent

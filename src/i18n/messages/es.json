@@ -60,8 +60,13 @@
   "industrial.listPorduct": "Conoce nuestros mejorantes enfocados en procesos industriales y sus grandes beneficios.",
   "fqa.title": "Preguntas Frecuentes",
   "fqa.subtitle": "Despeja tus dudas sobre el uso de nuestros productos y descubre cómo obtener el máximo rendimiento en tu producción con el respaldo de Ultrapan",
-  "product.benefits":"Beneficios y promesa única",
+  "product.benefits":"Beneficios técnicos",
   "product.usage":"¿Cómo se usa?",
-  "product.whyChooseIt":"¿Por qué elegirlo?"
+  "product.whyChooseIt":"¿Por qué elegirlo?",
+  "product.application":"Aplicaciones ideales",
+  "product.ingredients":"Ingredientes activos",
+  "product.dosis":"Dosis recomendada",
+  "product.competitiveAdvantajes":"Ventajas competitivas"
+
 
 }

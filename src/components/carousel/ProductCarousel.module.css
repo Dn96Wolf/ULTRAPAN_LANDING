@@ -10,8 +10,6 @@
   margin: 0 auto;
 }
 
-
-
 .title {
   text-align: center;
   font-size: clamp(1.6rem, 4vw, 2.2rem);
@@ -42,6 +40,7 @@
   background-color: white;
   box-shadow: 0 0 10px 0px rgba(88, 57, 19, 0.243);
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -139,6 +138,20 @@
 
 .softBlue {
   color: var(--color-ultrapan-c-plus);
+}
+
+.swiperLayout :global(.swiper-button-next) {
+  background-color: var(--color-primary) !important;
+  color: white;
+  border-radius: 100%;
+  padding: 12px;
+}
+
+.swiperLayout :global(.swiper-button-prev) {
+  background-color: var(--color-primary) !important;
+  border-radius: 100%;
+  padding: 12px;
+  color: white;
 }
 
 @media (min-width: 640px) {

@@ -47,9 +47,7 @@ export default function HomePage() {
     const nameProduct = productos.find(
       (e: ProductDetailInterface) => e.id === id,
     );
-
     if (!nameProduct) return;
-
     return router.push(`/productos/${createSlug(nameProduct.route)}`);
   }
 
@@ -99,9 +97,11 @@ export default function HomePage() {
         )}
       </section>
 
+      <section className={styles.whiteSpace}></section>
+
       <section className={styles.categoriesStyles}>
         <h2 className={`${styles.categoriesTitle}  text-center`}>
-          Soluciones formuladas para procesos artesanales e industriales
+          {t("main.solutions")}
         </h2>
       </section>
 
@@ -146,6 +146,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <section className={styles.whiteSpace}></section>
 
       <section className={styles.categoriesStyles}>
         <h2 className={`${styles.categoriesTitle}  text-center`}>

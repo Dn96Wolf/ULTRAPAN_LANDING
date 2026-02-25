@@ -13,12 +13,17 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background-position: right;
   background-size: cover;
 }
 
 .secondScreen {
   height: calc(100vh - 90px);
+}
+
+.whiteSpace {
+  width: 100vw;
+  height: 150px;
+  background-color: white;
 }
 
 .categoriesStyles {
@@ -30,14 +35,11 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.799);
-  /* background-color: var(--neutral-100); */
-  /* background-image: url('/assets/images/cintillo-principal.png'); */
   background-position: top center;
 }
 
 .categoriesTitle {
   font-size: 28px;
-  /* color: var(--primary-500); */
   color: white;
 }
 
@@ -102,7 +104,7 @@
 }
 
 .bg-brown-overlay {
-  background-color: var(--color-primary-translucid) !important;
+  background-color: var(--color-primary) !important;
 }
 
 .bg-neutral-overlay {
@@ -254,6 +256,10 @@
     flex-direction: row;
   }
 
+  .bg-brown-overlay {
+    background-color: var(--color-primary-translucid) !important;
+  }
+
   .craftLayer {
     background-position: center;
     background-size: cover;
@@ -324,6 +330,10 @@
   .industrialText p,
   .craftText p {
     font-size: 12px;
+  }
+
+  .carouselWrap {
+    overflow: hidden;
   }
 }
 

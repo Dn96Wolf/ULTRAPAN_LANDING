@@ -13,7 +13,6 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background-position: right;
   background-size: cover;
 }
 
@@ -23,7 +22,7 @@
 
 .whiteSpace {
   width: 100vw;
-  height: 250px;
+  height: 150px;
   background-color: white;
 }
 
@@ -105,7 +104,7 @@
 }
 
 .bg-brown-overlay {
-  background-color: var(--color-primary-translucid) !important;
+  background-color: var(--color-primary) !important;
 }
 
 .bg-neutral-overlay {
@@ -257,6 +256,10 @@
     flex-direction: row;
   }
 
+  .bg-brown-overlay {
+    background-color: var(--color-primary-translucid) !important;
+  }
+
   .craftLayer {
     background-position: center;
     background-size: cover;
@@ -310,8 +313,8 @@
   .craftSection {
     width: 50%;
     height: 100%;
-    background-image: url("/assets/images/panaderiaArtesanal.png");
-    background-position: center;
+    background-image: url("/assets/images/panaderia-artesanal.webp");
+    background-position: right;
   }
 
   .industrialText,
@@ -327,6 +330,10 @@
   .industrialText p,
   .craftText p {
     font-size: 12px;
+  }
+
+  .carouselWrap {
+    overflow: hidden;
   }
 }
 

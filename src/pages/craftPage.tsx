@@ -26,14 +26,16 @@ export default function CraftPage() {
         <div className={styles.firstContent}>
           <div className={styles.mainOverlay}>
             <h1 className={`${styles.mainTitle} text-color-white`}>
-              PANIFICACIÓN ARTESANAL
+              {t("handCrafter.title").toLocaleUpperCase()}
             </h1>
             <p className={`${styles.mainSubtitle} text-color-white`}>
-              Calidad y frescura que acompañan tu proceso artesanal.
+              {t("handCrafter.subtitle")}
             </p>
           </div>
         </div>
       </div>
+
+      <div className={styles.blankRibbon}></div>
 
       <div className={styles.ribbonProducts}>
         <div className={styles.ribbonLayer1}></div>
@@ -41,6 +43,8 @@ export default function CraftPage() {
           <h2 className={styles.titleRibbon}>{t("craftmaker.listPorduct")}</h2>
         </div>
       </div>
+
+      <div className={styles.blankRibbon}></div>
 
       <div className={styles.secondContent}>
         <ProductCarousel

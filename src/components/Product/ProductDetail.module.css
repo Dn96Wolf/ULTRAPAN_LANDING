@@ -4,13 +4,16 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .main {
   width: 100%;
   min-height: 100vh;
   margin: auto;
-  padding: 94px 0;
+  padding: 94px 12px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -63,7 +66,6 @@
   font-size: 20px;
   font-style: italic;
   color: white;
-
 }
 
 .productDescription {
@@ -132,7 +134,7 @@
 }
 
 .listBenefit {
-  width: 100%;
+  /* width: 100%; */
   height: max-content;
   display: flex;
   flex-direction: row;
@@ -227,9 +229,11 @@
   width: 100vw;
   height: 100vh;
   margin-bottom: 24px;
+  background-color: white;
 }
 
-.listDosisContainer {
+.listDosisContainer,
+.listAdvantagesContainer {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -255,7 +259,7 @@
   padding: 16px;
 }
 
-.listAdvantages {
+.vantage {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -266,8 +270,7 @@
   text-align: center;
 }
 
-
-.carouselSection{
+.carouselSection {
   width: 100vw;
   max-height: 500px;
   padding: 24px;
@@ -275,77 +278,19 @@
   overflow: hidden;
 }
 
-.carouselWrap{
+.carouselWrap {
   width: 100%;
   height: inherit;
 }
 
-
-
-
-/* .swiperLayout {
+.carouselContainer {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  min-height: 700px;
-} */
-
-/* Slide alignment */
-/* .slide {
-  display: flex;
-  justify-content: center;
-} */
-
-
-/* .swiperLayout :global(.swiper-button-next) {
-  background-color: var(--color-primary) !important;
-  color: white;
-  border-radius: 100%;
-  padding: 12px;
+  /* height: 400px; */
+  padding: 24px 0;
+  background-color: var(--neutral-100);
 }
-
-.swiperLayout :global(.swiper-button-prev) {
-  background-color: var(--color-primary) !important;
-  border-radius: 100%;
-  padding: 12px;
-  color: white;
-}
-
-
-.imageCarouselContainer{
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  padding: 24px 0 ;
-  background-color: bisque;
-}
-
-.imageCarousel{
-  width: 100%;
-  height: 100%;
-  /* background-color: aqua; */
-/* }  */
-
-
-
-.card{
-  width: 100%;
-  height: 700px;
-  border-radius: 8px;
-}
-
-.image{
-  width: 100%;
-  object-fit: cover;
-  overflow: hidden;
-  position: center;
-}
-
-
 
 /* desktop */
-
-
 
 @media (min-width: 640px) {
   .first {
@@ -386,10 +331,10 @@
   .productApplicationTitle,
   .productDosisTitle {
     text-align: left;
+    margin-left: 15px;
   }
 
   .productDosisTitle {
-    font-size: 22px;
     width: max-content;
   }
 
@@ -397,6 +342,7 @@
     flex-direction: row;
     align-items: start;
     border-radius: 8px;
+    justify-content: center;
   }
 
   .listTitle {
@@ -422,7 +368,7 @@
   .instructionsAndApplicationsContainer {
     display: flex;
     flex-direction: row;
-    padding: 0 24px;
+    /* padding: 0 24px; */
   }
 
   .ingredients,
@@ -462,19 +408,24 @@
     min-width: max-content;
   }
 
-  .listDosisContainer {
+  .listDosisContainer,
+  .listAdvantagesContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    gap: 24px;
     width: 100%;
   }
 
-  .listDosis,
-  .listAdvantages {
+  .listDosis {
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    justify-content: center;
+  }
+
+  .vantage {
+    margin: auto;
+    max-width: 300px;
   }
 
   .productDosisText {
@@ -491,11 +442,6 @@
     opacity: 0;
     transform: translateX(100px);
     animation: fadeIn 2s ease forwards;
-  }
-
-   .swiperLayout {
-    min-height: 700px;
-    padding: 34px 0 !important;
   }
 
   @keyframes fadeIn {

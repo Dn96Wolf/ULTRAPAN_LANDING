@@ -313,8 +313,8 @@
   .craftSection {
     width: 50%;
     height: 100%;
-    background-image: url("/assets/images/panaderiaArtesanal.png");
-    background-position: center;
+    background-image: url("/assets/images/panaderia-artesanal.webp");
+    background-position: right;
   }
 
   .industrialText,

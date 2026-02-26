@@ -35,12 +35,18 @@ export default function IndustrialPage() {
         </div>
       </div>
 
+      <div className={styles.blankRibbon}></div>
+
+
       <div className={styles.ribbonProducts}>
         <div className={styles.ribbonLayer1}></div>
         <div className={styles.ribbonLayer2}>
           <h2 className={styles.titleRibbon}>{t("industrial.listPorduct")}</h2>
         </div>
       </div>
+
+      <div className={styles.blankRibbon}></div>
+
 
       <div className={styles.secondContent}>
         <ProductCarousel

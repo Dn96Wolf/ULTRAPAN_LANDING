@@ -96,6 +96,16 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/ultrapan-10000.webp",
     mainImage: "/assets/images/ultrapan-mil-sobre.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/ultrapan-mil-sobre.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-10000.webp",
+        alt: "main",
+      },
+    ],
     benefits: [
       {
         title: "",
@@ -191,9 +201,19 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     category: "INDUSTRIAL",
     description:
       "Ultrapan Emulsoft Extender e sun mejorante dearrollado para matener la suavidad y frescura de la miga durante periodos prolongados. Su formula especializada ayuda a retardar la retrogradación del almidón, princpal respnsable del endurecimeinto del pan, lo que permite extender significativamente la vida útil comercial del producto terminado sin comprometer su textura ni sabor.",
-    carouselImage: "/assets/images/emulsoftextender.png",
+    carouselImage: "/assets/images/emulsoft-extender.webp",
     mainImage: "/assets/images/ultrapan-emulsoft-extender.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/emulsoft-extender.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-emulsoft-extender.webp",
+        alt: "main",
+      },
+    ],
     benefits: [
       {
         title: "",
@@ -282,6 +302,17 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/emulsoftpuls.png",
     mainImage: "/assets/images/ultrapan-emulsoft-plus.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/emulsoftpuls.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-emulsoft-plus.webp",
+        alt: "main",
+      },
+    ],
+
     benefits: [
       {
         title: "",
@@ -379,6 +410,16 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/congelado.png",
     mainImage: "/assets/images/ultrapan-congelado.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/congelado.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-congelado.webp",
+        alt: "main",
+      },
+    ],
     benefits: [
       {
         title: "",
@@ -496,6 +537,17 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/tortilla.png",
     mainImage: "/assets/images/ultrapan-tortilla.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/tortilla.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-tortilla.webp",
+        alt: "main",
+      },
+    ],
+
     benefits: [
       {
         title: "",
@@ -593,6 +645,17 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/sobre-ultrapan-c-plus.webp",
     mainImage: "/assets/images/ultrapan-c-sobre.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/sobre-ultrapan-c-plus.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-sobre.webp",
+        alt: "main",
+      },
+    ],
+
     benefits: [
       {
         title: "",
@@ -690,6 +753,16 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/sobre-ultrapan-g-plus.webp",
     mainImage: "/assets/images/ultrapan-g-sobre.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/sobre-ultrapan-g-plus.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-g-sobre.webp",
+        alt: "main",
+      },
+    ],
     benefits: [
       {
         title: "",
@@ -783,6 +856,17 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/sobre-dulce-plus.webp",
     mainImage: "/assets/images/ultrapan-dulceplus.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/sobre-dulce-plus.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-dulceplus.webp",
+        alt: "main",
+      },
+    ],
+
     benefits: [
       {
         title: "",
@@ -882,6 +966,17 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/emulsoft-h.webp",
     mainImage: "/assets/images/ultrapan-emulsoft-h.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/emulsoft-h.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-emulsoft-h.webp",
+        alt: "main",
+      },
+    ],
+
     benefits: [
       {
         title: "",

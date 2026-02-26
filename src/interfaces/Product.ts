@@ -8,7 +8,8 @@ export interface ProductDetailInterface {
   description2?: string;
   mainImage: string;
   image: string;
-  carouselImage:string;
+  carouselImage: string;
+  imagesRelated: { src: string; alt: string }[];
   textColor: string;
   benefits: {
     title: string;

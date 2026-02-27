@@ -46,4 +46,5 @@ export type ProductColorPalette =
   | "BLUE"
   | "BROWN"
   | "MUSTARD"
-  | "SOFTBROWN";
+  | "SOFTBROWN"
+  | "DISABLED";

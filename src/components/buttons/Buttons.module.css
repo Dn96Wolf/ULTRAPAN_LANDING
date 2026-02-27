@@ -42,6 +42,12 @@
   background-color: var(--color-ultrapan-c-plus-hover);
 }
 
+.btnDisable {
+  background-color: var(--neutral-200);
+  cursor: unset;
+}
+
+
 .buttonText {
   text-align: center;
   font-weight: 600;

@@ -45,7 +45,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     subtitle:
       "Tecnología enzimática diseñada para estandarizar tu calidad, mejorar el volumen y optimizar tus costos, desde el panadero artesano hasta la línea industrial.",
     backgroundImage: "/assets/images/ultrapan-line.webp",
-    backgroundImageResponsive: "/assets/images/ultrapan-line.webp",
+    backgroundImageResponsive: "/assets/images/main-responsive.webp",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: false,
     colorPalette: "BROWN",

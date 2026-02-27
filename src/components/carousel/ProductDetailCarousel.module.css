@@ -45,8 +45,12 @@
 @media (min-width: 640px) {
   .swiperLayout {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    min-height: 600px;
+    height: 300px;
   }
+  .image {
+    width: 100%;
+  border-radius: 12px;
+  object-fit: none;
+  /* object-fit: contain; */
+}
 }

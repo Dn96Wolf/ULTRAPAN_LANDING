@@ -47,6 +47,7 @@
   "form.company": "Empresa",
   "form.subject": "Asunto",
   "form.messaje": "Mensaje",
+  "form.success":"Se ha enviado tu mensaje correctamente! Recibiras una respuesta a la brevedad",
   "main.solutions": "Identifica el flujo que mejor se adapta a tus necesidades y potencializa tus resultados con Ultrapan",
   "main.industrial": "Panificación Industrial",
   "main.industrialSubtitle": "Formulaciones especializadas para procesos estandarizados.",

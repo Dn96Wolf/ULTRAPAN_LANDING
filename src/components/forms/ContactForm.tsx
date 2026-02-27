@@ -13,7 +13,6 @@ import {
 } from "@/interfaces/ContactForm.interface";
 
 export default function ContactForm({ titleBtn, element }: ContactFormProps) {
-  
   const initialState: ContactFormData = {
     name: "",
     lastName: "",
@@ -22,6 +21,7 @@ export default function ContactForm({ titleBtn, element }: ContactFormProps) {
     company: "",
     subject: "",
     message: "",
+    product: element ? element : undefined,
   };
 
   const [formData, setFormData] = useState<ContactFormData>(initialState);
@@ -121,6 +121,8 @@ export default function ContactForm({ titleBtn, element }: ContactFormProps) {
       alert("Ingresa un correo electrónico válido.");
     }
 
+    setFormData(initialState);
+
     //TODO: Validate data when we have the backend ready, for now we just reset the form and log the data
     //const token = recaptchaRef.current?.getValue();
     // if (!token) {
@@ -130,16 +132,17 @@ export default function ContactForm({ titleBtn, element }: ContactFormProps) {
     // console.log("Datos recibidos en el padre:", formData);
     // recaptchaRef.current?.reset();
     // setFormData(initialState);
+
     // try {
     //   setLoading(true);
-    //   const response = await fetch("/api/contact", {
+    //   const response = await fetch("/api/contacto", {
     //     method: "POST",
     //     headers: {
     //       "Content-Type": "application/json",
     //     },
     //     body: JSON.stringify({
     //       ...formData,
-    //       recaptchaToken: token,
+    //       // recaptchaToken: token, use later
     //     }),
     //   });
 
@@ -256,15 +259,23 @@ export default function ContactForm({ titleBtn, element }: ContactFormProps) {
             ref={recaptchaRef}
           /> */}
 
+          {}
           <ButtonComponent
-            colorPalette="BROWN"
+            colorPalette={loading ? "DISABLED" : "BROWN"}
             type="submit"
             title={titleBtn || "Enviar"}
             disabled={loading}
           />
 
           {error && <span className={styles.error}>{error}</span>}
-          {success && <span className={styles.success}>{success}</span>}
+          {success && (
+            <div className={styles.success}>
+              <p className={styles.successText}>
+                {t("form.success")}
+                <span>✅</span>
+              </p>
+            </div>
+          )}
         </form>
       </div>
     </section>

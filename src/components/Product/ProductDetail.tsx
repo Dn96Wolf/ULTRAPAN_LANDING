@@ -262,7 +262,7 @@ export default function ProductDetail({
         >
           ¿Buscas información de éste producto?
         </h2>
-        <ContactForm />
+        <ContactForm element={item.title} />
       </div>
     </div>
   );

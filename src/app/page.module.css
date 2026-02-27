@@ -62,7 +62,7 @@
   justify-content: center;
   opacity: 0;
   background-position: center bottom;
-  background-size: 120% 45%;
+  background-size: 120% 45%; 
   background-repeat: no-repeat;
   overflow: hidden;
   transition: opacity var(--fade-ms, 1000ms) ease;

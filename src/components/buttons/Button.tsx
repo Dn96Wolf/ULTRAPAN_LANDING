@@ -60,6 +60,28 @@ export default function ButtonComponent({
           <p className={styles.buttonText}>{title}</p>
         </button>
       )}
+
+      {colorPalette === "GRAY" && (
+        <button
+          type={type}
+          className={`${styles.button} ${styles.btnGray}`}
+          onClick={onAction}
+          disabled={disabled}
+        >
+          <p className={styles.buttonText}>{title}</p>
+        </button>
+      )}
+
+      {colorPalette === "DISABLED" && (
+        <button
+          type={type}
+          className={`${styles.button} ${styles.btnDisable}`}
+          onClick={onAction}
+          disabled={disabled}
+        >
+          <p className={styles.buttonText}>{title}</p>
+        </button>
+      )}
     </>
   );
 }

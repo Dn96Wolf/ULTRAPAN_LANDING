@@ -14,5 +14,5 @@ export type ContactFormData = {
   company: string;
   subject: string;
   message: string;
-  element?: string;
+  product?: string;
 };

@@ -9,15 +9,7 @@ import { CircleArrowLeft } from "lucide-react";
 import { t } from "@/i18n";
 import ContactForm from "../forms/ContactForm";
 import { useRouter } from "next/navigation";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, A11y, Navigation } from "swiper/modules";
-
-import { useRef } from "react";
+import ProductDetailCarouse from "../carousel/ProductDetailCarousel";
 
 export default function ProductDetail({
   item,
@@ -25,35 +17,10 @@ export default function ProductDetail({
   item: ProductDetailInterface;
 }) {
   const router = useRouter();
-  const swiperRef = useRef<any>(null);
-
-  const elements: any = [
-    {
-      title: "Titulo",
-      image: "/assets/images/emulsoft-h.webp",
-    },
-    {
-      title: "Titulo",
-      image: "/assets/images/emulsoft-h.webp",
-    },
-    // {
-    //   title: "Titulo",
-    //   image: "/assets/images/emulsoft-h.webp",
-    // },
-    // {
-    //   title: "Titulo",
-    //   image: "/assets/images/emulsoft-h.webp",
-    // },
-
-    // {
-    //   title: "Titulo",
-    //   image: "/assets/images/emulsoft-h.webp",
-    // },
-  ];
 
   return (
     <div
-      className={`${styles.sectionContent}  ${item.category === "INDUSTRIAL" ? styles.sectionContentIndustrial : styles.sectionContentCraftMaker}`}
+      className={`${styles.pageContent}  ${item.category === "INDUSTRIAL" ? styles.sectionContentIndustrial : styles.sectionContentCraftMaker}`}
     >
       <div
         className={styles.main}
@@ -87,7 +54,10 @@ export default function ProductDetail({
             </p>
 
             {item.description2 && (
-              <p className={styles.productDesktopDescription}>
+              <p
+                className={styles.productDesktopDescription}
+                style={{ color: item.textColor }}
+              >
                 {item.description2}
               </p>
             )}
@@ -100,12 +70,11 @@ export default function ProductDetail({
               width={100}
               height={100}
               className={styles.image}
+              style={{ color: item.backgroundColor }}
               sizes="(max-width: 640px) 100vw, 520px"
             />
           </div>
         </div>
-
-        {/* Beneficios técnicos  */}
 
         <div className={styles.productDetailContent}>
           <p
@@ -123,222 +92,189 @@ export default function ProductDetail({
               {item.description2}
             </p>
           )}
+        </div>
+      </div>
 
-          <div className={styles.productBenefits}>
-            <h3
-              className={`${styles.productBenefitsTitle}`}
-              style={{ color: item.textColor }}
-            >
-              {t("product.benefits")}
-            </h3>
+      <div
+        className={styles.sectionContainer}
+        style={{ background: item.backgroundColor }}
+      >
+        <h3
+          className={`${styles.productBenefitsTitle}`}
+          style={{ color: item.textColor }}
+        >
+          {t("product.benefits")}
+        </h3>
 
-            <div
-              className={styles.listBenefitContainer}
-              style={{ backgroundColor: item.benefits[0].bgColor }}
-            >
-              {item.benefits.map((element, index) => (
-                <div key={index} className={styles.listBenefit}>
-                  <div className={styles.listTitle}>
-                    <p className={styles.iconElement}>
-                      <Image
-                        src={element.icon}
-                        width={24}
-                        height={24}
-                        alt={element.description}
-                        className={styles.icon}
-                      />
-                    </p>
-                    <h3 className={styles.benefitTitle}>{element.title}</h3>
-                    <p className={styles.benefitDescription}>
-                      {" "}
-                      {element.description}{" "}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.instructionsAndApplicationsContainer}>
-            {/* Aplicaciones ideales  */}
-            <div className={styles.application} style={{ padding: "16px 0" }}>
-              <h3
-                className={`${styles.productApplicationTitle}`}
-                style={{ color: item.textColor }}
-              >
-                {t("product.application")}
-              </h3>
-
-              <div className={styles.listApplicationContainer}>
-                {item.applications.map((application, index) => (
-                  <div key={index}>
-                    <ul className={styles.listApplication}>
-                      <li
-                        className={styles.applicationDescription}
-                        style={{ color: item.textColor }}
-                      >
-                        {application}
-                      </li>
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Ingredientes  */}
-
-            <div className={styles.ingredients} style={{ padding: "16px 0" }}>
-              <h3
-                className={`${styles.productBenefitsTitle}`}
-                style={{ color: item.textColor }}
-              >
-                {t("product.ingredients")}
-              </h3>
-
-              <div className={styles.listIngredientContainer}>
-                <div
-                  className={styles.listIngredient}
-                  style={{ color: item.textColor }}
-                >
+        <div
+          className={styles.sectionRibbon}
+          style={{ backgroundColor: item.benefits[0].bgColor }}
+        >
+          <div className={styles.benefitsContainer}>
+            {item.benefits.map((element, index) => (
+              <div key={index} className={styles.benefitElement}>
+                <p className={styles.iconElement}>
                   <Image
-                    src={"/assets/images/molecule.png"}
-                    alt={item.title}
-                    width={54}
-                    height={54}
-                    sizes="(max-width: 640px) 100vw, 52px"
+                    src={element.icon}
+                    width={24}
+                    height={24}
+                    alt={element.description}
+                    className={styles.icon}
                   />
-
-                  <p
-                    className={styles.ingredientDescription}
-                    style={{ color: item.textColor }}
-                  >
-                    {item.ingredients}
-                  </p>
-                </div>
+                </p>
+                <p className={styles.benefitDescription}>
+                  {element.description}
+                </p>
               </div>
-            </div>
-          </div>
-
-          {/* Dosis reomendada  */}
-
-          <div
-            className={styles.instructions}
-            style={{
-              backgroundColor: item.benefits[1].bgColor,
-            }}
-          >
-            <h3 className={`${styles.productDosisTitle}`}>
-              {t("product.dosis")}
-            </h3>
-
-            <div className={styles.listDosisContainer}>
-              {item.instructions.map((element, index) => (
-                <div key={index} className={styles.listDosis}>
-                  <p className={styles.iconElement}>
-                    <Image
-                      src={element.icon}
-                      width={24}
-                      height={24}
-                      alt={element.description}
-                      className={styles.icon}
-                    />
-                  </p>
-
-                  <p className={styles.productDosisText}>
-                    {element.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* ventajas competitivas */}
-          <div
-            className={styles.productChosen}
-            style={{ backgroundColor: item.advantages[0].bgColor }}
-          >
-            <h3 className={`${styles.productBenefitsTitle}`}>
-              {t("product.competitiveAdvantajes")}
-            </h3>
-
-            <div className={styles.listAdvantages}>
-              {item.advantages.map((element, index) => (
-                <div key={index} className={styles.listBenefit}>
-                  <div className={styles.listTitle}>
-                    <p className={styles.iconElement}>
-                      <Image
-                        src={element.icon}
-                        width={24}
-                        height={24}
-                        alt={element.description}
-                        className={styles.icon}
-                      />
-                    </p>
-                    <h3 className={styles.benefitTitle}>{element.title}</h3>
-                    <p className={styles.advantageText}>
-                      {" "}
-                      {element.description}{" "}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* <div className={styles.carouselSection}>
-        <div className={` ${styles.carouselWrap}`}>
-          <Swiper
-            className={styles.swiperLayout}
-            modules={[Autoplay, Pagination, A11y, Navigation]}
-            onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-            }}
-            slidesPerView={1}
-            spaceBetween={16}
-            loop={elements.length > 1}
-            autoplay={
-              elements.length > 1
-                ? { delay: 5000, disableOnInteraction: false }
-                : false
-            }
-            a11y={{
-              enabled: true,
-            }}
-            navigation={{
-              enabled: true,
-            }}
-          >
-            {elements.map((item, idx) => (
-              <SwiperSlide
-                key={`${item.title}-${idx}`}
-                className={styles.slide}
+      <section className={styles.sectionContainer}>
+        <div className={styles.instructionsAndApplicationsContainer}>
+          {/* Aplicaciones ideales  */}
+          <div className={styles.application}>
+            <h3
+              className={`${styles.applicationTitle}`}
+              style={{ color: item.titleColor }}
+            >
+              {t("product.application")}
+            </h3>
+
+            <div className={styles.listApplicationContainer}>
+              {item.applications.map((application, index) => (
+                <div key={index}>
+                  <ul className={styles.applicationItem}>
+                    <li
+                      className={styles.applicationDescription}
+                      style={{ color: item.titleColor }}
+                    >
+                      {application}
+                    </li>
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Ingredientes  */}
+
+          <div className={styles.ingredients}>
+            <h3
+              className={`${styles.ingredientTitle}`}
+              style={{ color: item.titleColor }}
+            >
+              {t("product.ingredients")}
+            </h3>
+
+            <div className={styles.ingredientElement}>
+              <div
+                className={styles.ingredientIcon}
+                style={{ backgroundColor: item.titleColor }}
               >
-                <article className={styles.card}>
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className={styles.image}
-                    sizes="(min-width: 640px) 100vw, 520px"
-                    priority={idx === 0}
-                  />
-                </article>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                <Image
+                  src={"/assets/images/molecule.png"}
+                  alt={item.title}
+                  width={54}
+                  height={54}
+                  sizes="(max-width: 640px) 100vw, 52px"
+                />
+              </div>
+
+              <p
+                className={styles.ingredientDescription}
+                style={{ color: item.titleColor }}
+              >
+                {item.ingredients}
+              </p>
+            </div>
+          </div>
         </div>
-      </div> */}
+      </section>
+
+      <section className={styles.sectionContainer}>
+        <h3
+          className={`${styles.productDosisTitle}`}
+          style={{ color: item.titleColor }}
+        >
+          {t("product.dosis")}
+        </h3>
+
+        <div
+          className={styles.doseInner}
+          style={{ backgroundColor: item.benefits[1].bgColor }}
+        >
+          <div className={styles.doseContainer}>
+            {item.instructions.map((element, index) => (
+              <div key={index} className={styles.doseElement}>
+                <p className={styles.iconElement}>
+                  <Image
+                    src={element.icon}
+                    width={24}
+                    height={24}
+                    alt={element.description}
+                    className={styles.icon}
+                  />
+                </p>
+
+                <p className={styles.doseDescription}>{element.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ventajas competitivas */}
+
+      <section className={styles.sectionContainer}>
+        <h3
+          className={`${styles.advantagesTitle}`}
+          style={{ color: item.titleColor }}
+        >
+          {t("product.competitiveAdvantajes")}
+        </h3>
+
+        <div
+          className={styles.advantagesInner}
+          style={{ backgroundColor: item.advantages[0].bgColor }}
+        >
+          <div className={styles.advantagesContainer}>
+            {item.advantages.map((element, index) => (
+              <div key={index} className={styles.vantageElement}>
+                <p className={styles.iconElement}>
+                  <Image
+                    src={element.icon}
+                    width={24}
+                    height={24}
+                    alt={element.description}
+                    className={styles.icon}
+                  />
+                </p>
+                <p className={styles.vantageDescription}>
+                  {" "}
+                  {element.description}{" "}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {item.imagesRelated.length && (
+        <div className={styles.carouselContainer}>
+          <ProductDetailCarouse images={item.imagesRelated} />
+        </div>
+      )}
 
       <div className={styles.contactFormContent}>
         <h2
           className={styles.contactFormTitle}
-          style={{ color: item.valueProposal.bgColor }}
+          style={{ color: item.titleColor }}
         >
           ¿Buscas información de éste producto?
         </h2>
-        <ContactForm />
+        <ContactForm element={item.title} />
       </div>
     </div>
   );

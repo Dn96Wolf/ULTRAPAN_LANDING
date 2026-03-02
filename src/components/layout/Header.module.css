@@ -113,18 +113,21 @@
 .mobileLink,
 .mobileDropdownLabel {
   display: block;
-  padding: 0.85rem 0.75rem;
+  padding: 6px 10px;
+  border-radius: 4px;
   color: white;
+}
+
+.mobileLink:hover {
+  background-color: var(--primary-200);
+  color: var(--color-secondary);
+  transition: 0.3s ease;
 }
 
 .mobileDropdownLabel {
   padding: unset;
 }
-/* .mobileLink:hover {
-  background-color: var(--color-secondary);
-} */
 
-/* Wrapper dropdown */
 .dropdown {
   position: relative;
   display: inline-flex;
@@ -136,6 +139,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  padding: 6px 10px;
 
   background: transparent;
   border: 0;
@@ -254,16 +258,15 @@
   background: var(--neutral-300);
 }
 
-  .navItem {
-    width:  max-content;
-    padding: 6px 10px;
-    border-radius: 4px;
-  }
+.navItem {
+  width: max-content;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
 
-  .navItem:hover {
-    background-color: var(--primary-200)
-
-  }
+.navItem:hover {
+  background-color: var(--primary-200);
+}
 
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
@@ -287,6 +290,4 @@
   .dropdownMenu {
     display: block;
   }
-
-
 }

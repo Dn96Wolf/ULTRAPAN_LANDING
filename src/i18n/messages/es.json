@@ -47,10 +47,11 @@
   "form.company": "Empresa",
   "form.subject": "Asunto",
   "form.messaje": "Mensaje",
+  "form.success":"Se ha enviado tu mensaje correctamente! Recibiras una respuesta a la brevedad",
   "main.solutions": "Identifica el flujo que mejor se adapta a tus necesidades y potencializa tus resultados con Ultrapan",
-  "main.industrial": "Panificación Industrial",
+  "main.industrial": "Linea ULTRAPAN industrial",
   "main.industrialSubtitle": "Formulaciones especializadas para procesos estandarizados.",
-  "main.craftMaker": "Panificación Artesanal",
+  "main.craftMaker": "Linea ULTRAPAN artesanal",
   "main.craftMakerSubtitle": "Calidad y frescura que acompañan tu proceso artesanal.",
   "main.knowAboutUs": "Explora nuestra gama de mejorantes de alto rendimiento y encuentra el aliado perfecto para cada una de tus creaciones",
   "craftmaker.listPorduct": "Conoce nuestros mejorantes enfocados en procesos artesanales y sus grandes beneficios.",
@@ -66,7 +67,7 @@
   "product.application":"Aplicaciones ideales",
   "product.ingredients":"Ingredientes activos",
   "product.dosis":"Dosis recomendada",
-  "product.competitiveAdvantajes":"Ventajas competitivas"
-
-
+  "product.competitiveAdvantajes":"Ventajas competitivas",
+  "handCrafter.title":"Panificación artesanal",
+  "handCrafter.subtitle":"Calidad y frescura que acompañan tu proceso artesanal."
 }

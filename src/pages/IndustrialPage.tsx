@@ -25,15 +25,18 @@ export default function IndustrialPage() {
       <div className={styles.screen}>
         <div className={styles.firstContent}>
           <div className={styles.mainOverlay}>
-            <h1 className={`${styles.mainTitle} text-color-white`}>
+            <h1 className={`${styles.mainTitle} ${styles.outlinedTextTitle} text-color-white`}>
               {t("industrial.title")}
             </h1>
-            <p className={`${styles.mainSubtitle} text-color-white`}>
+            <h6 className={`${styles.mainSubtitle} ${styles.outlinedText} text-color-white`}>
               {t("industrial.subtitle")}
-            </p>
+            </h6>
           </div>
         </div>
       </div>
+
+      <div className={styles.blankRibbon}></div>
+
 
       <div className={styles.ribbonProducts}>
         <div className={styles.ribbonLayer1}></div>
@@ -41,6 +44,9 @@ export default function IndustrialPage() {
           <h2 className={styles.titleRibbon}>{t("industrial.listPorduct")}</h2>
         </div>
       </div>
+
+      <div className={styles.blankRibbon}></div>
+
 
       <div className={styles.secondContent}>
         <ProductCarousel

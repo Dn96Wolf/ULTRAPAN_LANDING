@@ -1,8 +1,5 @@
 import { HomeSlide } from "@/interfaces/HomeSlides.interface";
-import {
-  ProductColorPalette,
-  ProductDetailInterface,
-} from "@/interfaces/Product";
+import { ProductDetailInterface } from "@/interfaces/Product";
 import { FAQSection } from "@/interfaces/Questions";
 
 export const EMAIL_CONTACT = "ventas@enziquim.com";
@@ -28,7 +25,6 @@ export const SOCIAL_MEDIA = [
 export const NAV_ITEMS = [
   { href: "/", labelKey: "nav.home" as const },
   { href: "#", labelKey: "nav.Industrias" as const },
-  // { href: "/historia", labelKey: "nav.history" as const },
   { href: "/contacto", labelKey: "nav.contact" as const },
   { href: "/FAQ", labelKey: "nav.fqa" as const },
 ];
@@ -42,45 +38,75 @@ export const HOME_SLIDES: HomeSlide[] = [
   {
     title: "ULTRAPAN",
     idProduct: 0,
-    subtitle:
-      "Tecnología enzimática diseñada para estandarizar tu calidad, mejorar el volumen y optimizar tus costos, desde el panadero artesano hasta la línea industrial.",
-    backgroundImage: "/assets/images/ultrapan-line.webp",
-    backgroundImageResponsive: "/assets/images/ultrapan-line.webp",
+    subtitle: "Conoce la linea completa de mejorantes para panificación",
+    subtitle2: "",
+    backgroundImage: "/assets/images/ultrapan-line.jpg",
+    backgroundImageResponsive: "/assets/images/main-responsive.webp",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
-    action: false,
+    action: true,
+    secondAction: true,
     colorPalette: "BROWN",
+    secondColorPalette: "GRAY",
+    primaryButtonText: "Línea artesanal",
+    secondButtonText: "Línea Industrial",
+    primaryRoute: "artesanal",
+    secondRoute: "industrial",
   },
-  //IF WE NEEDIT
-  // {
-  //   title: "ULTRAPAN",
-  //   idProduct: 1000,
-  //   subtitle:
-  //     "Tecnología enzimática diseñada para estandarizar tu calidad, mejorar el volumen y optimizar tus costos, desde el panadero artesano hasta la línea industrial.",
-  //   backgroundImage: "/assets/images/mesaIndustrial.png",
-  //   backgroundImageResponsive: "/assets/images/mesaIndustrial.png",
-  //   ribbonClass: "page-module___8aEwW__bg-neutral-overlay",
-  //   action: false,
-  //   colorPalette: "BROWN" as ProductColorPalette,
-  // },
+
   {
     title: "ULTRAPAN C+",
     idProduct: 6,
-    subtitle: "La fórmula concentrada para el volumen perfecto.",
-    backgroundImage: "/assets/images/ultrapan-c-main.webp",
+    subtitle: "Estandariza tu producción con",
+    subtitle2:
+      "Nuestro mejorante ultra concentrado. Obten una excelente relación costo beneficio",
+    backgroundImage: "/assets/images/ultrapan-c-portada.jpg",
     backgroundImageResponsive: "/assets/images/sobre-ultrapan-c-plus.webp",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
-    colorPalette: "SOFTBLUE" as ProductColorPalette,
+    secondAction: false,
+    colorPalette: "SOFTBLUE",
+    secondColorPalette: "GRAY",
+    primaryButtonText: "¡Compruébalo!",
+    secondButtonText: "",
+    primaryRoute: "productos/ultrapan-c-plus",
+    secondRoute: "",
   },
   {
     title: "ULTRAPAN G+",
     idProduct: 7,
-    subtitle: "El mejorante todo terreno para tu negocio.",
-    backgroundImage: "/assets/images/ultrapan-g-main.webp",
+    subtitle: "La formulación de",
+    subtitle2:
+      "Permite estandarizar la producción y reducir la estructura de costos de la receta tradicional, sin cambiar el proceso",
+    backgroundImage: "/assets/images/ultrapan-g-portada.jpg",
     backgroundImageResponsive: "/assets/images/sobre-ultrapan-g-plus.webp",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
-    colorPalette: "MUSTARD" as ProductColorPalette,
+    secondAction: false,
+    colorPalette: "MUSTARD",
+    secondColorPalette: "GRAY",
+    primaryButtonText: "Conocer más",
+    secondButtonText: "",
+    primaryRoute: "productos/ultrapan-g-plus",
+    secondRoute: "",
+  },
+  {
+    title: "DULCE PLUS",
+    idProduct: 8,
+    subtitle: "Reduce hasta 2.5kg de huevo por saco de harina con",
+    specialTitle: "ULTRAPAN",
+    subtitle2:
+      "El mejorante desarrollado para mantener la suavidad, humedad y frescura de la miga durante periodos largos",
+    backgroundImage: "/assets/images/ultrapan-dulce-plus-portada.jpg",
+    backgroundImageResponsive: "/assets/images/sobre-dulce-plus.webp",
+    ribbonClass: "page-module___8aEwW__bg-brown-overlay",
+    action: true,
+    secondAction: false,
+    colorPalette: "BLUE",
+    secondColorPalette: "GRAY",
+    primaryButtonText: "Me interesa",
+    secondButtonText: "",
+    primaryRoute: "productos/ultrapan-dulce-plus",
+    secondRoute: "",
   },
 ];
 
@@ -96,6 +122,26 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/ultrapan-10000.webp",
     mainImage: "/assets/images/ultrapan-mil-sobre.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/ultrapan-mil-sobre.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-10000.webp",
+
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-10000.webp",
+
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-10000.webp",
+        alt: "main",
+      },
+    ],
     benefits: [
       {
         title: "",
@@ -182,6 +228,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     keywords: [],
     backgroundColor: "#e2a865",
     textColor: "#fff",
+    titleColor: "#613924",
   },
   {
     id: 2,
@@ -191,9 +238,40 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     category: "INDUSTRIAL",
     description:
       "Ultrapan Emulsoft Extender e sun mejorante dearrollado para matener la suavidad y frescura de la miga durante periodos prolongados. Su formula especializada ayuda a retardar la retrogradación del almidón, princpal respnsable del endurecimeinto del pan, lo que permite extender significativamente la vida útil comercial del producto terminado sin comprometer su textura ni sabor.",
-    carouselImage: "/assets/images/emulsoftextender.png",
+    carouselImage: "/assets/images/emulsoft-extender.webp",
     mainImage: "/assets/images/ultrapan-emulsoft-extender.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/emulsoft-extender.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/emulsoft-extender.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/emulsoft-extender.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/emulsoft-extender.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/emulsoft-extender.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/emulsoft-extender.webp",
+        alt: "Sobre",
+      },
+
+      // {
+      //   src: "/assets/images/ultrapan-emulsoft-extender.webp",
+      //   alt: "main",
+      // },
+    ],
     benefits: [
       {
         title: "",
@@ -269,6 +347,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     keywords: [],
     backgroundColor: "#683c12",
     textColor: "#fff",
+    titleColor: "#402619",
   },
 
   {
@@ -282,11 +361,37 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/emulsoftpuls.png",
     mainImage: "/assets/images/ultrapan-emulsoft-plus.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/emulsoftpuls.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/emulsoftpuls.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/emulsoftpuls.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/emulsoftpuls.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/emulsoftpuls.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/emulsoftpuls.png",
+        alt: "Sobre",
+      },
+    ],
+
     benefits: [
       {
         title: "",
         icon: "/icons/birutas.svg",
-
         description: "Mayor suavidad y humedad en la miga",
         disclaimer: "*Resultados dependen de proceso y almacenamiento",
         bgColor: "#613924",
@@ -367,6 +472,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     keywords: [],
     backgroundColor: "#e3c4a7",
     textColor: "#613924",
+    titleColor: "#613924",
   },
   {
     id: 4,
@@ -379,6 +485,36 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/congelado.png",
     mainImage: "/assets/images/ultrapan-congelado.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/congelado.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/congelado.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/congelado.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/congelado.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/congelado.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/congelado.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/congelado.png",
+        alt: "Sobre",
+      },
+    ],
     benefits: [
       {
         title: "",
@@ -484,6 +620,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     keywords: [],
     backgroundColor: "#9a6a34",
     textColor: "#fff",
+    titleColor: "#402619",
   },
   {
     id: 5,
@@ -496,6 +633,38 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/tortilla.png",
     mainImage: "/assets/images/ultrapan-tortilla.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/tortilla.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/tortilla.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/tortilla.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/tortilla.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/tortilla.png",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/tortilla.png",
+        alt: "Sobre",
+      },
+
+      // {
+      //   src: "/assets/images/ultrapan-tortilla.webp",
+      //   alt: "main",
+      // },
+    ],
+
     benefits: [
       {
         title: "",
@@ -581,6 +750,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     keywords: [],
     backgroundColor: "#e2a865",
     textColor: "#fff",
+    titleColor: "#e2a865",
   },
   {
     id: 6,
@@ -593,6 +763,17 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/sobre-ultrapan-c-plus.webp",
     mainImage: "/assets/images/ultrapan-c-sobre.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/sobre-ultrapan-c-plus.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-sobre.webp",
+        alt: "main",
+      },
+    ],
+
     benefits: [
       {
         title: "",
@@ -677,6 +858,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     keywords: [],
     backgroundColor: "#0c4a5a",
     textColor: "#fff",
+    titleColor: "#0c4a5a",
   },
 
   {
@@ -690,6 +872,16 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/sobre-ultrapan-g-plus.webp",
     mainImage: "/assets/images/ultrapan-g-sobre.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/sobre-ultrapan-g-plus.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-g-sobre.webp",
+        alt: "main",
+      },
+    ],
     benefits: [
       {
         title: "",
@@ -771,6 +963,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     keywords: [],
     backgroundColor: "#a0a468",
     textColor: "#fff",
+    titleColor: "#777940",
   },
   {
     id: 8,
@@ -783,6 +976,17 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/sobre-dulce-plus.webp",
     mainImage: "/assets/images/ultrapan-dulceplus.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/sobre-dulce-plus.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-dulceplus.webp",
+        alt: "main",
+      },
+    ],
+
     benefits: [
       {
         title: "",
@@ -867,6 +1071,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     keywords: [],
     backgroundColor: "#183270",
     textColor: "#fff",
+    titleColor: "#183270",
   },
 
   {
@@ -882,6 +1087,29 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     carouselImage: "/assets/images/emulsoft-h.webp",
     mainImage: "/assets/images/ultrapan-emulsoft-h.webp",
     image: "",
+    imagesRelated: [
+      {
+        src: "/assets/images/emulsoft-h.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-emulsoft-h.webp",
+        alt: "main",
+      },
+      {
+        src: "/assets/images/emulsoft-h.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/emulsoft-h.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/emulsoft-h.webp",
+        alt: "Sobre",
+      },
+    ],
+
     benefits: [
       {
         title: "",
@@ -893,7 +1121,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         title: "",
         icon: "/icons/bolillos.svg",
         description: "Mejora el volumen sin alterar la receta base",
-        bgColor: "",
+        bgColor: "#613924",
       },
       {
         title: "",
@@ -957,6 +1185,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     keywords: [],
     backgroundColor: "#c4b5ac",
     textColor: "#613924",
+    titleColor: "#613924",
   },
 ];
 

@@ -103,12 +103,14 @@ export default function Header() {
               <div key="nav-industries" className={styles.dropdown}>
                 <button
                   type="button"
-                  className={styles.dropdownTrigger}
+                  className={`${styles.dropdownTrigger} `}
                   aria-haspopup="menu"
                   aria-expanded={industriesOpen}
                   onClick={handleToggleIndustries}
                 >
-                  <span className={styles.mobileLink}>{t(item.labelKey)}</span>
+                  <span className={`${styles.mobileLink}`}>
+                    {t(item.labelKey)}
+                  </span>
                 </button>
 
                 <div

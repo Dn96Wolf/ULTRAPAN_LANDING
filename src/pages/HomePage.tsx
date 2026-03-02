@@ -1,16 +1,13 @@
 "use client";
 import styles from "../app/page.module.css";
 import { useEffect, useState } from "react";
-
 import { useRouter } from "next/navigation";
 import { HOME_SLIDES, PRODUCT_LIST } from "@/utils/constants";
 import ProductCarousel from "@/components/carousel/ProductCarousel";
 import ButtonComponent from "../components/buttons/Button";
-import { createSlug } from "@/utils/helpers";
 import { t } from "@/i18n";
-import { ProductDetailInterface } from "@/interfaces/Product";
 
-const intervalMs = 5000;
+const intervalMs = 7000;
 const fadeMs = 2000;
 const imagesFade = HOME_SLIDES;
 const productos = PRODUCT_LIST;
@@ -43,18 +40,14 @@ export default function HomePage() {
     return () => window.removeEventListener("resize", checkMobile);
   }, [breakpoint]);
 
-  function handlingProduct(id: number) {
-    const nameProduct = productos.find(
-      (e: ProductDetailInterface) => e.id === id,
-    );
-    if (!nameProduct) return;
-    return router.push(`/productos/${createSlug(nameProduct.route)}`);
+  function handlingProduct(route: string) {
+    return router.push(`/${route}`);
   }
 
   return (
     <main className={styles.page}>
       <section
-        className={` ${styles.firstScreen} `}
+        className={`${styles.firstScreen} `}
         style={{ ["--fade-ms" as any]: `${fadeMs}ms` }}
       >
         {!!imagesFade.length && (
@@ -72,22 +65,56 @@ export default function HomePage() {
                     <div
                       className={`${styles.mainTitleRibbon} ${imagesFade[index].ribbonClass}`}
                     >
+                      {element.subtitle !== "" && (
+                        <p
+                          className={`text-color-white  ${styles.mainSubtitle2}`}
+                        >
+                          {element.subtitle}{" "}
+                          {element.specialTitle && (
+                            <span className={"impact bold"}>
+                              {element.specialTitle}
+                            </span>
+                          )}
+                        </p>
+                      )}
+
                       <h1 className={`text-color-white ${styles.mainTitle}`}>
                         {element.title}
                       </h1>
-                      <p className={`text-color-white  ${styles.mainSubtitle}`}>
-                        {element.subtitle}
-                      </p>
 
-                      {element.action && (
-                        <div className={styles.buttonStyle}>
-                          <ButtonComponent
-                            colorPalette={element.colorPalette}
-                            title="Saber más"
-                            onAction={() => handlingProduct(element.idProduct)}
-                          />
-                        </div>
+                      {element.subtitle2 !== "" && (
+                        <p
+                          className={`text-color-white  ${styles.mainSubtitle}`}
+                        >
+                          {element.subtitle2}
+                        </p>
                       )}
+
+                      <div className={styles.actionButtonContainers}>
+                        {element.action && (
+                          <div className={styles.buttonStyle}>
+                            <ButtonComponent
+                              colorPalette={element.colorPalette}
+                              title={element.primaryButtonText}
+                              onAction={() =>
+                                handlingProduct(element.primaryRoute)
+                              }
+                            />
+                          </div>
+                        )}
+
+                        {element.secondAction && (
+                          <div className={styles.buttonStyle}>
+                            <ButtonComponent
+                              colorPalette={element.secondColorPalette}
+                              title={element.secondButtonText}
+                              onAction={() =>
+                                handlingProduct(element.secondRoute)
+                              }
+                            />
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -107,27 +134,26 @@ export default function HomePage() {
 
       <section className={styles.secondScreen} id="typeIndustrySection">
         <div className={styles.firstLayer}>
-          <div className={styles.industrialSection}></div>
+          <video
+            src={"/assets/media/artesanal.mp4"}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className={styles.craftVideo}
+          ></video>
 
-          <div className={styles.craftSection}></div>
+          <video
+            src={"/assets/media/industrial.mp4"}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className={styles.craftVideo}
+          ></video>
         </div>
 
         <div className={styles.thirdLayer}>
-          <div
-            className={styles.industrialOverlay}
-            onClick={() => onHandlingClick("industrial")}
-          >
-            <div className={styles.industrialText}>
-              <h2 className="text-color-white text-center">
-                {t("main.industrial")}
-              </h2>
-
-              <p className="text-color-white text-center ">
-                {t("main.industrialSubtitle")}
-              </p>
-            </div>
-          </div>
-
           <div
             className={styles.craftOverlay}
             onClick={() => onHandlingClick("artesanal")}
@@ -136,12 +162,17 @@ export default function HomePage() {
               <h2 className="text-color-white text-center">
                 {t("main.craftMaker")}
               </h2>
+            </div>
+          </div>
 
-              <p
-                className={`${styles.subTextSection} text-color-white text-center`}
-              >
-                {t("main.craftMakerSubtitle")}
-              </p>
+          <div
+            className={styles.industrialOverlay}
+            onClick={() => onHandlingClick("industrial")}
+          >
+            <div className={styles.industrialText}>
+              <h2 className="text-color-white text-center">
+                {t("main.industrial")}
+              </h2>
             </div>
           </div>
         </div>

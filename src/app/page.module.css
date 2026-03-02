@@ -48,7 +48,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  flex-direction: column-reverse;
   z-index: 1;
 }
 
@@ -56,7 +55,6 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,10 +99,11 @@
   width: 100%;
   height: 55%;
   padding: 24px;
+  gap: 16px;
 }
 
 .bg-brown-overlay {
-  background-color: var(--color-primary) !important;
+  background-color: var(--primary-600);
 }
 
 .bg-neutral-overlay {
@@ -112,24 +111,37 @@
 }
 
 .mainTitle {
-  font-size: 48px;
+  font-size: 65px;
   margin-bottom: 8px;
   animation: slideInLeft 2s ease-out both;
 }
 
-.mainSubtitle {
-  font-size: 14px;
+.mainSubtitle,
+.mainSubtitle2 {
+  font-size: 20px;
   text-align: center;
   margin-bottom: 12px;
-  animation: slideInBottom 2s ease-out both;
+  animation: slideInLeft 2s ease-out both;
+
+  /* animation: slideInBottom 2s ease-out both; */
+}
+
+.mainSubtitle2 {
+  margin-bottom: 0;
+  text-align: center;
+  margin-bottom: unset;
+}
+
+.actionButtonContainers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }
 
 .buttonStyle {
   width: 300px;
-  /* position: absolute;
-  z-index: 4;
-  bottom: 0;
-  left: 50%; */
   animation: slideInBottom 2s ease-out both;
 }
 
@@ -163,12 +175,10 @@
   z-index: 1;
 }
 
-.industrialSection {
-  background-image: url("/assets/images/panaderiaArtesanal.png");
-}
-
-.craftSection {
-  background-image: url("/assets/images/panaderiaIndustrial.png");
+.craftVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .industrialOverlay,
@@ -179,14 +189,9 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding: 48px;
+  padding: 24px;
   cursor: pointer;
   transition: all ease-in-out 0.15s;
-}
-
-.craftOverlay {
-  justify-content: flex-start;
-  align-items: flex-end;
 }
 
 .industrialOverlay:hover,
@@ -205,8 +210,9 @@
 
 .industrialText,
 .craftText {
-  padding: 24px 32px;
-  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+  padding: 12px 24px;
+  border-radius: 40px;
+  width: 100%;
 }
 
 .industrialText {
@@ -219,8 +225,7 @@
 
 .industrialText h2,
 .craftText h2 {
-  font-size: 16px;
-  margin-bottom: 8px;
+  font-size: 14px;
 }
 
 .craftText span,
@@ -250,6 +255,9 @@
 }
 
 @media (min-width: 640px) {
+  .firstScreen {
+    max-height: 766px;
+  }
   .firstLayer,
   .thirdLayer {
     display: flex;
@@ -257,7 +265,7 @@
   }
 
   .bg-brown-overlay {
-    background-color: var(--color-primary-translucid) !important;
+    background-color: transparent !important;
   }
 
   .craftLayer {
@@ -265,7 +273,8 @@
     background-size: cover;
   }
 
-  .craftContent {
+  .craftVideo {
+    width: 50%;
     /* width: 50%; */
   }
 
@@ -283,18 +292,24 @@
   }
 
   .mainTitle {
-    font-size: 68px;
+    font-size: 120px;
     animation: slideInLeft 2s ease-out both;
   }
 
-  .mainSubtitle {
+  .mainSubtitle,
+  .mainSubtitle2 {
     text-align: left;
-    font-size: 18px;
-    max-width: 500px;
+    font-size: 24px;
+    max-width: 450px;
     font-family: var(--font-nunito);
-    animation: slideInBottom 2s ease-out both;
+    animation: slideInLeft 2s ease-out both;
     margin-bottom: 40px;
     text-align: center;
+  }
+
+  .mainSubtitle2 {
+    margin-bottom: 0;
+    max-width: 400px;
   }
 
   .categoriesTitle {
@@ -313,13 +328,16 @@
   .craftSection {
     width: 50%;
     height: 100%;
-    background-image: url("/assets/images/panaderiaArtesanal.png");
-    background-position: center;
+    background-image: url("/assets/images/panaderia-artesanal.webp");
+    background-position: right;
   }
 
   .industrialText,
   .craftText {
+    max-width: 300px;
+    margin: 0 auto;
     padding: 24px 50px;
+    margin-bottom: 40px;
   }
 
   .industrialText h2,

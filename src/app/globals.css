@@ -3,22 +3,13 @@
   --foreground: #171717;
 }
 
-
-@font-face {
-  font-family: 'Impact';
-  src: url('/fonts/impact.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .impact {
-  font-family: 'Impact', sans-serif;
+  font-family: var(--font-impact);
 }
 
-.bold{
+.bold {
   font-weight: 800;
 }
-
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -56,6 +47,3 @@ a {
     color-scheme: dark;
   }
 }
-
-
-

@@ -27,6 +27,13 @@ const roboto = Roboto({
   variable: "--font-roboto",
 });
 
+import localFont from "next/font/local";
+
+const impact = localFont({
+  src: "../fonts/impact.ttf",
+  variable: "--font-impact",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -69,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={` ${roboto.variable}`}>
+    <html lang="es" className={` ${roboto.variable} ${impact.variable}`}>
       <body>
         <Header />
         <div style={{ overflow: "auto" }}>

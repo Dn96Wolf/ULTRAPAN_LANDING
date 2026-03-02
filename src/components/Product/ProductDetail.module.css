@@ -1,4 +1,4 @@
-.sectionContent {
+.pageContent {
   width: 100vw;
   height: 100%;
   background-repeat: no-repeat;
@@ -6,14 +6,13 @@
   background-position: center;
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
 
 .main {
   width: 100%;
   min-height: 100vh;
   margin: auto;
-  padding: 94px 12px;
+  padding: 94px 12px 0 12px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -27,7 +26,8 @@
   align-items: center;
   gap: 24px;
   padding: 12px;
-  max-width: 1440px;
+  max-width: 1366px;
+
   position: relative;
 }
 
@@ -64,7 +64,6 @@
 .productSubtitle {
   text-align: center;
   font-size: 20px;
-  font-style: italic;
   color: white;
 }
 
@@ -85,8 +84,6 @@
 }
 
 .productImage {
-  /* width: 320px; */
-  /* height: 320px; */
   border-radius: 12px;
   margin: 8px auto;
   overflow: hidden;
@@ -109,188 +106,146 @@
   margin: auto;
 }
 
-.productBenefits,
-.instructions,
-.productChosen {
+.sectionContainer {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  /* border-radius: 8px; */
 }
 
 .productBenefitsTitle,
-.productApplicationTitle,
-.productDosisTitle {
-  font-size: 30px;
+.applicationTitle,
+.ingredientTitle,
+.productDosisTitle,
+.advantagesTitle {
   color: white;
+  margin-bottom: 16px;
+  font-size: 32px;
+  padding: 0 24px;
   text-align: center;
 }
 
-.instructions {
-  display: flex;
-  padding: 16px;
-  /* flex-direction: column; */
+.productDosisTitle,
+.advantagesTitle {
+  padding: 24px 24px 0 24px;
 }
 
-.listBenefit {
-  /* width: 100%; */
-  height: max-content;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-radius: 8px;
-  gap: 12px;
-  padding: 16px;
-}
+.productBenefits,
+.instructionsAndApplicationsContainer {
+  max-width: 1366px;
 
-.listBenefitContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
   width: 100%;
-  border-radius: 8px;
+  margin: auto;
+  padding: 24px;
 }
 
-.listApplicationContainer {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+.sectionRibbon,
+.doseInner,
+.advantagesInner {
+  width: 100%;
+  padding: 24px 16px;
 }
 
-.listApplication {
-  display: flex;
-  align-items: start;
-  gap: 0;
-}
-
-.listIngredientContainer {
+.benefitsContainer,
+.doseContainer,
+.advantagesContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 24px 0;
-}
-
-.listIngredient,
-.listDosis {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.iconElement {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  color: var(--color-white);
-}
-
-.icon {
-  width: 100%;
-  height: 100%;
-}
-
-.listTitle {
-  width: 100%;
-  height: max-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.benefitTitle {
-  color: white;
-}
-
-.benefitDescription,
-.applicationDescription,
-.ingredientDescription {
-  color: white;
-  font-weight: 400;
-}
-
-.textProposal,
-.ingredientDescription,
-.productDosisText {
-  color: white;
-  text-align: center;
-}
-
-.brochureContent,
-.contactFormContent {
-  width: 100vw;
-  height: 100vh;
-  margin-bottom: 24px;
-  background-color: white;
-}
-
-.listDosisContainer,
-.listAdvantagesContainer {
-  display: flex;
-  flex-direction: column;
   gap: 24px;
 }
 
-.contactFormContent {
+.benefitElement,
+.doseElement,
+.vantageElement {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: max-content;
+}
+
+.iconElement {
+  width: 90px;
+  height: 90px;
+}
+
+.icon {
+  width: inherit;
+  height: inherit;
   margin: auto;
-  border: 12px;
-  padding: 48px 8px;
+  overflow: auto;
+}
+
+.benefitDescription,
+.doseDescription,
+.vantageDescription {
+  color: white;
+}
+
+/* applications */
+
+.instructionsAndApplicationsContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 24px;
+}
+
+.applicationTitle,
+.ingredientTitle {
+  padding: 0;
+}
+
+.applicationDescription {
+  font-size: 18px;
+}
+
+.application,
+.ingredients {
+  width: 100%;
+}
+
+.ingredientElement {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.ingredientIcon {
+  min-width: 48px;
+  max-width: 48px;
+  min-height: 48px;
+  max-height: 488px;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.contactFormContent,
+.carouselContainer {
+  max-width: 1366px;
+  width: 100%;
+  margin: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 40px;
+}
+
+.contactFormContent{
+  padding: 38px 24px;
+  max-width: unset;
+  background-color: var(--neutral-100);
+
 }
 
 .contactFormTitle {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 24px;
+  font-size: 42px;
 }
-
-.productChosen {
-  padding: 16px;
-}
-
-.vantage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.advantageText {
-  color: white;
-  text-align: center;
-}
-
-.carouselSection {
-  width: 100vw;
-  max-height: 500px;
-  padding: 24px;
-  /* height: 500px; */
-  overflow: hidden;
-}
-
-.carouselWrap {
-  width: 100%;
-  height: inherit;
-}
-
-.carouselContainer {
-  width: 100%;
-  /* height: 400px; */
-  padding: 24px 0;
-  background-color: var(--neutral-100);
-}
-
-/* desktop */
 
 @media (min-width: 640px) {
   .first {
@@ -315,139 +270,91 @@
   }
 
   .productTitle {
-    font-size: 48px;
+    font-size: 80px;
+    text-align: left;
   }
 
   .productSubtitle {
-    font-weight: 32px;
+    text-align: left;
+    font-size: 30px;
+  }
+
+  .productDesktopDescription {
+    text-align: left;
+    font-size: 18px;
   }
 
   .productImage {
     width: 100%;
-    /* height: 460px; */
+  }
+
+  .applicationTitle,
+  .ingredientTitle {
+    text-align: left;
   }
 
   .productBenefitsTitle,
-  .productApplicationTitle,
-  .productDosisTitle {
+  .productDosisTitle,
+  .advantagesTitle {
+    width: 100%;
+    max-width: 1366px;
+    margin: 24px auto;
     text-align: left;
-    margin-left: 15px;
   }
 
-  .productDosisTitle {
-    width: max-content;
+  .sectionRibbon {
+    padding: 28px;
   }
 
-  .listBenefitContainer {
+  .benefitsContainer,
+  .doseContainer,
+  .advantagesContainer {
     flex-direction: row;
     align-items: start;
-    border-radius: 8px;
-    justify-content: center;
   }
 
-  .listTitle {
+  .doseContainer,
+  .advantagesContainer {
+    gap: 48px;
+  }
+
+  .benefitElement,
+  .doseElement,
+  .vantageElement {
+    max-width: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
   }
 
-  .listDosis {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .benefitDescription {
-    text-align: center;
-  }
-
-  .brochureContent {
-    flex-direction: row;
-  }
-
-  .instructionsAndApplicationsContainer {
-    display: flex;
-    flex-direction: row;
-    /* padding: 0 24px; */
-  }
-
-  .ingredients,
-  .application {
-    width: 50%;
-  }
-
-  .listApplication {
-    margin: 0 !important;
-  }
-
-  .instructions,
-  .productChosen {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 8px;
-    padding: 12px 24px;
-  }
-
-  .benefitDescription {
-    max-width: 200px;
-  }
-
-  .listIngredient {
-    flex-direction: row;
-  }
-
-  .applicationDescription,
-  .ingredientDescription {
-    max-width: 500px;
-    text-align: left;
-  }
-
-  .productDosisTitle {
-    min-width: max-content;
-  }
-
-  .listDosisContainer,
-  .listAdvantagesContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 24px;
-    width: 100%;
-  }
-
-  .listDosis {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .vantage {
-    margin: auto;
+  .doseElement,
+  .vantageElement {
     max-width: 300px;
   }
 
-  .productDosisText {
+  .benefitDescription,
+  .applicationDescription,
+  .ingredientDescription,
+  .doseDescription {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .applicationDescription,
+  .ingredientDescription,
+  .vantageDescription {
     text-align: left;
   }
 
-  .fadeInLeft {
-    opacity: 0;
-    transform: translateX(-100px);
-    animation: fadeIn 2s ease forwards;
+  .instructionsAndApplicationsContainer {
+    flex-direction: row;
+    justify-content: center;
+    padding: 24px;
   }
 
-  .fadeInRight {
-    opacity: 0;
-    transform: translateX(100px);
-    animation: fadeIn 2s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+  .ingredientElement {
+    max-width: 400px;
+    font-size: 18px;
   }
 }

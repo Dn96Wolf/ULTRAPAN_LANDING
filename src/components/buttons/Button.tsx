@@ -61,6 +61,17 @@ export default function ButtonComponent({
         </button>
       )}
 
+      {colorPalette === "GRAY" && (
+        <button
+          type={type}
+          className={`${styles.button} ${styles.btnGray}`}
+          onClick={onAction}
+          disabled={disabled}
+        >
+          <p className={styles.buttonText}>{title}</p>
+        </button>
+      )}
+
       {colorPalette === "DISABLED" && (
         <button
           type={type}

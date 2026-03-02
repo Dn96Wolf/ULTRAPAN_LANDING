@@ -25,12 +25,16 @@ export default function CraftPage() {
       <div className={styles.screen}>
         <div className={styles.firstContent}>
           <div className={styles.mainOverlay}>
-            <h1 className={`${styles.mainTitle} text-color-white`}>
+            <h1
+              className={`${styles.mainTitle} ${styles.outlinedTextTitle} text-color-white`}
+            >
               {t("handCrafter.title").toLocaleUpperCase()}
             </h1>
-            <p className={`${styles.mainSubtitle} text-color-white`}>
+            <h6
+              className={`${styles.mainSubtitle} ${styles.outlinedText} text-color-white`}
+            >
               {t("handCrafter.subtitle")}
-            </p>
+            </h6>
           </div>
         </div>
       </div>

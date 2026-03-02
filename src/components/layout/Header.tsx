@@ -102,8 +102,9 @@ export default function Header() {
             return (
               <div key="nav-industries" className={styles.dropdown}>
                 <button
+                
                   type="button"
-                  className={styles.dropdownTrigger}
+                  className={`${styles.dropdownTrigger} ${styles.navItem}`}
                   aria-haspopup="menu"
                   aria-expanded={industriesOpen}
                   onClick={handleToggleIndustries}

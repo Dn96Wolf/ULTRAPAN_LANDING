@@ -25,12 +25,12 @@ export default function IndustrialPage() {
       <div className={styles.screen}>
         <div className={styles.firstContent}>
           <div className={styles.mainOverlay}>
-            <h1 className={`${styles.mainTitle} text-color-white`}>
+            <h1 className={`${styles.mainTitle} ${styles.outlinedTextTitle} text-color-white`}>
               {t("industrial.title")}
             </h1>
-            <p className={`${styles.mainSubtitle} text-color-white`}>
+            <h6 className={`${styles.mainSubtitle} ${styles.outlinedText} text-color-white`}>
               {t("industrial.subtitle")}
-            </p>
+            </h6>
           </div>
         </div>
       </div>

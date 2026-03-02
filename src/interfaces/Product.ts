@@ -11,6 +11,7 @@ export interface ProductDetailInterface {
   carouselImage: string;
   imagesRelated: { src: string; alt: string }[];
   textColor: string;
+  titleColor:string;
   benefits: {
     title: string;
     description: string;
@@ -47,4 +48,5 @@ export type ProductColorPalette =
   | "BROWN"
   | "MUSTARD"
   | "SOFTBROWN"
+  | "GRAY"
   | "DISABLED";

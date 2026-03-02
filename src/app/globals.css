@@ -3,12 +3,27 @@
   --foreground: #171717;
 }
 
+
+@font-face {
+  font-family: 'Impact';
+  src: url('/fonts/impact.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.impact {
+  font-family: 'Impact', sans-serif;
+}
+
+.bold{
+  font-weight: 800;
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --font-body: var(--font-nunito);
-    --font-heading: var(--font-montserrat);
   }
 }
 

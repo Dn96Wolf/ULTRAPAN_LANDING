@@ -1,8 +1,5 @@
 import { HomeSlide } from "@/interfaces/HomeSlides.interface";
-import {
-  ProductColorPalette,
-  ProductDetailInterface,
-} from "@/interfaces/Product";
+import { ProductDetailInterface } from "@/interfaces/Product";
 import { FAQSection } from "@/interfaces/Questions";
 
 export const EMAIL_CONTACT = "ventas@enziquim.com";
@@ -28,7 +25,6 @@ export const SOCIAL_MEDIA = [
 export const NAV_ITEMS = [
   { href: "/", labelKey: "nav.home" as const },
   { href: "#", labelKey: "nav.Industrias" as const },
-  // { href: "/historia", labelKey: "nav.history" as const },
   { href: "/contacto", labelKey: "nav.contact" as const },
   { href: "/FAQ", labelKey: "nav.fqa" as const },
 ];
@@ -80,7 +76,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     idProduct: 7,
     subtitle: "La formulación de",
     subtitle2:
-      "permite estandarizar la producción y reducir la estructura de costos de la receta tradicional, sin cambiar el proceso",
+      "Permite estandarizar la producción y reducir la estructura de costos de la receta tradicional, sin cambiar el proceso",
     backgroundImage: "/assets/images/ultrapan-g-portada.jpg",
     backgroundImageResponsive: "/assets/images/sobre-ultrapan-g-plus.webp",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
@@ -642,27 +638,27 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         src: "/assets/images/tortilla.png",
         alt: "Sobre",
       },
-       {
+      {
         src: "/assets/images/tortilla.png",
         alt: "Sobre",
       },
-       {
+      {
         src: "/assets/images/tortilla.png",
         alt: "Sobre",
       },
-       {
+      {
         src: "/assets/images/tortilla.png",
         alt: "Sobre",
       },
-       {
+      {
         src: "/assets/images/tortilla.png",
         alt: "Sobre",
       },
-       {
+      {
         src: "/assets/images/tortilla.png",
         alt: "Sobre",
       },
-  
+
       // {
       //   src: "/assets/images/ultrapan-tortilla.webp",
       //   alt: "main",

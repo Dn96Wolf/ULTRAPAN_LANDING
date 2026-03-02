@@ -1,4 +1,4 @@
-import { contactEmailProductTemplate } from "@/components/templates/ContactPRoductTemplate";
+import { contactEmailProductTemplate } from "@/components/templates/ContactProductTemplate";
 import { contactEmailTemplate } from "@/components/templates/ContactTemplate";
 import { ContactFormData } from "@/interfaces/ContactForm.interface";
 import { NextResponse } from "next/server";

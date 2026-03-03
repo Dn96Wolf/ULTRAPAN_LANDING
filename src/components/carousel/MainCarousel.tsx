@@ -19,7 +19,7 @@ type ImageCarouselProps = {
   intervalMs?: number;
 };
 
-const breakpoint = 640;
+const breakpoint = 768;
 
 export default function HomeCarousel({
   items,
@@ -70,9 +70,10 @@ export default function HomeCarousel({
               key={element.idProduct}
               className={` ${styles.frontPage}`}
               style={{
-                backgroundImage: `url(${!isMobile ? element.backgroundImage : element.backgroundImageResponsive})`,
+                backgroundImage: `url(${!isMobile ? element.backgroundImage : ""})`,
               }}
             >
+              {/* <div className={styles.overlayContainer}></div> */}
               <div className={styles.slideContent}>
                 <div className={styles.infoProductContainer}>
                   {element.subtitle !== "" && (
@@ -95,6 +96,15 @@ export default function HomeCarousel({
                     </p>
                   )}
                 </div>
+
+                {isMobile && (
+                  <div
+                    className={styles.mobileImageContainer}
+                    style={{
+                      backgroundImage: `url(${element.backgroundImageResponsive})`,
+                    }}
+                  ></div>
+                )}
 
                 <div className={styles.actionButtonContainers}>
                   {element.action && (

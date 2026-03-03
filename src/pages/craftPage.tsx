@@ -22,24 +22,19 @@ export default function CraftPage() {
 
   return (
     <section className={styles.mainPageLayout}>
-      <div className={styles.screen}>
+      <div className={styles.frontPage}>
         <div className={styles.firstContent}>
-          <div className={styles.mainOverlay}>
-            <h1
-              className={`${styles.mainTitle} ${styles.outlinedTextTitle} text-color-white`}
-            >
-              {t("handCrafter.title").toLocaleUpperCase()}
-            </h1>
-            <h6
-              className={`${styles.mainSubtitle} ${styles.outlinedText} text-color-white`}
-            >
-              {t("handCrafter.subtitle")}
-            </h6>
-          </div>
+          <h1 className={`${styles.mainTitle}`}>
+            {t("handCrafter.title").toLocaleUpperCase()}
+          </h1>
+          <span className={`${styles.mainSubtitle}`}>
+            {t("handCrafter.subtitle")}
+          </span>
         </div>
+        <div className={styles.blankRibbon}></div>
       </div>
 
-      <div className={styles.blankRibbon}></div>
+      {/* <div className={styles.blankRibbon}></div> */}
 
       <div className={styles.ribbonProducts}>
         <div className={styles.ribbonLayer1}></div>
@@ -48,7 +43,7 @@ export default function CraftPage() {
         </div>
       </div>
 
-      <div className={styles.blankRibbon}></div>
+      {/* <div className={styles.blankRibbon}></div> */}
 
       <div className={styles.secondContent}>
         <ProductCarousel

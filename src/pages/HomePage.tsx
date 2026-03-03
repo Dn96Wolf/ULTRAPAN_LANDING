@@ -49,10 +49,11 @@ export default function HomePage() {
 
           <div className={styles.craftOverlay}>
             <div className={styles.craftOverlayContent}>
-              <div>
-                <h2 className={styles.craftTitle}>Artesanal</h2>
+              <div className={styles.craftOverlayContainer}>
+                <p className={styles.craftSubtitle}>Descubre nuestra</p>
+                <h2 className={styles.craftTitle}>Línea artesanal</h2>
                 <p className={styles.craftSubtitle}>
-                  Mejorantes para panificación tradicional
+                   panificación tradicional
                 </p>
               </div>
             </div>
@@ -76,11 +77,13 @@ export default function HomePage() {
 
           <div className={styles.industrialOverlay}>
             <div className={styles.craftOverlayContent}>
-              <div>
-                <h2 className={styles.craftTitle}>Industrial</h2>
+              <div className={styles.craftOverlayContainer}>
+                <p className={styles.craftSubtitle}>Descubre nuestra</p>
+
+                <h2 className={styles.craftTitle}>Línea industrial</h2>
 
                 <p className={styles.craftSubtitle}>
-                  Mejorantes para producción y gran volumen
+                   producción y gran volumen
                 </p>
               </div>
             </div>

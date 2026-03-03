@@ -19,11 +19,11 @@ export default function HomePage() {
   const [isMobile, setIsMobile] = useState(false);
   const [active, setActive] = useState<number>(0);
 
-  function onHandlingClick(id: string) {
-    if (!id) return;
+ function onHandlingClick(id: string) {
+   if (!id) return;
 
-    return router.push(`/${id}`);
-  }
+   return router.push(`/${id}`);
+ }
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -78,7 +78,9 @@ export default function HomePage() {
                         </p>
                       )}
 
-                      <h1 className={`text-color-white ${styles.mainTitle}`}>
+                      <h1
+                        className={`text-color-white ${styles.mainTitle} impact`}
+                      >
                         {element.title}
                       </h1>
 
@@ -124,11 +126,12 @@ export default function HomePage() {
         )}
       </section>
 
-      <section className={styles.whiteSpace}></section>
+      {/* <section className={styles.whiteSpace}></section> */}
 
       <section className={styles.categoriesStyles}>
         <h2 className={`${styles.categoriesTitle}  text-center`}>
-          {t("main.solutions")}
+          {t("main.solutions")}{" "}
+          <span className="impact bold">{"ULTRAPAN"}</span>
         </h2>
       </section>
 
@@ -143,17 +146,17 @@ export default function HomePage() {
             className={styles.craftVideo}
           ></video>
 
-          <video
+          {/* <video
             src={"/assets/media/industrial.mp4"}
             autoPlay
             muted
             loop
             playsInline
             className={styles.craftVideo}
-          ></video>
+          ></video> */}
         </div>
 
-        <div className={styles.thirdLayer}>
+        {/* <div className={styles.thirdLayer}>
           <div
             className={styles.craftOverlay}
             onClick={() => onHandlingClick("artesanal")}
@@ -175,7 +178,7 @@ export default function HomePage() {
               </h2>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       <section className={styles.whiteSpace}></section>

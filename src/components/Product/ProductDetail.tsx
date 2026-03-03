@@ -10,6 +10,7 @@ import { t } from "@/i18n";
 import ContactForm from "../forms/ContactForm";
 import { useRouter } from "next/navigation";
 import ProductDetailCarouse from "../carousel/ProductDetailCarousel";
+import { NAME_PRODUCTS } from "@/utils/constants";
 
 export default function ProductDetail({
   item,
@@ -17,6 +18,23 @@ export default function ProductDetail({
   item: ProductDetailInterface;
 }) {
   const router = useRouter();
+
+  function highlightBrand(text: string): React.ReactNode[] {
+    const sortedProducts = NAME_PRODUCTS.sort((a, b) => b.length - a.length);
+
+    const regex = new RegExp(`(${sortedProducts.join("|")})`, "g");
+
+    return text.split(regex).map((part, index) => {
+      if (NAME_PRODUCTS.includes(part)) {
+        return (
+          <span key={index} className="impact">
+            {part}
+          </span>
+        );
+      }
+      return part;
+    });
+  }
 
   return (
     <div
@@ -34,7 +52,7 @@ export default function ProductDetail({
 
           <div className={styles.productData}>
             <h1
-              className={styles.productTitle}
+              className={`${styles.productTitle} impact`}
               style={{ color: item.textColor }}
             >
               {item.title.toUpperCase()}
@@ -50,7 +68,7 @@ export default function ProductDetail({
               className={styles.productDesktopDescription}
               style={{ color: item.textColor }}
             >
-              {item.description}
+              {highlightBrand(item.description)}
             </p>
 
             {item.description2 && (
@@ -81,7 +99,7 @@ export default function ProductDetail({
             className={styles.productDescription}
             style={{ color: item.textColor }}
           >
-            {item.description}
+            {highlightBrand(item.description)}
           </p>
 
           {item.description2 && (
@@ -95,13 +113,10 @@ export default function ProductDetail({
         </div>
       </div>
 
-      <div
-        className={styles.sectionContainer}
-        style={{ background: item.backgroundColor }}
-      >
+      <div className={styles.sectionContainer}>
         <h3
           className={`${styles.productBenefitsTitle}`}
-          style={{ color: item.textColor }}
+          style={{ color: item.titleColor }}
         >
           {t("product.benefits")}
         </h3>
@@ -148,7 +163,7 @@ export default function ProductDetail({
                   <ul className={styles.applicationItem}>
                     <li
                       className={styles.applicationDescription}
-                      style={{ color: item.titleColor }}
+                      style={{ color: "#000" }}
                     >
                       {application}
                     </li>
@@ -184,7 +199,7 @@ export default function ProductDetail({
 
               <p
                 className={styles.ingredientDescription}
-                style={{ color: item.titleColor }}
+                style={{ color: "#000" }}
               >
                 {item.ingredients}
               </p>

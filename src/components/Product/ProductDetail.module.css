@@ -108,6 +108,7 @@
 
 .sectionContainer {
   width: 100%;
+  padding: 48px 0;
 }
 
 .productBenefitsTitle,
@@ -116,10 +117,14 @@
 .productDosisTitle,
 .advantagesTitle {
   color: white;
-  margin-bottom: 16px;
   font-size: 32px;
   padding: 0 24px;
   text-align: center;
+}
+
+.applicationTitle,
+.ingredientTitle {
+  margin-bottom: 18px;
 }
 
 .productDosisTitle,
@@ -130,10 +135,9 @@
 .productBenefits,
 .instructionsAndApplicationsContainer {
   max-width: 1366px;
-
   width: 100%;
   margin: auto;
-  padding: 24px;
+  padding: 48px;
 }
 
 .sectionRibbon,
@@ -206,7 +210,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 24px;
 }
 
@@ -225,7 +229,6 @@
 
 .contactFormContent,
 .carouselContainer {
-  max-width: 1366px;
   width: 100%;
   margin: auto;
   padding: 24px;
@@ -236,11 +239,10 @@
   gap: 40px;
 }
 
-.contactFormContent{
+.contactFormContent {
   padding: 38px 24px;
   max-width: unset;
   background-color: var(--neutral-100);
-
 }
 
 .contactFormTitle {
@@ -260,8 +262,7 @@
 
   .productDesktopDescription {
     display: block;
-    margin: 24px auto;
-    text-align: left;
+    /* margin: 24px auto; */
   }
 
   .productData {
@@ -280,7 +281,6 @@
   }
 
   .productDesktopDescription {
-    text-align: left;
     font-size: 18px;
   }
 
@@ -300,6 +300,7 @@
     max-width: 1366px;
     margin: 24px auto;
     text-align: left;
+    word-break: break-all;
   }
 
   .sectionRibbon {
@@ -321,7 +322,7 @@
   .benefitElement,
   .doseElement,
   .vantageElement {
-    max-width: 180px;
+    max-width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -330,27 +331,27 @@
 
   .doseElement,
   .vantageElement {
-    max-width: 300px;
+    /* max-width: 300px; */
   }
 
   .benefitDescription,
   .applicationDescription,
   .ingredientDescription,
-  .doseDescription {
+  .doseDescription,
+  .vantageDescription {
     text-align: center;
     font-size: 18px;
   }
 
   .applicationDescription,
-  .ingredientDescription,
-  .vantageDescription {
+  .ingredientDescription {
     text-align: left;
   }
 
   .instructionsAndApplicationsContainer {
     flex-direction: row;
     justify-content: center;
-    padding: 24px;
+    padding: 48px 24px;
   }
 
   .ingredientElement {

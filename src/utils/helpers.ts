@@ -1,5 +1,6 @@
 import { PRODUCT_LIST } from "@/utils/constants";
 import { ProductDetailInterface } from "@/interfaces/Product";
+import React from 'react'
 
 export function createSlug(text: string) {
   return text
@@ -19,3 +20,5 @@ export function getProductBySlug(slug: string) {
       decodeURIComponent(slug),
   );
 }
+
+

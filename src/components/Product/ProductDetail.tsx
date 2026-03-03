@@ -42,7 +42,7 @@ export default function ProductDetail({
     >
       <div
         className={styles.main}
-        style={{ backgroundColor: item.backgroundColor }}
+        style={{ backgroundColor: item.backgroundColor, backgroundImage: item.image }}
       >
         <div className={styles.first}>
           <a className={styles.backButton} onClick={() => router.back()}>

@@ -55,7 +55,6 @@ export const HOME_SLIDES: HomeSlide[] = [
     subtitle2: "",
     backgroundImage: "/assets/images/linea-ultrapan.webp",
     backgroundImageResponsive: "/assets/images/linea-ultrapan-responsive.webp",
-
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: true,
@@ -138,7 +137,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "ULTRAPAN 10,000 es un mejorante diseñado para brindar una mejora sustancial en volumen, resiliencia y rendimiento en pan blanco tipo salado. Su combinación de enzimas y acondicionadores permite mantener la calidad del pan aún con variaciones en el tipo de harina o condiciones de proceso.",
     carouselImage: "/assets/images/ultrapan-10000.webp",
     mainImage: "/assets/images/ultrapan-mil-sobre.webp",
-    image: "",
+    image: "/assets/images/ultrapan-c-fondo.jpg",
     imagesRelated: [
       {
         src: "/assets/images/ultrapan-mil-sobre.webp",
@@ -775,15 +774,47 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultrapan C+ es un mejorante panario libre de bromato con una formulación altamente concentrada que mejora la tolerancia de la masa durante el amasado y fermentación, además de estandarizar el volumen y la textura del pan. Su acción está dirigida a procesos artesanales que requieren control sin modificar el proceso base.",
     carouselImage: "/assets/images/sobre-ultrapan-c-plus.webp",
     mainImage: "/assets/images/ultrapan-c-sobre.webp",
-    image: "",
+    image: "/assets/images/ultrapan-c-fondo.jpg",
     imagesRelated: [
       {
-        src: "/assets/images/sobre-ultrapan-c-plus.webp",
+        src: "/assets/images/ultrapan-c-galeria-1.jpg",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/ultrapan-c-sobre.webp",
-        alt: "main",
+        src: "/assets/images/ultrapan-c-galeria-2.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-3.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-4.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-5.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-6.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-7.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-8.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-9.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-10.jpg",
+        alt: "Sobre",
       },
     ],
 

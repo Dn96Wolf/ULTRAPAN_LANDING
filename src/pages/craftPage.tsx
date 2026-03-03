@@ -6,6 +6,7 @@ import { PRODUCT_LIST } from "@/utils/constants";
 import { useRouter } from "next/navigation";
 import { ProductDetailInterface } from "@/interfaces/Product";
 import { t } from "@/i18n";
+import ButtonComponent from "@/components/buttons/Button";
 
 const productos = PRODUCT_LIST;
 
@@ -20,10 +21,14 @@ export default function CraftPage() {
     );
   }
 
+  function onRouteContact(element: string) {
+    return router.push(`/${element}`);
+  }
+
   return (
     <section className={styles.mainPageLayout}>
       <div className={styles.frontPage}>
-        <div className={styles.firstContent}>
+        <div className={styles.overlayContainer}>
           <h1 className={`${styles.mainTitle}`}>
             {t("handCrafter.title").toLocaleUpperCase()}
           </h1>
@@ -31,19 +36,12 @@ export default function CraftPage() {
             {t("handCrafter.subtitle")}
           </span>
         </div>
-        <div className={styles.blankRibbon}></div>
+        <div className={styles.separator}></div>
       </div>
 
-      {/* <div className={styles.blankRibbon}></div> */}
-
-      <div className={styles.ribbonProducts}>
-        <div className={styles.ribbonLayer1}></div>
-        <div className={styles.ribbonLayer2}>
-          <h2 className={styles.titleRibbon}>{t("craftmaker.listPorduct")}</h2>
-        </div>
-      </div>
-
-      {/* <div className={styles.blankRibbon}></div> */}
+      <h2 className={styles.carouselTitle}>
+        Descubre la línea de mejorantes de panificación artesanal
+      </h2>
 
       <div className={styles.secondContent}>
         <ProductCarousel
@@ -56,6 +54,29 @@ export default function CraftPage() {
           }
         />
       </div>
+
+      <div className={styles.contactSpace}>
+        <h2 className={styles.contactTitle}>
+          ¿Tienes dudas sobre qué mejorante es ideal para tu proceso?
+        </h2>
+
+        <div className={styles.contactContent}>
+          <p className={styles.contactSubtitle}>
+            Deja que nuestros asesores comerciales se acerquen contigo para
+            brindarte atención personalizada
+          </p>
+
+          <div className={styles.btnContent}>
+            <ButtonComponent
+              title="Solicitar información"
+              colorPalette="SOFTBLUE"
+              onAction={() => onRouteContact("contacto")}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.blankRibbon}></div>
     </section>
   );
 }

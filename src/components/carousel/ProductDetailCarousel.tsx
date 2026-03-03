@@ -19,9 +19,7 @@ type ImageCarouselProps = {
   intervalMs?: number;
 };
 
-export default function ProductDetailCarouse({
-  images,
-}: ImageCarouselProps) {
+export default function ProductDetailCarouse({ images }: ImageCarouselProps) {
   const swiperReference = useRef<any>(null);
 
   if (!images?.length) return null;
@@ -41,13 +39,23 @@ export default function ProductDetailCarouse({
             slidesPerView: 2,
             spaceBetween: 40,
           },
+
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+
+          1366: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
           1444: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 20,
           },
           1920: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 20,
           },
         }}
         loop

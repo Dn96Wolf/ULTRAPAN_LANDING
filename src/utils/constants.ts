@@ -54,7 +54,8 @@ export const HOME_SLIDES: HomeSlide[] = [
     subtitle: "Conoce la linea completa de mejorantes para panificación",
     subtitle2: "",
     backgroundImage: "/assets/images/ultrapan-line.jpg",
-    backgroundImageResponsive: "/assets/images/main-responsive.webp",
+    backgroundImageResponsive: "/assets/images/responsiveFront.png",
+
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: true,
@@ -73,7 +74,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     subtitle2:
       "Nuestro mejorante ultra concentrado. Obten una excelente relación costo beneficio",
     backgroundImage: "/assets/images/ultrapan-c-portada.jpg",
-    backgroundImageResponsive: "/assets/images/sobre-ultrapan-c-plus.webp",
+    backgroundImageResponsive: "/assets/images/responsiveFront.png",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: false,
@@ -91,7 +92,8 @@ export const HOME_SLIDES: HomeSlide[] = [
     subtitle2:
       "Permite estandarizar la producción y reducir la estructura de costos de la receta tradicional, sin cambiar el proceso",
     backgroundImage: "/assets/images/ultrapan-g-portada.jpg",
-    backgroundImageResponsive: "/assets/images/sobre-ultrapan-g-plus.webp",
+    backgroundImageResponsive: "/assets/images/responsiveFront.png",
+
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: false,
@@ -110,7 +112,8 @@ export const HOME_SLIDES: HomeSlide[] = [
     subtitle2:
       "El mejorante desarrollado para mantener la suavidad, humedad y frescura de la miga durante periodos largos",
     backgroundImage: "/assets/images/ultrapan-dulce-plus-portada.jpg",
-    backgroundImageResponsive: "/assets/images/sobre-dulce-plus.webp",
+    backgroundImageResponsive: "/assets/images/responsiveFront.png",
+
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: false,

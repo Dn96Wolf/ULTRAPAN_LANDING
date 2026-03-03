@@ -5,6 +5,11 @@
   flex-direction: row;
 }
 
+.principal {
+  width: 100vw;
+  height: 100vh;
+}
+
 .firstScreen,
 .secondScreen {
   width: 100vw;
@@ -26,145 +31,51 @@
   background-color: white;
 }
 
-.categoriesStyles {
+.categoriesStyles,
+.carouselContainer {
   width: 100vw;
-  height: 200px;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* background-color: rgba(0, 0, 0, 0.799); */
-  background-position: top center;
-}
-
-.categoriesTitle {
-  font-size: 28px;
-  color: var(--primary-600);
-  text-align: center;
-}
-
-.firstLayer {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-}
-
-.craftLayer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  background-position: center bottom;
-  background-size: 120% 45%;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  transition: opacity var(--fade-ms, 1000ms) ease;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.thirdLayer {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  z-index: 3;
-}
-
-.craftContent {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 2;
-}
-
-.mainTitleContainer {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 3;
-}
-
-.mainTitleRibbon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 55%;
   padding: 24px;
-  gap: 16px;
-}
-
-.bg-brown-overlay {
-  background-color: var(--primary-600);
-}
-
-.bg-neutral-overlay {
-  background-color: var(--color-neutral-translucid) !important;
-}
-
-.mainTitle {
-  font-size: 65px;
-  margin-bottom: 8px;
-  animation: slideInLeft 2s ease-out both;
-}
-
-.mainSubtitle,
-.mainSubtitle2 {
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 12px;
-  line-height: normal;
-  animation: slideInLeft 2s ease-out both;
-
-  /* animation: slideInBottom 2s ease-out both; */
-}
-
-.mainSubtitle2 {
-  margin-bottom: 0;
-  text-align: center;
-  margin-bottom: unset;
-}
-
-.actionButtonContainers {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  background-position: top center;
+  background-color: var(--neutral-100);
 }
 
-.buttonStyle {
-  width: 300px;
-  animation: slideInBottom 2s ease-out both;
+.carouselContainer {
+  background-color: white;
 }
 
-.presentation {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 2;
-}
-
-.titlePresentation {
-  width: max-content;
-  height: max-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
+.categoriesTitle,
+.carouselTitle {
+  font-size: 24px;
+  text-align: center;
+  color: var(--blue-500);
 }
 
 /* SECCION DE CATEGORIAS */
+
+.industriesSection {
+  width: 100vw;
+  height: 100vh;
+  padding: 24px 12px;
+  background-color: var(--neutral-100);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.craftContainer,
+.industrialContainer {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px 0px rgba(88, 57, 19, 0.5);
+  color: white;
+}
 
 .industrialSection,
 .craftSection {
@@ -181,180 +92,144 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
 }
 
-.industrialOverlay,
-.craftOverlay {
+.craftOverlay,
+.industrialOverlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.192);
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-image: linear-gradient(
+    228deg,
+    rgba(97, 57, 36, 1) 0%,
+    rgba(102, 57, 36, 0.73) 20%,
+    rgba(102, 57, 36, 0.43) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
-  transition: all ease-in-out 0.15s;
 }
 
-.industrialOverlay:hover,
-.craftOverlay:hover {
-  transition: all ease-in-out 0.15s;
-  transform: scale(1.01);
+.industrialOverlay {
+  background-image: linear-gradient(
+    50deg,
+    rgba(97, 57, 36, 1) 0%,
+    rgba(102, 57, 36, 0.73) 20%,
+    rgba(102, 57, 36, 0.43) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
-.industrialOverlay:hover {
-  background-color: var(--color-neutral-translucid);
-}
-
-.craftOverlay:hover {
-  background-color: var(--color-primary-translucid);
-}
-
-.industrialText,
-.craftText {
-  padding: 12px 24px;
-  border-radius: 40px;
+.craftOverlayContent {
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
 }
 
-.industrialText {
-  background-color: var(--neutral-600);
+.craftTitle,
+.craftSubtitle {
+  font-size: 32px;
+  text-align: center;
+  max-width: 220px;
+  /* color: var(--neutral-200); */
 }
 
-.craftText {
-  background-color: var(--primary-600);
+.craftSubtitle {
+  font-size: 18px;
+
+  /* margin-bottom: 32px; */
 }
 
-.industrialText h2,
-.craftText h2 {
-  font-size: 14px;
+.craftButton,
+.industrialButton {
+  width: max-content;
+  height: 45px;
+  background-color: var(--primary-500);
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 12px;
 }
 
-.craftText span,
-.industrialText span {
-  font-size: 10px;
-}
-
-.industrialText:hover {
-  background-color: var(--neutral-400);
-}
-
-.craftText:hover {
+.craftButton:hover {
   background-color: var(--primary-400);
 }
 
-.subtitle {
-  color: var(--color-text);
-  font-size: 14;
-  line-height: 1.5;
-  text-align: center;
+.industrialButton {
+  background-color: var(--neutral-200);
+  color: var(--color-primary);
 }
 
-.scrollBtn {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto;
+.industrialButton:hover {
+  background-color: var(--neutral-100);
 }
 
 @media (min-width: 640px) {
-  .firstScreen {
-    max-height: 766px;
-  }
-  .firstLayer,
-  .thirdLayer {
-    display: flex;
-    flex-direction: row;
+  .categoriesStyles,
+  .carouselContainer {
+    padding: 48px 48px 0 48px;
+    height: auto;
   }
 
-  .bg-brown-overlay {
-    background-color: transparent !important;
+  .categoriesTitle,
+  .carouselTitle {
+    font-size: 48px;
+    max-width: 1020px;
+    text-align: center;
+    margin: auto;
   }
 
-  .craftLayer {
-    background-position: center;
-    background-size: cover;
+  .industriesSection {
+    gap: 48px;
+    flex-direction: column;
+    padding: 48px;
+    height: max-content;
+  }
+
+  .craftContainer,
+  .industrialContainer {
+    height: 500px;
+    max-width: 1366px;
+    margin: auto;
+  }
+
+  .craftOverlay:hover,
+  .industrialOverlay:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.04);
+    transition: all 0.2s ease-in-out;
+    color: var(--blue-500);
+  }
+
+  .ultrapanSize {
+    font-size: 52px;
+  }
+
+  .craftTitle {
+    font-size: 48px;
+    text-align: center;
+    max-width: unset;
+  }
+
+  .craftSubtitle {
+    font-size: 24px;
+    max-width: max-content;
   }
 
   .craftVideo {
-    width: 50%;
-    /* width: 50%; */
-  }
-
-  .mainTitleContainer {
-    align-items: flex-start;
-    height: 100%;
-    position: relative;
-    padding: 48px;
-    /* padding: 0 0 0 48px; */
-  }
-
-  .mainTitleRibbon {
-    width: max-content;
-    height: 100%;
-    /* background-color: var(--color-primary-translucid); */
-  }
-
-  .mainTitle {
-    font-size: 120px;
-    animation: slideInLeft 2s ease-out both;
-  }
-
-  .mainSubtitle,
-  .mainSubtitle2 {
-    text-align: left;
-    font-size: 24px;
-    max-width: 450px;
-    font-family: var(--font-nunito);
-    animation: slideInLeft 2s ease-out both;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-
-  .mainSubtitle2 {
-    margin-bottom: 0;
-    max-width: 400px;
-  }
-
-  .categoriesTitle {
-    font-size: 40px;
-    max-width: 1120px;
-  }
-
-  .industrialSection {
-    width: 50%;
-    height: 100%;
-    background-image: url("/assets/images/panaderiaIndustrial.png");
-    background-size: cover;
-    background-position: center;
-  }
-
-  .craftSection {
-    width: 50%;
-    height: 100%;
-    background-image: url("/assets/images/panaderia-artesanal.webp");
-    background-position: right;
-  }
-
-  .industrialText,
-  .craftText {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 24px 50px;
-    margin-bottom: 40px;
-  }
-
-  .industrialText h2,
-  .craftText h2 {
-    font-size: 18px;
-  }
-
-  .industrialText p,
-  .craftText p {
-    font-size: 12px;
-  }
-
-  .carouselWrap {
-    overflow: hidden;
+    width: 100%;
   }
 }
 

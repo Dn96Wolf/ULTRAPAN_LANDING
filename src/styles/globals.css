@@ -23,7 +23,7 @@ body {
   color: var(--color-text);
   line-height: 1.5;
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-roboto);
 
 }
 
@@ -199,5 +199,5 @@ main {
 
 .impact {
   font-family: var(--font-impact) !important; 
-  letter-spacing: 2.2px;
+  letter-spacing: 3px;
 }

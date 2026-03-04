@@ -4,21 +4,7 @@ import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-import { Nunito_Sans, Montserrat, Roboto } from "next/font/google";
-
-const nunito = Nunito_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-  variable: "--font-nunito",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  display: "swap",
-  variable: "--font-montserrat",
-});
+import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
   subsets: ["latin"],

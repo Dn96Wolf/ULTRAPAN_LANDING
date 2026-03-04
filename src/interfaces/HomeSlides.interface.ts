@@ -3,7 +3,7 @@ import { ProductColorPalette } from "./Product";
 export interface HomeSlide {
   idProduct: number;
   title: string;
-  specialTitle?:string;
+  specialTitle?: string;
   subtitle: string;
   subtitle2: string;
   backgroundImage: string;
@@ -16,5 +16,6 @@ export interface HomeSlide {
   primaryButtonText: string;
   secondButtonText: string;
   primaryRoute: string;
-  secondRoute:string;
+  secondRoute: string;
+  backgroundColor: string;
 }

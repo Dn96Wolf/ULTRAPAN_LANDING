@@ -3,9 +3,7 @@
   --foreground: #171717;
 }
 
-.impact {
-  font-family: var(--font-impact);
-}
+
 
 .bold {
   font-weight: 800;
@@ -29,6 +27,7 @@ body {
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: normal;
 }
 
 * {

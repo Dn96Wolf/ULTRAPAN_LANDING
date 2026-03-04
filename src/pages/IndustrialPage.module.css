@@ -1,57 +1,80 @@
 .mainPageLayout {
   width: 100vw;
-  height: 100%;
 }
 
-.screen {
-  width: 100vw;
-  height: 100vh;
+.frontPage {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  background-image: url("/assets/images/mesaIndustrial.png");
+  background-position: center left;
+}
+
+.overlayContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 90px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  background-image: linear-gradient(
+    50deg,
+    rgb(62, 56, 53) 0%,
+    rgba(53, 46, 43, 0.73) 20%,
+    rgba(101, 95, 93, 0.43) 50%,
+    rgba(135, 130, 130, 0) 100%
+  );
+  z-index: 1;
+}
+
+.separator {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  border-top-right-radius: 32px;
+  border-top-left-radius: 32px;
+  background-color: white;
+  z-index: 2;
 }
 
 .firstContent {
   width: 100%;
   height: 100%;
-  position: relative;
-  background-image: url("/assets/images/panaderiaIndustrial.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 60%;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.mainTitleContent {
-  width: 100%;
-  height: 100%;
-}
-
-.mainOverlay {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(65, 34, 5, 0.327);
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
 }
 
 .mainTitle {
-  font-size: 60px;
-  margin: 0 auto;
+  width: 100%;
+  font-size: 28px;
+  color: white;
+  font-size: 48px;
+  margin-bottom: 8px;
   text-align: center;
-  margin-bottom: 12px;
-  animation: slideInLeft 2s ease-out both;
 }
 
 .mainSubtitle {
   font-size: 28px;
+  color: white;
   text-align: center;
-  animation: slideInBottom 2s ease-out both;
+  width: 100%;
+  display: none;
+}
+
+.carouselTitleContact{
+  width: 100%;
+  height: 100%;
+  padding: 0 24px;
+}
+
+.carouselTitle {
+  text-align: center;
+  font-size: 32px;
+  color: var(--blue-600);
+  text-wrap: balance;
 }
 
 .secondContent {
@@ -62,8 +85,8 @@
   position: relative;
   width: 100%;
   height: 300px;
-  background-image: url("/assets/images/cintillo-industrial.png");
-  background-position: center;
+  background-image: url("/assets/images/cintillo-artesanal.png");
+  background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 24px;
@@ -75,7 +98,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(212, 210, 194, 0.532);
+  background-color: rgba(222, 214, 101, 0.496);
   z-index: 1;
 }
 
@@ -95,73 +118,90 @@
 .titleRibbon {
   font-size: 28px;
   text-align: center;
-  color: var(--neutral-700);
+  color: var(--color-primary);
 }
 
 .blankRibbon {
-  width: 100vw;
-  height: 150px;
+  width: 100%;
+  height: 300px;
+  background-image: url("/assets/images/panaderiaIndustrial.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
 }
 
-.outlinedTextTitle {
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--primary-700);
-  -webkit-text-fill-color: white;
-  text-stroke: 1px black;
-  text-fill-color: white;
+.contactSpace {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  padding: 24px 12px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
 }
-.outlinedText {
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--primary-700);
-  -webkit-text-fill-color: white;
 
-  text-stroke: 1px black;
-  text-fill-color: white;
+.contactTitle {
+  font-size: 32px;
+  text-align: center;
+  color: var(--blue-500);
+  font-weight: 600;
+}
+
+.contactSubtitle {
+  font-size: 16px;
+  word-wrap: balance;
+  /* color: var(--blue-500); */
+}
+
+.contactContent {
+  text-align: center;
+}
+
+.btnContent {
+  max-width: 300px;
+  margin: auto;
+  margin-top: 24px;
 }
 
 @media (min-width: 640px) {
-  .screen {
-    max-height: 766px;
-  }
-
-  .mainOverlay {
-    justify-content: flex-end;
-    align-items: center;
+  .overlayContainer {
     padding: 48px;
   }
 
   .mainTitle {
     width: 100%;
-    font-size: 80px;
+    /* font-size: 80px; */
+    text-align: left;
   }
-
   .mainSubtitle {
-    font-size: 28px;
-    text-align: center;
-    font-weight: 800;
-    max-width: 700px;
+    font-size: 20px;
+    text-align: left;
+    max-width: 450px;
+    display: block;
   }
 
-  .firstContent {
-    background-size: cover;
+  .separator {
+    height: 30px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    background-color: white;
   }
 
-  .ribbonProducts {
-    height: 400px;
-    padding: 24px;
+  .carouselTitle {
+    font-size: 60px;
+    display: none;
   }
 
-  .titleRibbon {
-    width: 80%;
-    margin: auto;
+  .contactTitle{
     font-size: 48px;
+    max-width: 1116px;
   }
 
-  .outlinedTextTitle {
-    -webkit-text-stroke-width: 4px;
-  }
-  .outlinedText {
-    -webkit-text-stroke-width: 2px;
+   .contactSubtitle {
+    font-size: 26px;
+    max-width: 910px;
   }
 }
 
@@ -169,7 +209,7 @@
 
 @keyframes slideInLeft {
   from {
-    transform: translateX(1000px);
+    transform: translateX(-1000px);
     opacity: 0;
   }
   to {

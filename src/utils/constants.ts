@@ -34,23 +34,37 @@ export const INDUSTRIAS_SUBMENU = [
   { href: "/industrial", label: "Industrial" },
 ];
 
+export const NAME_PRODUCTS = [
+  "Ultrapan",
+  "Ultrapan 10,000",
+  "Ultrapan Emulsoft Extender",
+  "Ultrapan Emulsoft Plus",
+  "Ultrapan Congelado",
+  "Ultra Mill Tortilla M1",
+  "Ultrapan C+",
+  "Ultrapan G+",
+  "Ultrapan Dulce Plus",
+  "Ultrapan Emulsoft H",
+];
+
 export const HOME_SLIDES: HomeSlide[] = [
   {
     title: "ULTRAPAN",
     idProduct: 0,
     subtitle: "Conoce la linea completa de mejorantes para panificación",
     subtitle2: "",
-    backgroundImage: "/assets/images/ultrapan-line.jpg",
-    backgroundImageResponsive: "/assets/images/main-responsive.webp",
+    backgroundImage: "/assets/images/linea-ultrapan.webp",
+    backgroundImageResponsive: "/assets/images/productos.png",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: true,
-    colorPalette: "BROWN",
+    colorPalette: "SOFTBLUE",
     secondColorPalette: "GRAY",
     primaryButtonText: "Línea artesanal",
     secondButtonText: "Línea Industrial",
     primaryRoute: "artesanal",
     secondRoute: "industrial",
+    backgroundColor: "#613924",
   },
 
   {
@@ -58,9 +72,9 @@ export const HOME_SLIDES: HomeSlide[] = [
     idProduct: 6,
     subtitle: "Estandariza tu producción con",
     subtitle2:
-      "Nuestro mejorante ultra concentrado. Obten una excelente relación costo beneficio",
-    backgroundImage: "/assets/images/ultrapan-c-portada.jpg",
-    backgroundImageResponsive: "/assets/images/sobre-ultrapan-c-plus.webp",
+      "Nuestro mejorante ultra concentrado. Obten una excelente relación costo beneficio.",
+    backgroundImage: "/assets/images/ultrapan-c-portada.webp",
+    backgroundImageResponsive: "/assets/images/ultrapan-c-sobre.webp",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: false,
@@ -70,15 +84,16 @@ export const HOME_SLIDES: HomeSlide[] = [
     secondButtonText: "",
     primaryRoute: "productos/ultrapan-c-plus",
     secondRoute: "",
+    backgroundColor: "#0c4a5a",
   },
   {
     title: "ULTRAPAN G+",
     idProduct: 7,
     subtitle: "La formulación de",
     subtitle2:
-      "Permite estandarizar la producción y reducir la estructura de costos de la receta tradicional, sin cambiar el proceso",
-    backgroundImage: "/assets/images/ultrapan-g-portada.jpg",
-    backgroundImageResponsive: "/assets/images/sobre-ultrapan-g-plus.webp",
+      "Permite estandarizar la producción y reducir la estructura de costos de la receta tradicional, sin cambiar el proceso.",
+    backgroundImage: "/assets/images/ultrapan-g-portada.webp",
+    backgroundImageResponsive: "/assets/images/ultrapan-g-sobre.webp",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: false,
@@ -88,6 +103,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     secondButtonText: "",
     primaryRoute: "productos/ultrapan-g-plus",
     secondRoute: "",
+    backgroundColor: "#a0a468",
   },
   {
     title: "DULCE PLUS",
@@ -95,18 +111,19 @@ export const HOME_SLIDES: HomeSlide[] = [
     subtitle: "Reduce hasta 2.5kg de huevo por saco de harina con",
     specialTitle: "ULTRAPAN",
     subtitle2:
-      "El mejorante desarrollado para mantener la suavidad, humedad y frescura de la miga durante periodos largos",
-    backgroundImage: "/assets/images/ultrapan-dulce-plus-portada.jpg",
-    backgroundImageResponsive: "/assets/images/sobre-dulce-plus.webp",
+      "El mejorante desarrollado para mantener la suavidad, humedad y frescura de la miga durante periodos largos.",
+    backgroundImage: "/assets/images/ultrapan-dulce-portada.webp",
+    backgroundImageResponsive: "/assets/images/ultrapandulceplus.webp",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: false,
-    colorPalette: "BLUE",
+    colorPalette: "BROWN",
     secondColorPalette: "GRAY",
     primaryButtonText: "Me interesa",
     secondButtonText: "",
     primaryRoute: "productos/ultrapan-dulce-plus",
     secondRoute: "",
+    backgroundColor: "#183270",
   },
 ];
 
@@ -118,10 +135,10 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     subtitle: "Resiliencia máxima para líneas de alto volumen.",
     category: "INDUSTRIAL",
     description:
-      "Ultapan 10,000 es un mejorante diseñado para brindar una mejora sustancial en volumen, resiliencia y rendimiento en pan blanco tipo salado. Su combinanción de enzimas y acondicionadores permite mantener la calidad el pan aún con variaciones en el tipo de harina o condiciones de proceso",
+      "ULTRAPAN 10,000 es un mejorante diseñado para brindar una mejora sustancial en volumen, resiliencia y rendimiento en pan blanco tipo salado. Su combinación de enzimas y acondicionadores permite mantener la calidad del pan aún con variaciones en el tipo de harina o condiciones de proceso.",
     carouselImage: "/assets/images/ultrapan-10000.webp",
     mainImage: "/assets/images/ultrapan-mil-sobre.webp",
-    image: "",
+    image: "/assets/images/ultrapan-diez-fondo.jpg",
     imagesRelated: [
       {
         src: "/assets/images/ultrapan-mil-sobre.webp",
@@ -159,15 +176,13 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       {
         title: "",
         icon: "/icons/bolillos.svg",
-
-        description: "Mayor volumen y rendimeinto por bulto",
+        description: "Mayor volumen y rendimiento por bulto",
         bgColor: "#44bdcb",
       },
       {
         title: "",
         icon: "/icons/reduce.svg",
-
-        description: "Mejora la eslasticidad de la masa",
+        description: "Mejora la elasticidad de la masa",
         bgColor: "#44bdcb",
       },
       {
@@ -179,14 +194,14 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       },
     ],
     applications: [
-      "Pan frances artesanal e industrial",
-      "Pan blanco en lineas de gran volumen",
+      "Pan francés artesanal e industrial",
+      "Pan blanco en líneas de gran volumen",
       "Procesos con fermentación retardada o controlada",
     ],
     instructions: [
       {
         title: "",
-        description: "132 g por  cada 50 kg de harina (2 bultos)",
+        description: "132 g por cada 50 kg de harina (2 bultos)",
         bgColor: "#8c633d",
         icon: "/icons/bascula.svg",
       },
@@ -202,7 +217,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       bgColor: "#8c633d",
     },
     ingredients:
-      "Enzima α amilaxa, xilanasa, fosfolipasa, ácido ascórbico y mezcla de emulsificantes",
+      "Enzima ɑ amilasa, xilanasa, fosfolipasa, ácido ascórbico y mezcla de emulsificantes",
     advantages: [
       {
         title: "",
@@ -237,10 +252,10 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     subtitle: "Larga vida, Frescura hasta por 90 días.",
     category: "INDUSTRIAL",
     description:
-      "Ultrapan Emulsoft Extender e sun mejorante dearrollado para matener la suavidad y frescura de la miga durante periodos prolongados. Su formula especializada ayuda a retardar la retrogradación del almidón, princpal respnsable del endurecimeinto del pan, lo que permite extender significativamente la vida útil comercial del producto terminado sin comprometer su textura ni sabor.",
+      "Ultrapan Emulsoft Extender es un mejorante desarrollado para mantener la suavidad, humedad y frescura de la miga durante periodos prolongados. Su fórmula especializada ayuda a retardar la retrogradación del almidón, principal responsable del endurecimiento del pan, lo que permite extender significativamente la vida útil comercial del producto terminado sin comprometer su textura ni sabor",
     carouselImage: "/assets/images/emulsoft-extender.webp",
     mainImage: "/assets/images/ultrapan-emulsoft-extender.webp",
-    image: "",
+    image: "/assets/images/ultrapan-diez-fondo.jpg",
     imagesRelated: [
       {
         src: "/assets/images/emulsoft-extender.webp",
@@ -276,15 +291,14 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       {
         title: "",
         icon: "/icons/recienHorneado.svg",
-
-        description: "Conserva la suavidad de la migra hasta por 90 días*",
+        description: "Conserva la suavidad de la miga hasta por 90 días",
         disclaimer: "*Resultados dependen de proceso y almacenamiento",
         bgColor: "#402619",
       },
       {
         title: "",
         icon: "/icons/flechasAbajo.svg",
-        description: "Reduce la retrogradación del almidon",
+        description: "Reduce la retrogradación del almidón",
         bgColor: "#502e14",
       },
       {
@@ -297,7 +311,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         title: "",
         icon: "/icons/prolonga.svg",
 
-        description: "Mayor vida de anaquel sin afectar sabor ni textura.",
+        description: "Mayor vida de anaquel sin afectar sabor ni textura",
         bgColor: "#44bdcb",
       },
     ],
@@ -305,7 +319,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     instructions: [
       {
         title: "",
-        description: "0.5% a 1% sobre el peso de harina",
+        description: "0.5% a 1% sobre el peso de la harina",
         bgColor: "#8c633d",
         icon: "/icons/bascula.svg",
       },
@@ -321,12 +335,12 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       bgColor: "#8c633d",
     },
     ingredients:
-      "Enzima α amilaxa, xilanasa, fosfolipasa, ácido ascórbico y mezcla de emulsificantes",
+      "Enzima ɑ amilasa, xilanasa, fosfolipasa, amilasa maltogénica y mezcla de emulsificantes.",
     advantages: [
       {
         title: "",
         icon: "/icons/reduceDevoluciones.svg",
-        description: "Reduce devoluciones por pérdida de frescura.",
+        description: "Reduce devoluciones por pérdida de frescura",
         bgColor: "#372015",
       },
       {
@@ -338,7 +352,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       {
         title: "",
         icon: "/icons/optimizarProcesos.svg",
-        description: "Optimiza proceso de distribución nacional o exportación",
+        description: "Optimiza procesos de distribución nacional o exportación",
         bgColor: "#372015",
       },
     ],
@@ -349,7 +363,6 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     textColor: "#fff",
     titleColor: "#402619",
   },
-
   {
     id: 3,
     title: "Ultrapan Emulsoft Plus",
@@ -357,10 +370,10 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     subtitle: "Suavidad premium para tu pan dulce.",
     category: "INDUSTRIAL",
     description:
-      "Ultrapan Emulsoft Plus es un mejorante para masas dulces que combina emulsificantes con enzimas funcionales para mejorar la suavidad, frescura y resiliencia del pan. Ideal para procesos artesanales e industriales donde se busca una esperiencia sensorial superior sin cambiar el proceso tradicional.",
+      "Ultrapan Emulsoft Plus es un mejorante para masas dulces que combina emulsificantes con enzimas funcionales para mejorar la suavidad, frescura y resiliencia del pan. Ideal para procesos artesanales e industriales donde se busca una experiencia sensorial superior sin cambiar el proceso tradicional.",
     carouselImage: "/assets/images/emulsoftpuls.png",
     mainImage: "/assets/images/ultrapan-emulsoft-plus.webp",
-    image: "",
+    image: "/assets/images/ultrapan-emulsoft-fondo.jpg",
     imagesRelated: [
       {
         src: "/assets/images/emulsoftpuls.png",
@@ -422,7 +435,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       },
     ],
     applications: [
-      "Bolleria artesanal (conchas, roles, pan de leche)",
+      "Bollería artesanal (conchas, roles, pan de leche)",
       "Pan de caja tradicional o tipo brioche",
       "Procesos con o sin premezcla industrial",
     ],
@@ -445,12 +458,12 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       bgColor: "#8c633d",
     },
     ingredients:
-      "Enzima α amilasa, xilanasa, fosfolipasa y mezcla de emulsificantes.",
+      "Enzima ɑ amilasa, xilanasa, fosfolipasa y mezcla de emulsificantes.",
     advantages: [
       {
         title: "",
         icon: "/icons/facilIncorporación.svg",
-        description: "Fácil de incorporación a cualquier receta",
+        description: "Fácil incorporación a cualquier receta",
         bgColor: "#74522b",
       },
       {
@@ -467,7 +480,6 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         bgColor: "",
       },
     ],
-
     colorPalette: "BROWN",
     keywords: [],
     backgroundColor: "#e3c4a7",
@@ -481,10 +493,10 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     subtitle: "Estabilidad total para la cadena de frío.",
     category: "INDUSTRIAL",
     description:
-      "Ultrapan congelado es un mejorante funcional formulado para garantizar estabiliad, frescura y estructura en productos de panificación sometidos a procesos de congelación. Su mezcla de enzimas y emulsificantes permite conservar la calidad del pan durante el almacenamiento, descongelado y horneado, asegurando un producto final con volumen, miga suave y excelente presentación",
+      "Ultrapan Congelado es un mejorante funcional formulado para garantizar estabilidad, frescura y estructura en productos de panificación sometidos a procesos de congelación. Su mezcla de enzimas y emulsificantes permite conservar la calidad del pan durante el almacenamiento, descongelado y horneado, asegurando un producto final con volumen, miga suave y excelente presentación.",
     carouselImage: "/assets/images/congelado.png",
     mainImage: "/assets/images/ultrapan-congelado.webp",
-    image: "",
+    image: "/assets/images/ultrapan-congelado.webp",
     imagesRelated: [
       {
         src: "/assets/images/congelado.png",
@@ -519,7 +531,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       {
         title: "",
         icon: "/icons/bolillos.svg",
-        description: "Conserva el volumen y fomras del pan tras descongelado",
+        description: "Conserva el volumen y forma del pan tras descongelado",
         disclaimer: "",
         bgColor: "#402619",
       },
@@ -540,14 +552,14 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         title: "",
         icon: "/icons/amaza.svg",
         description:
-          "Aporta resiliencia y elasticidad a la masa, favoreciendo su recuperación.",
+          "Aporta resiliencia y elasticidad a la masa, favoreciendo su recuperación",
         bgColor: "#44bdcb",
       },
       {
         title: "",
         icon: "/icons/prolonga.svg",
         description:
-          "Prolonga la vida de anaquel del pan terminado, sin uso de conseradores",
+          "Prolonga la vida de anaquel del pan terminado, sin uso de conservadores",
         bgColor: "#44bdcb",
       },
       {
@@ -560,14 +572,14 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     applications: [
       "Pan crudo congelado (baguettes, bollos, panecillos)",
       "Pan precocido congelado para horneado en tienda",
-      "Bolleria dulce congelada o productos listos para hornear",
-      "Pan de caja para exportación o lineas de foodservice",
+      "Bollería dulce congelada o productos listos para hornear",
+      "Pan de caja para exportación o líneas de foodservice",
     ],
     instructions: [
       {
         title: "",
         description:
-          "0.5% a 1% sobre el peso de harina. Equivale a 5 - 10 g/kg, ajustable según tipo de receta y proceso",
+          "0.5% a 1.0% sobre el peso de la harina. Equivalente a 5–10 g/kg, ajustable según tipo de receta y proceso",
         bgColor: "#8c633d",
         icon: "/icons/bascula.svg",
       },
@@ -583,13 +595,13 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       bgColor: "#8c633d",
     },
     ingredients:
-      "Enzima α amilasa, xilanasa, fosfolipasa, amilasa maltogénica, glucosa oxidasa y mezcla de emulsificantes.",
+      "Enzima ɑ amilasa, xilanasa, fosfolipasa, amilasa maltogénica, glucosa oxidasa y mezcla de emulsificantes.",
     advantages: [
       {
         title: "",
         icon: "/icons/evitaPerdidas.svg",
         description:
-          "Evita mermas por pérdida de volumen o defomración tras el descongelado",
+          "Evita mermas por pérdida de volumen o deformación tras el descongelado",
         bgColor: "#372015",
       },
       {
@@ -597,22 +609,21 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         icon: "/icons/recienHorneado.svg",
 
         description:
-          "Mejora la calidad sensorial del pan como si fuera recien horneado",
+          "Mejora la calidad sensorial del pan como si fuera recién horneado",
         bgColor: "",
       },
       {
         title: "",
         icon: "/icons/mejora.svg",
-
         description:
-          "Aumenta la eficienia y versatilidad de las lineas industriales congeladas",
+          "Aumenta la eficiencia y versatilidad de las líneas industriales congeladas",
         bgColor: "",
       },
       {
         title: "",
         icon: "/icons/copo.svg",
         description:
-          "Compatible con IQF, fermetanción controlada y lineas automatizadas",
+          "Compatible con IQF, fermentación controlada y líneas automatizadas",
         bgColor: "",
       },
     ],
@@ -629,10 +640,10 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     subtitle: "La solución para la tortilla de harina perfecta",
     category: "INDUSTRIAL",
     description:
-      "Ultra Mil Tortilla M1 es una mezcla optimizada de enzimas y emulsificantes que mejora la textura, elasticidad y vida útil de la tortilla de harina. Ideal para lineas de producción continua donde se requiere estandarización y calidad sensorial superior.",
+      "Ultra Mill Tortilla M1 es una mezcla optimizada de enzimas y emulsificantes que mejora la textura, elasticidad y vida útil de la tortilla de harina. Ideal para líneas de producción continua donde se requiere estandarización y calidad sensorial superior.",
     carouselImage: "/assets/images/tortilla.png",
     mainImage: "/assets/images/ultrapan-tortilla.webp",
-    image: "",
+    image: "/assets/images/ultrapan-tortilla-fondo.jpg",
     imagesRelated: [
       {
         src: "/assets/images/tortilla.png",
@@ -658,18 +669,13 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         src: "/assets/images/tortilla.png",
         alt: "Sobre",
       },
-
-      // {
-      //   src: "/assets/images/ultrapan-tortilla.webp",
-      //   alt: "main",
-      // },
     ],
 
     benefits: [
       {
         title: "",
         icon: "/icons/aumentoSuavidad.svg",
-        description: "Aumnetar la suavidad de la tortilla",
+        description: "Aumenta la suavidad de la tortilla",
         disclaimer: "",
         bgColor: "#2e509f",
       },
@@ -677,7 +683,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         title: "",
         icon: "/icons/rolabilidad.svg",
         description: "Mejora la rollabilidad sin romperse",
-        bgColor: "",
+        bgColor: "#2e509f",
       },
       {
         title: "",
@@ -701,12 +707,12 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     applications: [
       "Tortilla de harina empacada",
       "Procesos con laminado o extrusión",
-      "Producción industria o maquila de marcas blancas",
+      "Producción industrial o maquila de marcas blancas",
     ],
     instructions: [
       {
         title: "",
-        description: "0.05% a 0.1% sobre el peso de la harina",
+        description: "0.05% a 0.1% sobre el peso de la harina (0.5 a 1 g/kg)",
         bgColor: "",
         icon: "/icons/bascula.svg",
       },
@@ -722,7 +728,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       bgColor: "#8c633d",
     },
     ingredients:
-      "Enzima α amilasa, xilanasa, fosfolipasa, amilasa maltogénica, glucosa oxidasa y mezcla de emulsificantes.",
+      "Enzima ɑ amilasa, xilanasa, fosfolipasa, amilasa maltogénica y mezcla de emulsificantes.",
     advantages: [
       {
         title: "",
@@ -736,14 +742,14 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         icon: "/icons/evitaPerdidas.svg",
         description:
           "Mejora la calidad sensorial del pan como si fuera recien horneado",
-        bgColor: "",
+        bgColor: "#183270",
       },
       {
         title: "",
         icon: "/icons/experiencia.svg",
         description:
           "Aumenta la eficienia y versatilidad de las lineas industriales congeladas",
-        bgColor: "",
+        bgColor: "#183270",
       },
     ],
     colorPalette: "BROWN",
@@ -759,18 +765,50 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     subtitle: "La fórmula concentrada para el volumen perfecto.",
     category: "ARTESANAL",
     description:
-      "Ultapan C+ es un mejorante panario libre de bromato con una formulación altamente concentrada que mejora la tolerancia de la masa durante el amasado y fermentación, además de estandarizar el volumen y la textura del pan. Su acción esta dirigida a procesos artesanales que requieren control sin modificar el proceso base",
+      "Ultrapan C+ es un mejorante panario libre de bromato con una formulación altamente concentrada que mejora la tolerancia de la masa durante el amasado y fermentación, además de estandarizar el volumen y la textura del pan. Su acción está dirigida a procesos artesanales que requieren control sin modificar el proceso base.",
     carouselImage: "/assets/images/sobre-ultrapan-c-plus.webp",
     mainImage: "/assets/images/ultrapan-c-sobre.webp",
-    image: "",
+    image: "/assets/images/ultrapan-c-fondo.jpg",
     imagesRelated: [
       {
-        src: "/assets/images/sobre-ultrapan-c-plus.webp",
+        src: "/assets/images/ultrapan-c-galeria-1.jpg",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/ultrapan-c-sobre.webp",
-        alt: "main",
+        src: "/assets/images/ultrapan-c-galeria-2.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-3.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-4.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-5.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-6.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-7.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-8.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-9.jpg",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-c-galeria-10.jpg",
+        alt: "Sobre",
       },
     ],
 
@@ -807,21 +845,21 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       },
     ],
     applications: [
-      "Pan frances",
+      "Pan francés",
       "Pan blanco artesanal (masas saladas)",
-      "Procesos sin cámaras de fermentacion controlada",
+      "Procesos sin cámaras de fermentación controlada",
     ],
 
     instructions: [
       {
         title: "",
-        description: "Concentrada (10 g por bulto de 25 kg de harina)",
+        description: "Concentrada (10 g por bulto de 25 kg de harina).",
         bgColor: "#37a3b1",
         icon: "/icons/bascula.svg",
       },
       {
         title: "",
-        description: "Caja con 100 sobres de 10g.",
+        description: "Caja con 100 sobres de 10 g.",
         bgColor: "#37a3b1",
         icon: "/icons/caja.svg",
       },
@@ -832,24 +870,24 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       bgColor: "#37a3b1",
     },
     ingredients:
-      "Enzima (α amilaxa, xilanasa, lipasa, glucosa oxidasa), emulsificantes y oxidantes",
+      "Enzima ɑ amilasa, xilanasa, fosfolipasa, amilasa maltogénica y mezcla de emulsificantes.",
     advantages: [
       {
         title: "",
         icon: "/icons/costoBeneficio.svg",
-        description: "Excelente relación costo beneficio",
+        description: "Excelente relación costo-beneficio",
         bgColor: "#37a3b1",
       },
       {
         title: "",
         icon: "/icons/panCaja.svg",
-        description: "Estandarización en condiciones artesanals ",
+        description: "Estandarización en condiciones artesanales",
         bgColor: "#37a3b1",
       },
       {
         title: "",
         icon: "/icons/primero.svg",
-        description: "Primer mejorante concentrado",
+        description: "Primer mejorante concentrado sin bromato",
         bgColor: "#37a3b1",
       },
     ],
@@ -868,10 +906,12 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     subtitle: "El mejorante todo terreno para tu negocio.",
     category: "ARTESANAL",
     description:
-      "Mejorante diseñado para pan blanco y masas saladas, que ofrece una eficiencia económica y tecnológica inigualable en el mercado. Su formulación permite estandarizar la produccíon y reduri la estructura de costos de la recta tradicioanl, sin modificar el proceso",
+      "Mejorante diseñado para pan blanco y masas saladas, que ofrece una eficiencia económica y tecnológica inigualable en el mercado.",
+    description2:
+      "Su formulación permite estandarizar la producción y reducir la estructura de costos de la receta tradicional, sin modificar el proceso.",
     carouselImage: "/assets/images/sobre-ultrapan-g-plus.webp",
     mainImage: "/assets/images/ultrapan-g-sobre.webp",
-    image: "",
+    image: "/assets/images/ultrapan-g-fondo.jpg",
     imagesRelated: [
       {
         src: "/assets/images/sobre-ultrapan-g-plus.webp",
@@ -907,7 +947,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       {
         title: "",
         icon: "/icons/mezclado.svg",
-        description: "Alta tolerancia al proceso",
+        description: "Alta tolerancia al proceso.",
         bgColor: "#44bdcb",
       },
     ],
@@ -926,7 +966,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       },
       {
         title: "",
-        description: "Caja con 60 sobres de 62.5 g.",
+        description: "Caja con 50 sobres de 62.5 g.",
         bgColor: "#37a3b1",
         icon: "/icons/caja.svg",
       },
@@ -937,7 +977,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       bgColor: "#777940",
     },
     ingredients:
-      "Enzima α amilaxa, fosfolipasa, amilasa maltogénica y mezcla de emulsificantes",
+      "Enzimas (ɑ-amilasa, xilanasa, lipasa, glucosa oxidasa), emulsificantes yoxidantes.",
     advantages: [
       {
         title: "",
@@ -972,10 +1012,11 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     subtitle: "",
     category: "ARTESANAL",
     description:
-      "Ultrapan Dulce Plus es un mejorante desarrollado para mantener la suavidad, humedad y frescura de la miga durante periodos prolongados. Su formula especializada ayuda a retardar la retrogradación del almidón, principal responsable del endurecimeinto del pan, lo que permite extender significativamente la vida útil comercial del producto terminado sin comprometer su textura ni sabor.",
+      "Ultrapan Dulce Plus es un mejorante desarrollado para mantener la suavidad, humedad y frescura de la miga durante periodos prolongados. Su fórmula especializada ayuda a retardar la retrogradación del almidón, principal responsable del endurecimiento del pan, ´lo que permite extender significativamente la vida útil comercial del producto terminado sin comprometer su textura ni sabor",
     carouselImage: "/assets/images/sobre-dulce-plus.webp",
     mainImage: "/assets/images/ultrapan-dulceplus.webp",
-    image: "",
+    image: "/assets/images/ultrapan-dulce-fondo.jpg",
+
     imagesRelated: [
       {
         src: "/assets/images/sobre-dulce-plus.webp",
@@ -992,7 +1033,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         title: "",
         icon: "/icons/amaza.svg",
 
-        description: "Ayuda en disminución de tiempos de reposo",
+        description: "Ayuda en disminución de tiempos de reposo.",
         bgColor: "#2e509f",
       },
       {
@@ -1021,10 +1062,10 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Concha, cuernitos, rebanadas.",
       "Pan de temporada (rosca de reyes y pan de muerto)",
       "Pan dulce empacado",
-      "Pan de botella",
+      "Pan de bollería",
     ],
     ingredients:
-      "Enzima α amilaxa, xilanasa, fosfolipasa, amilasa maltogénica y mezcla de emulsificantes",
+      "Enzima ɑ amilasa, xilanasa, fosfolipasa, amilasa maltogénica y mezcla de emulsificantes.",
     instructions: [
       {
         title: "",
@@ -1034,7 +1075,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       },
       {
         title: "",
-        description: "Caja con sobres de 250g y bulto de 5 kg",
+        description: "Caja con sobres de 250 g y bulto de 5 kg y 25 kg",
         bgColor: "",
         icon: "/icons/caja.svg",
       },
@@ -1050,7 +1091,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         title: "",
         icon: "/icons/huevito.svg",
         description:
-          "Ayuda a reducir el uso de huevo en la receta (panes fermentados)",
+          "Ayuda a reducirel uso de huevo en la receta (panes fermentados)",
         bgColor: "#2e509f",
       },
       {
@@ -1132,19 +1173,19 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       {
         title: "",
         icon: "/icons/amaza.svg",
-        description: "Excelente resilienica (rebote tras presion)",
+        description: "Excelente resiliencia (rebote tras presión)",
         bgColor: "",
       },
     ],
     applications: [
-      "Bolleria artesanal (conchas, roles, pan de leche)",
+      "Bollería artesanal (conchas, roles, pan de leche)",
       "Pan de caja tradicional o tipo brioche",
     ],
-    ingredients: "α amilaxa, xilanasa, fosfolipasa y mezcla de emulsificantes",
+    ingredients: "ɑ amilasa, xilanasa, fosfolipasa y mezcla de emulsificantes.",
     instructions: [
       {
         title: "",
-        description: "0.5% a 1% sobre el peso de la harina (% a 10 g/kg)",
+        description: "0.5% a 1% sobre el peso de harina (5 a 10 g/kg)",
         bgColor: "",
         icon: "/icons/bascula.svg",
       },

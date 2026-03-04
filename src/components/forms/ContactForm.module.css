@@ -58,8 +58,7 @@
 
 @media (min-width: 640px) {
   .wrapper {
-    padding: 16px 0;
-    /* padding: clamp(3rem, 6vw, 5rem) 0; */
+    padding: 6px 0;
   }
   .grid {
     grid-template-columns: repeat(2, 1fr);

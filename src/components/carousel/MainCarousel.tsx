@@ -1,68 +1,205 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import styles from "./MainCarousel.module.css";
 
-import Image, { StaticImageData } from "next/image";
-
-// Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, A11y, Autoplay, EffectFade } from "swiper/modules";
 
-// Swiper modules
-import { Autoplay, Pagination, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
-export interface MainCarouselItem {
-  image: StaticImageData;
-  alt: string; // URL o ruta en /public
-}
+import { HomeSlide } from "@/interfaces/HomeSlides.interface";
+import { useRouter } from "next/navigation";
+import ButtonComponent from "../buttons/Button";
 
-type MainCarouselProps = {
-  elementos: MainCarouselItem[];
-  intervalMs?: number; // default 1000
-  ctaLabel?: string; // default "Ver más"
+type ImageCarouselProps = {
+  items: HomeSlide[];
+  intervalMs?: number;
 };
 
-export function MainCarousel({
-  elementos,
-  intervalMs = 200,
-}: MainCarouselProps) {
-  if (!elementos?.length) return null;
+const breakpoint = 768;
+
+export default function HomeCarousel({
+  items,
+  intervalMs = 4500,
+}: ImageCarouselProps) {
+  const router = useRouter();
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  const swiperReference = useRef<any>(null);
+
+  if (!items?.length) return null;
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < breakpoint);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, [breakpoint]);
+
+  function handlingProduct(route: string) {
+    return router.push(`/${route}`);
+  }
 
   return (
-    <section className={styles.wrapper} aria-label={""}>
-      <div className={styles.inner}>
-        <Swiper
-          className={styles.swiper}
-          modules={[Autoplay, Pagination, A11y]}
-          slidesPerView={1}
-          spaceBetween={0}
-          loop={elementos.length > 1}
-          autoplay={
-            elementos.length > 1
-              ? { delay: intervalMs, disableOnInteraction: false }
-              : false
-          }
-          a11y={{
-            enabled: true,
-          }}
-        >
-          {elementos.map((item, idx) => (
-            <SwiperSlide key={`${item.alt}-${idx}`} className={styles.slide}>
-              <article className={styles.card}>
-                <div className={styles.imageWrap}>
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    fill
-                    className={styles.image}
-                    sizes="(min-width: 640px) 100vw, 100vh"
-                    priority={idx === 0}
-                  />
+    <div className={`${styles.wrapper} ${styles.swiperLayout}`}>
+      <Swiper
+        modules={[Navigation, A11y, EffectFade]}
+        onSwiper={(swiperElement) => {
+          swiperReference.current = swiperElement;
+        }}
+        centeredSlides={true}
+        loop
+        autoplay={{
+          delay: intervalMs,
+          disableOnInteraction: false,
+        }}
+        className="mySwiper"
+        effect={"fade"}
+        fadeEffect={{
+          crossFade: true,
+        }}
+        navigation={true}
+      >
+        {items.map((element, index) => (
+          <SwiperSlide key={index} className={styles.slide}>
+            {isMobile && (
+              <div
+                className={styles.mobileImageContainer}
+                style={{
+                  backgroundColor: element.backgroundColor,
+                }}
+              >
+                <div
+                  className={styles.mobileFront}
+                  style={{
+                    backgroundImage: `url(${element.backgroundImageResponsive})`,
+                  }}
+                >
+                  <div className={styles.mobileContent}>
+                    {element.subtitle !== "" && (
+                      <p
+                        className={`text-color-white  ${styles.mainSubtitle2}`}
+                      >
+                        {element.subtitle}{" "}
+                        {element.specialTitle && (
+                          <span className={"impact bold"}>
+                            {element.specialTitle}
+                          </span>
+                        )}
+                      </p>
+                    )}
+                    <h1 className={`${styles.mainTitle} impact`}>
+                      {element.title}
+                    </h1>
+
+                    {/* {element.subtitle2 !== "" && (
+                      <p className={`text-color-white  ${styles.mainSubtitle}`}>
+                        {element.subtitle2}
+                      </p>
+                    )} */}
+                  </div>
+
+                  <div className={styles.textContent}>
+                    {element.subtitle2 !== "" && (
+                      <p className={`${styles.mainSubtitle}`}>
+                        {element.subtitle2}
+                      </p>
+                    )}
+
+                    <div className={styles.actionButtonContainers}>
+                      {element.action && (
+                        <div className={styles.buttonStyle}>
+                          <ButtonComponent
+                            colorPalette={element.colorPalette}
+                            title={element.primaryButtonText}
+                            onAction={() =>
+                              handlingProduct(element.primaryRoute)
+                            }
+                          />
+                        </div>
+                      )}
+
+                      {element.secondAction && (
+                        <div className={styles.buttonStyle}>
+                          <ButtonComponent
+                            colorPalette={element.secondColorPalette}
+                            title={element.secondButtonText}
+                            onAction={() =>
+                              handlingProduct(element.secondRoute)
+                            }
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </article>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
+              </div>
+            )}
+
+            {!isMobile && (
+              <div
+                key={element.idProduct}
+                className={` ${styles.frontPage}`}
+                style={{
+                  backgroundImage: `url(${!isMobile ? element.backgroundImage : ""})`,
+                }}
+              >
+                <div className={styles.slideContent}>
+                  <div className={styles.infoProductContainer}>
+                    {element.subtitle !== "" && (
+                      <p
+                        className={`text-color-white  ${styles.mainSubtitle2}`}
+                      >
+                        {element.subtitle}{" "}
+                        {element.specialTitle && (
+                          <span className={"impact bold"}>
+                            {element.specialTitle}
+                          </span>
+                        )}
+                      </p>
+                    )}
+                    <h1 className={`${styles.mainTitle} impact`}>
+                      {element.title}
+                    </h1>
+
+                    {element.subtitle2 !== "" && (
+                      <p className={`text-color-white  ${styles.mainSubtitle}`}>
+                        {element.subtitle2}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className={styles.actionButtonContainers}>
+                    {element.action && (
+                      <div className={styles.buttonStyle}>
+                        <ButtonComponent
+                          colorPalette={element.colorPalette}
+                          title={element.primaryButtonText}
+                          onAction={() => handlingProduct(element.primaryRoute)}
+                        />
+                      </div>
+                    )}
+
+                    {element.secondAction && (
+                      <div className={styles.buttonStyle}>
+                        <ButtonComponent
+                          colorPalette={element.secondColorPalette}
+                          title={element.secondButtonText}
+                          onAction={() => handlingProduct(element.secondRoute)}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 }

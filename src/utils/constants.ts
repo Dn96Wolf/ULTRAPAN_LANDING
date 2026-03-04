@@ -54,16 +54,17 @@ export const HOME_SLIDES: HomeSlide[] = [
     subtitle: "Conoce la linea completa de mejorantes para panificación",
     subtitle2: "",
     backgroundImage: "/assets/images/linea-ultrapan.webp",
-    backgroundImageResponsive: "/assets/images/linea-ultrapan-responsive.webp",
+    backgroundImageResponsive: "/assets/images/productos.png",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: true,
-    colorPalette: "BROWN",
+    colorPalette: "SOFTBLUE",
     secondColorPalette: "GRAY",
     primaryButtonText: "Línea artesanal",
     secondButtonText: "Línea Industrial",
     primaryRoute: "artesanal",
     secondRoute: "industrial",
+    backgroundColor: "#613924",
   },
 
   {
@@ -73,8 +74,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     subtitle2:
       "Nuestro mejorante ultra concentrado. Obten una excelente relación costo beneficio.",
     backgroundImage: "/assets/images/ultrapan-c-portada.webp",
-    backgroundImageResponsive:
-      "/assets/images/ultrapan-c-portada-responsive.webp",
+    backgroundImageResponsive: "/assets/images/ultrapan-c-sobre.webp",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: false,
@@ -84,6 +84,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     secondButtonText: "",
     primaryRoute: "productos/ultrapan-c-plus",
     secondRoute: "",
+    backgroundColor: "#0c4a5a",
   },
   {
     title: "ULTRAPAN G+",
@@ -92,8 +93,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     subtitle2:
       "Permite estandarizar la producción y reducir la estructura de costos de la receta tradicional, sin cambiar el proceso.",
     backgroundImage: "/assets/images/ultrapan-g-portada.webp",
-    backgroundImageResponsive:
-      "/assets/images/ultrapan-g-portada-responsive.webp",
+    backgroundImageResponsive: "/assets/images/ultrapan-g-sobre.webp",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: false,
@@ -103,6 +103,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     secondButtonText: "",
     primaryRoute: "productos/ultrapan-g-plus",
     secondRoute: "",
+    backgroundColor: "#a0a468",
   },
   {
     title: "DULCE PLUS",
@@ -112,17 +113,17 @@ export const HOME_SLIDES: HomeSlide[] = [
     subtitle2:
       "El mejorante desarrollado para mantener la suavidad, humedad y frescura de la miga durante periodos largos.",
     backgroundImage: "/assets/images/ultrapan-dulce-portada.webp",
-    backgroundImageResponsive: "/assets/images/ultrapan-dulce-responsive.webp",
-
+    backgroundImageResponsive: "/assets/images/ultrapandulceplus.webp",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: false,
-    colorPalette: "BLUE",
+    colorPalette: "BROWN",
     secondColorPalette: "GRAY",
     primaryButtonText: "Me interesa",
     secondButtonText: "",
     primaryRoute: "productos/ultrapan-dulce-plus",
     secondRoute: "",
+    backgroundColor: "#183270",
   },
 ];
 
@@ -137,7 +138,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "ULTRAPAN 10,000 es un mejorante diseñado para brindar una mejora sustancial en volumen, resiliencia y rendimiento en pan blanco tipo salado. Su combinación de enzimas y acondicionadores permite mantener la calidad del pan aún con variaciones en el tipo de harina o condiciones de proceso.",
     carouselImage: "/assets/images/ultrapan-10000.webp",
     mainImage: "/assets/images/ultrapan-mil-sobre.webp",
-    image: "/assets/images/ultrapan-c-fondo.jpg",
+    image: "/assets/images/ultrapan-diez-fondo.jpg",
     imagesRelated: [
       {
         src: "/assets/images/ultrapan-mil-sobre.webp",
@@ -175,14 +176,12 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       {
         title: "",
         icon: "/icons/bolillos.svg",
-
         description: "Mayor volumen y rendimiento por bulto",
         bgColor: "#44bdcb",
       },
       {
         title: "",
         icon: "/icons/reduce.svg",
-
         description: "Mejora la elasticidad de la masa",
         bgColor: "#44bdcb",
       },
@@ -256,7 +255,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultrapan Emulsoft Extender es un mejorante desarrollado para mantener la suavidad, humedad y frescura de la miga durante periodos prolongados. Su fórmula especializada ayuda a retardar la retrogradación del almidón, principal responsable del endurecimiento del pan, lo que permite extender significativamente la vida útil comercial del producto terminado sin comprometer su textura ni sabor",
     carouselImage: "/assets/images/emulsoft-extender.webp",
     mainImage: "/assets/images/ultrapan-emulsoft-extender.webp",
-    image: "",
+    image: "/assets/images/ultrapan-diez-fondo.jpg",
     imagesRelated: [
       {
         src: "/assets/images/emulsoft-extender.webp",
@@ -374,7 +373,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultrapan Emulsoft Plus es un mejorante para masas dulces que combina emulsificantes con enzimas funcionales para mejorar la suavidad, frescura y resiliencia del pan. Ideal para procesos artesanales e industriales donde se busca una experiencia sensorial superior sin cambiar el proceso tradicional.",
     carouselImage: "/assets/images/emulsoftpuls.png",
     mainImage: "/assets/images/ultrapan-emulsoft-plus.webp",
-    image: "",
+    image: "/assets/images/ultrapan-emulsoft-fondo.jpg",
     imagesRelated: [
       {
         src: "/assets/images/emulsoftpuls.png",
@@ -497,7 +496,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultrapan Congelado es un mejorante funcional formulado para garantizar estabilidad, frescura y estructura en productos de panificación sometidos a procesos de congelación. Su mezcla de enzimas y emulsificantes permite conservar la calidad del pan durante el almacenamiento, descongelado y horneado, asegurando un producto final con volumen, miga suave y excelente presentación.",
     carouselImage: "/assets/images/congelado.png",
     mainImage: "/assets/images/ultrapan-congelado.webp",
-    image: "",
+    image: "/assets/images/ultrapan-congelado.webp",
     imagesRelated: [
       {
         src: "/assets/images/congelado.png",
@@ -644,7 +643,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultra Mill Tortilla M1 es una mezcla optimizada de enzimas y emulsificantes que mejora la textura, elasticidad y vida útil de la tortilla de harina. Ideal para líneas de producción continua donde se requiere estandarización y calidad sensorial superior.",
     carouselImage: "/assets/images/tortilla.png",
     mainImage: "/assets/images/ultrapan-tortilla.webp",
-    image: "",
+    image: "/assets/images/ultrapan-tortilla-fondo.jpg",
     imagesRelated: [
       {
         src: "/assets/images/tortilla.png",
@@ -670,11 +669,6 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
         src: "/assets/images/tortilla.png",
         alt: "Sobre",
       },
-
-      // {
-      //   src: "/assets/images/ultrapan-tortilla.webp",
-      //   alt: "main",
-      // },
     ],
 
     benefits: [
@@ -917,7 +911,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Su formulación permite estandarizar la producción y reducir la estructura de costos de la receta tradicional, sin modificar el proceso.",
     carouselImage: "/assets/images/sobre-ultrapan-g-plus.webp",
     mainImage: "/assets/images/ultrapan-g-sobre.webp",
-    image: "",
+    image: "/assets/images/ultrapan-g-fondo.jpg",
     imagesRelated: [
       {
         src: "/assets/images/sobre-ultrapan-g-plus.webp",
@@ -1021,7 +1015,8 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultrapan Dulce Plus es un mejorante desarrollado para mantener la suavidad, humedad y frescura de la miga durante periodos prolongados. Su fórmula especializada ayuda a retardar la retrogradación del almidón, principal responsable del endurecimiento del pan, ´lo que permite extender significativamente la vida útil comercial del producto terminado sin comprometer su textura ni sabor",
     carouselImage: "/assets/images/sobre-dulce-plus.webp",
     mainImage: "/assets/images/ultrapan-dulceplus.webp",
-    image: "",
+    image: "/assets/images/ultrapan-dulce-fondo.jpg",
+
     imagesRelated: [
       {
         src: "/assets/images/sobre-dulce-plus.webp",

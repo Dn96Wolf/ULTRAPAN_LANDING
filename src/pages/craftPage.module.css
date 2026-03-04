@@ -164,10 +164,10 @@
 
   .mainTitle {
     width: 100%;
-    font-size: 80px;
     text-align: left;
   }
   .mainSubtitle {
+    font-size: 20px;
     text-align: left;
   }
 
@@ -183,16 +183,17 @@
   }
 
   .carouselTitle {
-    font-size: 60px;
     display: none;
   }
 
   .contactTitle {
     font-size: 48px;
+    max-width: 1116px;
   }
 
   .contactSubtitle {
-    font-size: 32px;
+    font-size: 26px;
+    max-width: 910px;
   }
 }
 

@@ -47,7 +47,7 @@ export default function HomeCarousel({
   return (
     <div className={`${styles.wrapper} ${styles.swiperLayout}`}>
       <Swiper
-        modules={[Autoplay, Navigation, A11y, EffectFade]}
+        modules={[Navigation, A11y, EffectFade]}
         onSwiper={(swiperElement) => {
           swiperReference.current = swiperElement;
         }}
@@ -66,69 +66,137 @@ export default function HomeCarousel({
       >
         {items.map((element, index) => (
           <SwiperSlide key={index} className={styles.slide}>
-            <div
-              key={element.idProduct}
-              className={` ${styles.frontPage}`}
-              style={{
-                backgroundImage: `url(${!isMobile ? element.backgroundImage : ""})`,
-              }}
-            >
-              {/* <div className={styles.overlayContainer}></div> */}
-              <div className={styles.slideContent}>
-                <div className={styles.infoProductContainer}>
-                  {element.subtitle !== "" && (
-                    <p className={`text-color-white  ${styles.mainSubtitle2}`}>
-                      {element.subtitle}{" "}
-                      {element.specialTitle && (
-                        <span className={"impact bold"}>
-                          {element.specialTitle}
-                        </span>
+            {isMobile && (
+              <div
+                className={styles.mobileImageContainer}
+                style={{
+                  backgroundColor: element.backgroundColor,
+                }}
+              >
+                <div
+                  className={styles.mobileFront}
+                  style={{
+                    backgroundImage: `url(${element.backgroundImageResponsive})`,
+                  }}
+                >
+                  <div className={styles.mobileContent}>
+                    {element.subtitle !== "" && (
+                      <p
+                        className={`text-color-white  ${styles.mainSubtitle2}`}
+                      >
+                        {element.subtitle}{" "}
+                        {element.specialTitle && (
+                          <span className={"impact bold"}>
+                            {element.specialTitle}
+                          </span>
+                        )}
+                      </p>
+                    )}
+                    <h1 className={`${styles.mainTitle} impact`}>
+                      {element.title}
+                    </h1>
+
+                    {/* {element.subtitle2 !== "" && (
+                      <p className={`text-color-white  ${styles.mainSubtitle}`}>
+                        {element.subtitle2}
+                      </p>
+                    )} */}
+                  </div>
+
+                  <div className={styles.textContent}>
+                    {element.subtitle2 !== "" && (
+                      <p className={`${styles.mainSubtitle}`}>
+                        {element.subtitle2}
+                      </p>
+                    )}
+
+                    <div className={styles.actionButtonContainers}>
+                      {element.action && (
+                        <div className={styles.buttonStyle}>
+                          <ButtonComponent
+                            colorPalette={element.colorPalette}
+                            title={element.primaryButtonText}
+                            onAction={() =>
+                              handlingProduct(element.primaryRoute)
+                            }
+                          />
+                        </div>
                       )}
-                    </p>
-                  )}
-                  <h1 className={`${styles.mainTitle} impact`}>
-                    {element.title}
-                  </h1>
 
-                  {element.subtitle2 !== "" && (
-                    <p className={`text-color-white  ${styles.mainSubtitle}`}>
-                      {element.subtitle2}
-                    </p>
-                  )}
-                </div>
-
-                {isMobile && (
-                  <div
-                    className={styles.mobileImageContainer}
-                    style={{
-                      backgroundImage: `url(${element.backgroundImageResponsive})`,
-                    }}
-                  ></div>
-                )}
-
-                <div className={styles.actionButtonContainers}>
-                  {element.action && (
-                    <div className={styles.buttonStyle}>
-                      <ButtonComponent
-                        colorPalette={element.colorPalette}
-                        title={element.primaryButtonText}
-                        onAction={() => handlingProduct(element.primaryRoute)}
-                      />
+                      {element.secondAction && (
+                        <div className={styles.buttonStyle}>
+                          <ButtonComponent
+                            colorPalette={element.secondColorPalette}
+                            title={element.secondButtonText}
+                            onAction={() =>
+                              handlingProduct(element.secondRoute)
+                            }
+                          />
+                        </div>
+                      )}
                     </div>
-                  )}
-
-                  {element.secondAction && (
-                    <div className={styles.buttonStyle}>
-                      <ButtonComponent
-                        colorPalette={element.secondColorPalette}
-                        title={element.secondButtonText}
-                        onAction={() => handlingProduct(element.secondRoute)}
-                      />
-                    </div>
-                  )}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
+
+            {!isMobile && (
+              <div
+                key={element.idProduct}
+                className={` ${styles.frontPage}`}
+                style={{
+                  backgroundImage: `url(${!isMobile ? element.backgroundImage : ""})`,
+                }}
+              >
+                <div className={styles.slideContent}>
+                  <div className={styles.infoProductContainer}>
+                    {element.subtitle !== "" && (
+                      <p
+                        className={`text-color-white  ${styles.mainSubtitle2}`}
+                      >
+                        {element.subtitle}{" "}
+                        {element.specialTitle && (
+                          <span className={"impact bold"}>
+                            {element.specialTitle}
+                          </span>
+                        )}
+                      </p>
+                    )}
+                    <h1 className={`${styles.mainTitle} impact`}>
+                      {element.title}
+                    </h1>
+
+                    {element.subtitle2 !== "" && (
+                      <p className={`text-color-white  ${styles.mainSubtitle}`}>
+                        {element.subtitle2}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className={styles.actionButtonContainers}>
+                    {element.action && (
+                      <div className={styles.buttonStyle}>
+                        <ButtonComponent
+                          colorPalette={element.colorPalette}
+                          title={element.primaryButtonText}
+                          onAction={() => handlingProduct(element.primaryRoute)}
+                        />
+                      </div>
+                    )}
+
+                    {element.secondAction && (
+                      <div className={styles.buttonStyle}>
+                        <ButtonComponent
+                          colorPalette={element.secondColorPalette}
+                          title={element.secondButtonText}
+                          onAction={() => handlingProduct(element.secondRoute)}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
           </SwiperSlide>
         ))}
       </Swiper>

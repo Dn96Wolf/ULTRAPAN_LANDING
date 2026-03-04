@@ -39,7 +39,9 @@ export default function IndustrialPage() {
         <div className={styles.separator}></div>
       </div>
 
-      <h2 className={styles.carouselTitle}>{t("industrial.subtitle")}</h2>
+      <div className={styles.carouselTitleContact}>
+        <h2 className={styles.carouselTitle}>{t("industrial.subtitle")}</h2>
+      </div>
 
       <div className={styles.secondContent}>
         <ProductCarousel

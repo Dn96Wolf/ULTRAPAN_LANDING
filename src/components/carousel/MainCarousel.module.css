@@ -56,19 +56,42 @@
 }
 
 .mobileImageContainer {
-  width: 100%;
-  height: 300px;
-  margin: auto;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 20px 0px rgba(88, 57, 19, 0.5);
-  background-position: center;
-  background-size: cover;
-}
-
-.mobileImage {
+  position: relative;
   width: 100%;
   height: 100%;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 20px 0px rgba(88, 57, 19, 0.5);
+  background-position: center;
+}
+
+.mobileFront {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.mobileContent {
+  width: 100%;
+  padding: 120px 0 0 0; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.textContent {
+  padding: 16px;
+  width: 100%;
+  height: 200px;
 }
 
 .infoProductContainer {
@@ -101,9 +124,10 @@
   text-align: center;
   margin-bottom: 12px;
   line-height: normal;
-   text-align: center;
+  text-align: center;
   text-wrap: balance;
   animation: slideInLeft 2s ease-out both;
+  color: white;
 }
 
 .bg-brown-overlay {
@@ -162,7 +186,7 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    padding: 48px 60px;
+    padding: 48px 68px;
     position: relative;
   }
 

@@ -1,17 +1,16 @@
 .mainContent {
   width: 100vw;
   min-height: 100vh;
-  padding: 90px 0;
-  background-image: url("/assets/images/cintillo-artesanal.png");
+  padding: 120px 0;
+  /* background-image: url("/assets/images/cintillo-artesanal.png"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: white;
+  background-image: url("/assets/images/ultrapan-g-fondo.jpg");
 }
 
-
-
 .container {
-  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
@@ -19,7 +18,6 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  /* z-index: 2; */
 }
 
 .textContainer {
@@ -45,6 +43,7 @@
   background-color: var(--neutral-100);
   padding: 16px;
   border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -117,7 +116,7 @@
 .slogan {
   font-size: 18px;
   font-weight: 600;
-  color: var(--neutral-600);
+  color: white;
   text-align: center;
 }
 
@@ -135,8 +134,7 @@
   }
 
   .subtitle {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 18px;
   }
 
   .contactInfoContainer {

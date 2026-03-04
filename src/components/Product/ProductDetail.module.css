@@ -250,7 +250,6 @@
   justify-content: center;
   align-items: center;
   padding: 8px;
-  /* margin: auto ma; */
   margin-bottom: 24px;
 }
 
@@ -297,7 +296,7 @@
   height: 580px;
   min-height: 580px;
   max-height: 580px;
-  padding: 74px 12px 24px 12px;
+  padding: 60px 12px 24px 12px;
   border-radius: 18px;
   background: white;
   box-shadow: 0 0 20px 0px rgba(88, 57, 19, 0.5);
@@ -307,6 +306,7 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition: all 0.2 ease-in-out;
 }
 
 .smallCard {
@@ -315,8 +315,10 @@
   max-height: 278px;
 }
 
-.card:hover {
-  transform: scale(1.01);
+.card:hover,
+.smallCard:hover {
+  transform: scale(1.05);
+  transition: all 0.2 ease-in-out;
 }
 
 .cardTwins {
@@ -468,7 +470,7 @@
   .doseDescription,
   .vantageDescription {
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .doseDescription {
@@ -504,7 +506,7 @@
   .smallCard {
     width: 100%;
     max-width: 400px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }

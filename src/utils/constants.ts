@@ -496,7 +496,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultrapan Congelado es un mejorante funcional formulado para garantizar estabilidad, frescura y estructura en productos de panificación sometidos a procesos de congelación. Su mezcla de enzimas y emulsificantes permite conservar la calidad del pan durante el almacenamiento, descongelado y horneado, asegurando un producto final con volumen, miga suave y excelente presentación.",
     carouselImage: "/assets/images/congelado.png",
     mainImage: "/assets/images/ultrapan-congelado.webp",
-    image: "/assets/images/ultrapan-congelado.webp",
+    image: "/assets/images/ultrapan-congelado-fondo.jpg",
     imagesRelated: [
       {
         src: "/assets/images/congelado.png",
@@ -562,12 +562,12 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
           "Prolonga la vida de anaquel del pan terminado, sin uso de conservadores",
         bgColor: "#44bdcb",
       },
-      {
-        title: "",
-        icon: "/icons/optimiza.svg",
-        description: "Optimiza",
-        bgColor: "#44bdcb",
-      },
+      // {
+      //   title: "",
+      //   icon: "/icons/optimiza.svg",
+      //   description: "Optimiza",
+      //   bgColor: "#44bdcb",
+      // },
     ],
     applications: [
       "Pan crudo congelado (baguettes, bollos, panecillos)",

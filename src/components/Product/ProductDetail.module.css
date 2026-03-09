@@ -293,7 +293,6 @@
 .largeCard,
 .smallCard {
   width: 100%;
-  max-width: 300px;
   height: 580px;
   min-height: 580px;
   max-height: 580px;
@@ -311,6 +310,8 @@
 }
 
 .largeCard {
+  width: 92%;
+  margin: auto;
   max-width: unset;
 }
 
@@ -330,7 +331,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  height: 580px;
+  /* height: 580px; */
 }
 
 .cardHeader {

@@ -41,8 +41,17 @@ a {
   text-decoration: none;
 }
 
+.whatsAppClass{
+  position: fixed;
+  z-index: 10000;
+  bottom: 20px;
+  right: 20px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
+
+

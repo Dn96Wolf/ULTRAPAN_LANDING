@@ -14,6 +14,8 @@ const roboto = Roboto({
 });
 
 import localFont from "next/font/local";
+import Image from "next/image";
+import Link from "next/link";
 
 const impact = localFont({
   src: "../fonts/impact.ttf",
@@ -68,6 +70,17 @@ export default function RootLayout({
         <div style={{ overflow: "auto" }}>
           <main className="mainContent">{children}</main>
           {/* <ContactForm /> */}
+
+          <div className="whatsAppClass">
+            <a href="https://api.whatsapp.com/send/?phone=5573448151&text&type=phone_number&app_absent=0" target="_blank">
+              <Image
+                src={"/assets/images/whatsApp.png"}
+                width={48}
+                height={48}
+                alt="whatsApp image"
+              ></Image>
+            </a>
+          </div>
         </div>
         <Footer />
       </body>

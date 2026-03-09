@@ -1,6 +1,7 @@
 import styles from "./Footer.module.css";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 interface FooterElement {
   title: string;
@@ -12,6 +13,7 @@ interface FooterElement {
     name: string;
     url: string;
   }[];
+  links: { title: string; url: string }[];
 }
 
 const socialIconMap: Record<string, React.ComponentType> = {
@@ -28,15 +30,34 @@ const footerElements: FooterElement[] = [
     textColor: "",
     link: "https://enziquim.com",
     icons: [],
+    links: [],
   },
   {
     title: "Derechos reservados",
     image: "",
-
     text: `Copyright ©${new Date().getFullYear()}`,
     textColor: "Enzimas y Productos Químicos S.A. de C.V.",
     link: null,
     icons: [],
+    links: [],
+  },
+  {
+    title: "Enlaces",
+    image: "",
+    text: "",
+    textColor: "",
+    link: null,
+    icons: [],
+    links: [
+      {
+        title: "Contacto",
+        url: "/contacto",
+      },
+      {
+        title: "FQA",
+        url: "/fqa",
+      },
+    ],
   },
   {
     title: "Síguenos",
@@ -59,6 +80,7 @@ const footerElements: FooterElement[] = [
       //   url: "https://www.instagram.com/enziquim/",
       // },
     ],
+    links: [],
   },
 ];
 
@@ -78,6 +100,22 @@ export default function Footer() {
               />
             ) : (
               <h2 className={styles.footerItemTitle}>{item.title}</h2>
+            )}
+
+            {!!item.links.length && (
+              <div className={styles.footerLinks}>
+                {item.links.map((link, index) => (
+                  <Link
+                    key={index}
+                    className={styles.footerItemLink}
+                    href={link.url ? link.url : "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.title}
+                  </Link>
+                ))}
+              </div>
             )}
 
             <p className={styles.footerItemText}>

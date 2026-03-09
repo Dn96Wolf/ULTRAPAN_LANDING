@@ -23,8 +23,14 @@
 
 .footerItemTitle {
   color: var(--color-white);
-  margin-top: 1rem;
   line-height: 1.5;
+}
+
+.footerLinks{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1rem;
 }
 
 .footerItemText {

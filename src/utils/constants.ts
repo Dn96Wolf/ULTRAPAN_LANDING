@@ -15,18 +15,14 @@ export const SOCIAL_MEDIA = [
   {
     name: "Facebook",
     url: "https://www.facebook.com/Enziquim",
-  },
-  // {
-  //   name: "Instagram",
-  //   url: "https://www.instagram.com/enziquim/",
-  // },
+  }
 ];
 
 export const NAV_ITEMS = [
   { href: "/", labelKey: "nav.home" as const },
   { href: "#", labelKey: "nav.Industrias" as const },
   { href: "/contacto", labelKey: "nav.contact" as const },
-  { href: "/FAQ", labelKey: "nav.fqa" as const },
+  // { href: "/FAQ", labelKey: "nav.fqa" as const },
 ];
 
 export const INDUSTRIAS_SUBMENU = [
@@ -54,7 +50,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     subtitle: "Conoce la linea completa de mejorantes para panificación",
     subtitle2: "",
     backgroundImage: "/assets/images/linea-ultrapan.webp",
-    backgroundImageResponsive: "/assets/images/productos.png",
+    backgroundImageResponsive: "/assets/images/ultrapan-line-responsive.png",
     ribbonClass: "page-module___8aEwW__bg-brown-overlay",
     action: true,
     secondAction: true,
@@ -138,25 +134,47 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "ULTRAPAN 10,000 es un mejorante diseñado para brindar una mejora sustancial en volumen, resiliencia y rendimiento en pan blanco tipo salado. Su combinación de enzimas y acondicionadores permite mantener la calidad del pan aún con variaciones en el tipo de harina o condiciones de proceso.",
     carouselImage: "/assets/images/ultrapan-10000.webp",
     mainImage: "/assets/images/ultrapan-mil-sobre.webp",
-    image: "/assets/images/ultrapan-diez-fondo.jpg",
+    image: "/assets/images/ultrapan-diez-mil-fondo.webp",
     imagesRelated: [
       {
-        src: "/assets/images/ultrapan-mil-sobre.webp",
+        src: "/assets/images/ultrapan-diez-mil-galeria-1.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/ultrapan-10000.webp",
-
+        src: "/assets/images/ultrapan-diez-mil-galeria-2.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/ultrapan-10000.webp",
-
+        src: "/assets/images/ultrapan-diez-mil-galeria-3.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/ultrapan-10000.webp",
-        alt: "main",
+        src: "/assets/images/ultrapan-diez-mil-galeria-4.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-diez-mil-galeria-5.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-diez-mil-galeria-6.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-diez-mil-galeria-7.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-diez-mil-galeria-8.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-diez-mil-galeria-9.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-diez-mil-galeria-10.webp",
+        alt: "Sobre",
       },
     ],
     benefits: [
@@ -255,37 +273,48 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultrapan Emulsoft Extender es un mejorante desarrollado para mantener la suavidad, humedad y frescura de la miga durante periodos prolongados. Su fórmula especializada ayuda a retardar la retrogradación del almidón, principal responsable del endurecimiento del pan, lo que permite extender significativamente la vida útil comercial del producto terminado sin comprometer su textura ni sabor",
     carouselImage: "/assets/images/emulsoft-extender.webp",
     mainImage: "/assets/images/ultrapan-emulsoft-extender.webp",
-    image: "/assets/images/ultrapan-diez-fondo.jpg",
+    image: "/assets/images/ultrapan-extender-fondo.webp",
     imagesRelated: [
       {
-        src: "/assets/images/emulsoft-extender.webp",
+        src: "/assets/images/ultrapan-extender-detalles-1.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/emulsoft-extender.webp",
+        src: "/assets/images/ultrapan-extender-detalles-2.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/emulsoft-extender.webp",
+        src: "/assets/images/ultrapan-extender-detalles-3.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/emulsoft-extender.webp",
+        src: "/assets/images/ultrapan-extender-detalles-4.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/emulsoft-extender.webp",
+        src: "/assets/images/ultrapan-extender-detalles-5.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/emulsoft-extender.webp",
+        src: "/assets/images/ultrapan-extender-detalles-6.webp",
         alt: "Sobre",
       },
-
-      // {
-      //   src: "/assets/images/ultrapan-emulsoft-extender.webp",
-      //   alt: "main",
-      // },
+      {
+        src: "/assets/images/ultrapan-extender-detalles-7.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-extender-detalles-8.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-extender-detalles-9.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-extender-detalles-10.webp",
+        alt: "Sobre",
+      },
     ],
     benefits: [
       {
@@ -373,30 +402,46 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultrapan Emulsoft Plus es un mejorante para masas dulces que combina emulsificantes con enzimas funcionales para mejorar la suavidad, frescura y resiliencia del pan. Ideal para procesos artesanales e industriales donde se busca una experiencia sensorial superior sin cambiar el proceso tradicional.",
     carouselImage: "/assets/images/emulsoftpuls.png",
     mainImage: "/assets/images/ultrapan-emulsoft-plus.webp",
-    image: "/assets/images/ultrapan-emulsoft-fondo.jpg",
+    image: "/assets/images/ultrapan-plus-fondo.webp",
     imagesRelated: [
       {
-        src: "/assets/images/emulsoftpuls.png",
+        src: "/assets/images/ultrapan-plus-detalles-1.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/emulsoftpuls.png",
+        src: "/assets/images/ultrapan-plus-detalles-2.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/emulsoftpuls.png",
+        src: "/assets/images/ultrapan-plus-detalles-3.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/emulsoftpuls.png",
+        src: "/assets/images/ultrapan-plus-detalles-4.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/emulsoftpuls.png",
+        src: "/assets/images/ultrapan-plus-detalles-5.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/emulsoftpuls.png",
+        src: "/assets/images/ultrapan-plus-detalles-6.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-plus-detalles-7.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-plus-detalles-8.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-plus-detalles-9.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-plus-detalles-10.webp",
         alt: "Sobre",
       },
     ],
@@ -496,34 +541,48 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultrapan Congelado es un mejorante funcional formulado para garantizar estabilidad, frescura y estructura en productos de panificación sometidos a procesos de congelación. Su mezcla de enzimas y emulsificantes permite conservar la calidad del pan durante el almacenamiento, descongelado y horneado, asegurando un producto final con volumen, miga suave y excelente presentación.",
     carouselImage: "/assets/images/congelado.png",
     mainImage: "/assets/images/ultrapan-congelado.webp",
-    image: "/assets/images/ultrapan-congelado-fondo.jpg",
+    image: "/assets/images/ultrapan-congelado-fondo.webp",
     imagesRelated: [
       {
-        src: "/assets/images/congelado.png",
+        src: "/assets/images/ultrapan-congelado-detalles-1.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/congelado.png",
+        src: "/assets/images/ultrapan-congelado-detalles-2.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/congelado.png",
+        src: "/assets/images/ultrapan-congelado-detalles-3.webp",
+
         alt: "Sobre",
       },
       {
-        src: "/assets/images/congelado.png",
+        src: "/assets/images/ultrapan-congelado-detalles-4.webp",
+
         alt: "Sobre",
       },
       {
-        src: "/assets/images/congelado.png",
+        src: "/assets/images/ultrapan-congelado-detalles-5.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/congelado.png",
+        src: "/assets/images/ultrapan-congelado-detalles-6.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/congelado.png",
+        src: "/assets/images/ultrapan-congelado-detalles-7.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-congelado-detalles-8.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-congelado-detalles-9.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-congelado-detalles-10.webp",
         alt: "Sobre",
       },
     ],
@@ -562,12 +621,6 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
           "Prolonga la vida de anaquel del pan terminado, sin uso de conservadores",
         bgColor: "#44bdcb",
       },
-      // {
-      //   title: "",
-      //   icon: "/icons/optimiza.svg",
-      //   description: "Optimiza",
-      //   bgColor: "#44bdcb",
-      // },
     ],
     applications: [
       "Pan crudo congelado (baguettes, bollos, panecillos)",
@@ -643,30 +696,46 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultra Mill Tortilla M1 es una mezcla optimizada de enzimas y emulsificantes que mejora la textura, elasticidad y vida útil de la tortilla de harina. Ideal para líneas de producción continua donde se requiere estandarización y calidad sensorial superior.",
     carouselImage: "/assets/images/tortilla.png",
     mainImage: "/assets/images/ultrapan-tortilla.webp",
-    image: "/assets/images/ultrapan-tortilla-fondo.jpg",
+    image: "/assets/images/ultrapan-tortilla-fondo.webp",
     imagesRelated: [
       {
-        src: "/assets/images/tortilla.png",
+        src: "/assets/images/ultrapan-tortilla-detalles-1.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/tortilla.png",
+        src: "/assets/images/ultrapan-tortilla-detalles-2.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/tortilla.png",
+        src: "/assets/images/ultrapan-tortilla-detalles-3.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/tortilla.png",
+        src: "/assets/images/ultrapan-tortilla-detalles-4.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/tortilla.png",
+        src: "/assets/images/ultrapan-tortilla-detalles-5.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/tortilla.png",
+        src: "/assets/images/ultrapan-tortilla-detalles-6.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-tortilla-detalles-7.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-tortilla-detalles-8.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-tortilla-detalles-9.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-tortilla-detalles-10.webp",
         alt: "Sobre",
       },
     ],
@@ -768,7 +837,7 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultrapan C+ es un mejorante panario libre de bromato con una formulación altamente concentrada que mejora la tolerancia de la masa durante el amasado y fermentación, además de estandarizar el volumen y la textura del pan. Su acción está dirigida a procesos artesanales que requieren control sin modificar el proceso base.",
     carouselImage: "/assets/images/sobre-ultrapan-c-plus.webp",
     mainImage: "/assets/images/ultrapan-c-sobre.webp",
-    image: "/assets/images/ultrapan-c-fondo.jpg",
+    image: "/assets/images/ultrapan-c-fondo.webp",
     imagesRelated: [
       {
         src: "/assets/images/ultrapan-c-galeria-1.jpg",
@@ -898,7 +967,6 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     textColor: "#fff",
     titleColor: "#0c4a5a",
   },
-
   {
     id: 7,
     title: "Ultrapan G+",
@@ -911,15 +979,47 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Su formulación permite estandarizar la producción y reducir la estructura de costos de la receta tradicional, sin modificar el proceso.",
     carouselImage: "/assets/images/sobre-ultrapan-g-plus.webp",
     mainImage: "/assets/images/ultrapan-g-sobre.webp",
-    image: "/assets/images/ultrapan-g-fondo.jpg",
+    image: "/assets/images/ultrapan-g-fondo.webp",
     imagesRelated: [
       {
-        src: "/assets/images/sobre-ultrapan-g-plus.webp",
+        src: "/assets/images/ultrapan-g-detalles-1.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/ultrapan-g-sobre.webp",
-        alt: "main",
+        src: "/assets/images/ultrapan-g-detalles-2.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-g-detalles-3.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-g-detalles-4.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-g-detalles-5.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-g-detalles-6.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-g-detalles-7.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-g-detalles-8.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-g-detalles-9.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-g-detalles-10.webp",
+        alt: "Sobre",
       },
     ],
     benefits: [
@@ -1015,16 +1115,43 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Ultrapan Dulce Plus es un mejorante desarrollado para mantener la suavidad, humedad y frescura de la miga durante periodos prolongados. Su fórmula especializada ayuda a retardar la retrogradación del almidón, principal responsable del endurecimiento del pan, ´lo que permite extender significativamente la vida útil comercial del producto terminado sin comprometer su textura ni sabor",
     carouselImage: "/assets/images/sobre-dulce-plus.webp",
     mainImage: "/assets/images/ultrapan-dulceplus.webp",
-    image: "/assets/images/ultrapan-dulce-fondo.jpg",
-
+    image: "/assets/images/ultrapan-dulce-fondo.webp",
     imagesRelated: [
       {
-        src: "/assets/images/sobre-dulce-plus.webp",
+        src: "/assets/images/ultrapan-dulce-detalles-1.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/ultrapan-dulceplus.webp",
-        alt: "main",
+        src: "/assets/images/ultrapan-dulce-detalles-2.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-dulce-detalles-3.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-dulce-detalles-4.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-dulce-detalles-5.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-dulce-detalles-7.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-dulce-detalles-8.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-dulce-detalles-9.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-dulce-detalles-10.webp",
+        alt: "Sobre",
       },
     ],
 
@@ -1114,7 +1241,6 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
     textColor: "#fff",
     titleColor: "#183270",
   },
-
   {
     id: 9,
     title: "Ultrapan Emulsoft H",
@@ -1127,26 +1253,46 @@ export const PRODUCT_LIST: ProductDetailInterface[] = [
       "Su capacidad emulsificante permite sustituir el uso de huevo, optimizando costos sin comprometer la calidad.",
     carouselImage: "/assets/images/emulsoft-h.webp",
     mainImage: "/assets/images/ultrapan-emulsoft-h.webp",
-    image: "",
+    image: "/assets/images/ultrapan-emulsoft-h-fondo.webp",
     imagesRelated: [
       {
-        src: "/assets/images/emulsoft-h.webp",
+        src: "/assets/images/ultrapan-emulsoft-h-detalles-1.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/ultrapan-emulsoft-h.webp",
-        alt: "main",
-      },
-      {
-        src: "/assets/images/emulsoft-h.webp",
+        src: "/assets/images/ultrapan-emulsoft-h-detalles-2.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/emulsoft-h.webp",
+        src: "/assets/images/ultrapan-emulsoft-h-detalles-3.webp",
         alt: "Sobre",
       },
       {
-        src: "/assets/images/emulsoft-h.webp",
+        src: "/assets/images/ultrapan-emulsoft-h-detalles-4.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-emulsoft-h-detalles-5.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-emulsoft-h-detalles-6.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-emulsoft-h-detalles-7.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-emulsoft-h-detalles-8.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-emulsoft-h-detalles-9.webp",
+        alt: "Sobre",
+      },
+      {
+        src: "/assets/images/ultrapan-emulsoft-h-detalles-10.webp",
         alt: "Sobre",
       },
     ],
@@ -1293,63 +1439,68 @@ export const CONTACT_PAGE_TEXT = {
 
 export const FAQ_SECTIONS: FAQSection[] = [
   {
-    title: "Sobre el uso y aplicación",
+    title: "Uso y aplicación",
     items: [
       {
-        question:
-          "¿Necesito modificar mi receta actual o comprar maquinaria nueva para usar sus mejorantes?",
+        question: "¿Cómo se incorpora el mejorante a mi receta tradicional?",
         answer: [
-          "Nuestros mejorantes están diseñados para actuar sobre tu proceso base sin modificarlo. Funcionan perfectamente tanto en procesos artesanales directos como en aquellos sin cámaras de fermentación controlada.",
+          "Es muy sencillo. Nuestros mejorantes son de fácil incorporación a cualquier receta. Basta con agregarlos directamente a la harina y mezclar de forma normal.",
         ],
       },
       {
         question:
-          "¿Qué producto me recomiendan para pan tipo francés o bolillo?",
+          "¿Tengo que modificar mis tiempos de amasado o fermentación? ",
         answer: [
-          "Para pan francés y masas saladas, recomendamos Ultrapan C+ si buscas un concentrado de alto rendimiento, o Ultrapan G+ si buscas reducir costos en la receta tradicional. Para especialidades rústicas como baguettes o chapatas, Ultrapan Harina Completa MTM ofrece un acabado craquelado en la corteza.",
+          "No, por lo general no requiere cambios en la receta ni en el proceso de elaboración. Al contrario, el uso de nuestros mejorantes te brinda una mayor tolerancia durante el proceso de amasado y fermentación, aportando estabilidad a tu producción.",
         ],
       },
       {
-        question: "¿Tienen opciones libres de bromato?",
+        question:
+          "¿Puedo utilizar estos mejorantes si ya empleo otros aditivos en mi panadería?",
         answer: [
-          "Sí. Ultrapan C+ es nuestro primer mejorante concentrado formulado totalmente libre de bromato, garantizando un producto más limpio y seguro.",
+          "Sí, nuestros mejorantes son totalmente compatibles con los aditivos existentes que ya utilices en tus formulaciones.",
+        ],
+      },
+      {
+        question:
+          "¿Qué pasa si mi proveedor de harina cambia o me entrega una calidad diferente?",
+        answer: [
+          "Ese es uno de los mayores beneficios. El mejorante te ayuda a estandarizar el resultado final de tu producto. Esto te permite mantener la calidad de tu pan incluso si enfrentas variaciones en el tipo de harina, harinas de fuerza media o condiciones cambiantes en tu proceso.",
         ],
       },
     ],
   },
   {
-    title: "Sobre ahorro y rendimiento",
+    title: "Ahorro y rentabilidad ",
     items: [
       {
         question:
-          "¿Cómo puedo reducir mis costos de producción sin bajar la calidad?",
+          "¿De qué manera me ayuda el mejorante a reducir los costos de mi receta? ",
         answer: [
-          "Ultrapan Dulce Plus sustituye el uso de huevo en masas dulces.",
-          "Ultrapan G+ reduce la cantidad de grasa y mejora el costo-beneficio.",
-          "Ultrapan 10,000 mejora el rendimiento por bulto al permitir mayor absorción de agua.",
+          "Su formulación está diseñada para reducir la estructura de costos de tu receta tradicional. Dependiendo de tu proceso, el poder catalítico y emulsificante te permite optimizar ingredientes costosos; por ejemplo, puedes sustituir el uso de huevo o incluso eliminar la grasa (manteca o margarina) sin que esto afecte el volumen o la suavidad de tu pan.",
         ],
       },
       {
-        question: "¿Cómo evito que mis tortillas de harina se peguen o rompan?",
+        question: "¿El uso de mejorantes aumenta el rendimiento de mi masa? ",
         answer: [
-          "Para ello desarrollamos Ultra Mill Tortilla M1. Mejora la rollabilidad, evita que las tortillas se peguen en el empaque y reduce mermas y devoluciones.",
+          "Totalmente. Al utilizarlos, notarás un mayor rendimiento y volumen por cada bulto de harina. Además, ciertas fórmulas permiten que tu masa tolere una mayor absorción de agua sin colapsar, lo que incrementa el peso final de tu masa y tu rentabilidad.",
         ],
       },
     ],
   },
   {
-    title: "Sobre vida de anaquel y conservación",
+    title: "Ventajas generales del producto ",
     items: [
       {
-        question: "¿Cuánto tiempo puede durar mi pan suave?",
+        question: "¿Qué mejoras notará mi cliente en el pan terminado? ",
         answer: [
-          "Dependiendo del proceso y almacenamiento, con Ultrapan Emulsoft Extender puedes conservar la suavidad de la miga hasta por 90 días. Ideal para pan de caja y productos de larga vida en anaquel.",
+          "Tus clientes percibirán una mejora integral en la textura, el volumen y la apariencia del pan. La miga tendrá una estructura más uniforme y esponjosa , con mayor suavidad y humedad. Además, aporta una excelente resiliencia, lo que significa que el pan recupera su forma (rebote) después de ser presionado.",
         ],
       },
       {
-        question: "¿Tienen soluciones para masa o pan congelado?",
+        question: "¿Me ayuda a que el pan no se haga duro tan rápido? ",
         answer: [
-          "Sí. Ultrapan Congelado protege la estructura del pan durante la congelación y el descongelado, evitando deformaciones y pérdida de volumen.",
+          "Sí, los mejorantes prolongan significativamente la vida de anaquel de tus productos. Ayudan a mantener la percepción de frescura por más tiempo, lo que reduce tus mermas por devoluciones o pan que pierde su suavidad rápidamente.",
         ],
       },
     ],

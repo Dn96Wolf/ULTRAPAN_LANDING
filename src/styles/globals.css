@@ -156,6 +156,14 @@ main {
   overflow: scroll;
 }
 
+.whatsAppClass{
+  position: fixed;
+  z-index: 10000;
+  bottom: 40px;
+  right: 20px;
+  cursor: pointer;
+}
+
 @media (min-width: 640px) {
   .mainContent {
     min-height: 100vh;

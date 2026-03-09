@@ -153,43 +153,43 @@ export default function ProductDetail({
       </div> */}
 
       <section className={styles.sectionContainer}>
-        <div className={styles.cardsContent}>
-          <div className={styles.card}>
-            <div
-              className={styles.cardBodyOverlay}
-              style={{ backgroundColor: item.backgroundColor }}
-            ></div>
-            <div
-              className={styles.cardHeader}
-              style={{ backgroundColor: item.backgroundColor }}
-            >
-              <h4>{t("product.benefits")}</h4>
-            </div>
-
-            <div className={styles.doseInner}>
-              {item.benefits.map((element, index) => (
-                <div key={index} className={styles.doseElement}>
-                  <p
-                    className={styles.benefitIcon}
-                    style={{ backgroundColor: item.titleColor }}
-                  >
-                    <Image
-                      src={element.icon}
-                      width={24}
-                      height={24}
-                      alt={element.description}
-                      className={styles.icon}
-                    />
-                  </p>
-
-                  <p className={styles.doseDescription}>
-                    {element.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+        <div className={styles.largeCard}>
+          <div
+            className={styles.cardBodyOverlay}
+            style={{ backgroundColor: item.backgroundColor }}
+          ></div>
+          <div
+            className={styles.cardHeader}
+            style={{ backgroundColor: item.backgroundColor }}
+          >
+            <h4>{t("product.benefits")}</h4>
           </div>
 
+          <div className={styles.doseInner}>
+            {item.benefits.map((element, index) => (
+              <div key={index} className={styles.doseElement}>
+                <p
+                  className={styles.benefitIcon}
+                  style={{ backgroundColor: item.titleColor }}
+                >
+                  <Image
+                    src={element.icon}
+                    width={24}
+                    height={24}
+                    alt={element.description}
+                    className={styles.icon}
+                  />
+                </p>
+
+                <p className={styles.doseDescription}>{element.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.sectionContainer}>
+        <div className={styles.cardsContent}>
           <div className={styles.cardTwins}>
             <div className={styles.smallCard}>
               <div
@@ -255,174 +255,48 @@ export default function ProductDetail({
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className={styles.card}>
-            <div className={styles.cardBody}>
-              <div
-                className={styles.cardBodyOverlay}
-                style={{ backgroundColor: item.backgroundColor }}
-              ></div>
+            <div className={styles.smallCard}>
+              <div className={styles.cardBody}>
+                <div
+                  className={styles.cardBodyOverlay}
+                  style={{ backgroundColor: item.backgroundColor }}
+                ></div>
 
-              <div
-                className={styles.cardHeader}
-                style={{ backgroundColor: item.backgroundColor }}
-              >
-                <h4>{t("product.dosis")}</h4>
-              </div>
+                <div
+                  className={styles.cardHeader}
+                  style={{ backgroundColor: item.backgroundColor }}
+                >
+                  <h4>{t("product.dosis")}</h4>
+                </div>
 
-              <div className={styles.doseInner}>
-                {item.instructions.map((element, index) => (
-                  <div key={index} className={styles.doseElement}>
-                    <p
-                      className={styles.benefitIcon}
-                      style={{ backgroundColor: item.titleColor }}
-                    >
-                      <Image
-                        src={element.icon}
-                        width={24}
-                        height={24}
-                        alt={element.description}
-                        className={styles.icon}
-                      />
-                    </p>
+                <div className={styles.doseInner}>
+                  {item.instructions.map((element, index) => (
+                    <div key={index} className={styles.doseElement}>
+                      <p
+                        className={styles.benefitIcon}
+                        style={{ backgroundColor: item.titleColor }}
+                      >
+                        <Image
+                          src={element.icon}
+                          width={24}
+                          height={24}
+                          alt={element.description}
+                          className={styles.icon}
+                        />
+                      </p>
 
-                    <p className={styles.doseDescription}>
-                      {element.description}
-                    </p>
-                  </div>
-                ))}
+                      <p className={styles.doseDescription}>
+                        {element.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* <section className={styles.sectionContainer}>
-        <div className={styles.instructionsAndApplicationsContainer}>
-          <div className={styles.application}>
-            <h3
-              className={`${styles.applicationTitle}`}
-              style={{ color: item.titleColor }}
-            >
-              {t("product.application")}
-            </h3>
-
-            <div className={styles.listApplicationContainer}>
-              {item.applications.map((application, index) => (
-                <div key={index}>
-                  <ul className={styles.applicationItem}>
-                    <li
-                      className={styles.applicationDescription}
-                      style={{ color: "#000" }}
-                    >
-                      {application}
-                    </li>
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-
-          <div className={styles.ingredients}>
-            <h3
-              className={`${styles.ingredientTitle}`}
-              style={{ color: item.titleColor }}
-            >
-              {t("product.ingredients")}
-            </h3>
-
-            <div className={styles.ingredientElement}>
-              <div
-                className={styles.ingredientIcon}
-                style={{ backgroundColor: item.titleColor }}
-              >
-                <Image
-                  src={"/assets/images/molecule.png"}
-                  alt={item.title}
-                  width={54}
-                  height={54}
-                  sizes="(max-width: 640px) 100vw, 52px"
-                />
-              </div>
-
-              <p
-                className={styles.ingredientDescription}
-                style={{ color: "#000" }}
-              >
-                {item.ingredients}
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <h3
-              className={`${styles.productDosisTitle}`}
-              style={{ color: item.titleColor }}
-            >
-              {t("product.dosis")}
-            </h3>
-
-            <div
-              className={styles.doseInner}
-              style={{ backgroundColor: item.benefits[1].bgColor }}
-            >
-              <div className={styles.doseContainer}>
-                {item.instructions.map((element, index) => (
-                  <div key={index} className={styles.doseElement}>
-                    <p className={styles.iconElement}>
-                      <Image
-                        src={element.icon}
-                        width={24}
-                        height={24}
-                        alt={element.description}
-                        className={styles.icon}
-                      />
-                    </p>
-
-                    <p className={styles.doseDescription}>
-                      {element.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* <section className={styles.sectionContainer}>
-        <h3
-          className={`${styles.productDosisTitle}`}
-          style={{ color: item.titleColor }}
-        >
-          {t("product.dosis")}
-        </h3>
-
-        <div
-          className={styles.doseInner}
-          style={{ backgroundColor: item.benefits[1].bgColor }}
-        >
-          <div className={styles.doseContainer}>
-            {item.instructions.map((element, index) => (
-              <div key={index} className={styles.doseElement}>
-                <p className={styles.iconElement}>
-                  <Image
-                    src={element.icon}
-                    width={24}
-                    height={24}
-                    alt={element.description}
-                    className={styles.icon}
-                  />
-                </p>
-
-                <p className={styles.doseDescription}>{element.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* ventajas competitivas */}
 
@@ -436,7 +310,7 @@ export default function ProductDetail({
 
         <div
           className={styles.advantagesInner}
-          style={{ backgroundColor: item.advantages[0].bgColor }}
+          style={{ backgroundColor: item.backgroundColor}}
         >
           <div className={styles.advantagesContainer}>
             {item.advantages.map((element, index) => (

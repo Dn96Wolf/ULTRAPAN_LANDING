@@ -54,8 +54,8 @@ const footerElements: FooterElement[] = [
         url: "/contacto",
       },
       {
-        title: "FQA",
-        url: "/fqa",
+        title: "FAQ",
+        url: "/FAQ",
       },
     ],
   },
@@ -128,7 +128,6 @@ export default function Footer() {
               <a
                 className={styles.footerItemLink}
                 href={item.link ? item.link : "#"}
-                target="_blank"
                 rel="noopener noreferrer"
               >
                 {item.link}

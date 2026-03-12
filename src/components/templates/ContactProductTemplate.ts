@@ -29,7 +29,7 @@ export const contactEmailProductTemplate = ({
           <!-- HEADER -->
           <tr>
             <td style="background-color:#613924; padding:20px; text-align:center;">
-              <img src="/assets/images/banner-white.png" 
+              <img src="https://res.cloudinary.com/diqdogfwl/image/upload/v1773284199/banner-white_nx7oh1.png" 
                    alt="Ultrapan" 
                    style="max-width:180px; display:block; margin:0 auto;" />
             </td>
@@ -110,8 +110,8 @@ export const contactEmailProductTemplate = ({
               >
                 <img
                   style="width: 180px; height: 50px"
-                  src="/assets/images/logo.png"
-                  alt=""
+                  src="https://res.cloudinary.com/diqdogfwl/image/upload/v1773284113/logo_d6d9ma.png"
+                  alt="logo-enziquim"
                 />
                 <p style="margin: 0 0 8px 0">
                   ©${new Date().getFullYear()} Enzimas y Productos Químicos S.A. de C.V.

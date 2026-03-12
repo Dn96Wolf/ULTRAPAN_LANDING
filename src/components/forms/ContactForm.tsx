@@ -11,6 +11,7 @@ import {
   ContactFormData,
   ContactFormProps,
 } from "@/interfaces/ContactForm.interface";
+import ModalConfirm from "../dialogs/ModalConfirm";
 
 export default function ContactForm({ titleBtn, element }: ContactFormProps) {
   const initialState: ContactFormData = {
@@ -27,8 +28,8 @@ export default function ContactForm({ titleBtn, element }: ContactFormProps) {
   const [formData, setFormData] = useState<ContactFormData>(initialState);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   function handleNameChange(e: React.ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
@@ -90,7 +91,7 @@ export default function ContactForm({ titleBtn, element }: ContactFormProps) {
     e.preventDefault();
 
     setError("");
-    setSuccess("");
+  
 
     if (!/^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$/.test(formData.name)) {
       alert("El nombre solo puede contener letras y espacios.");
@@ -133,151 +134,155 @@ export default function ContactForm({ titleBtn, element }: ContactFormProps) {
     // recaptchaRef.current?.reset();
     // setFormData(initialState);
 
-    // try {
-    //   setLoading(true);
-    //   const response = await fetch("/api/contacto", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       ...formData,
-    //       // recaptchaToken: token, use later
-    //     }),
-    //   });
+    try {
+      setLoading(true);
+      const response = await fetch("/api/contacto", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          //recaptchaToken: token, use later
+        }),
+      });
 
-    //   const result = await response.json();
+      const result = await response.json();
 
-    //   if (!response.ok) {
-    //     throw new Error(result.message || "Error al enviar el mensaje");
-    //   }
+      if (!response.ok) {
+        throw new Error(result.message || "Error al enviar el mensaje");
+      }
 
-    //   setSuccess("Mensaje enviado correctamente.");
-    //   setFormData(initialState);
-    //   recaptchaRef.current?.reset();
-    // } catch (err: any) {
-    //   setError(err.message || "Ocurrió un error inesperado.");
-    // } finally {
-    //   setLoading(false);
-    // }
+      setShowModal(true);
+      setFormData(initialState);
+      recaptchaRef.current?.reset();
+    } catch (err: any) {
+      setError(err.message || "Ocurrió un error inesperado.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
-    <section className={styles.wrapper}>
-      <div className={styles.inner}>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <div className={styles.grid}>
+    <>
+      <section className={styles.wrapper}>
+        <div className={styles.inner}>
+          <form
+            className={styles.form}
+            onSubmit={handleSubmit}
+            autoComplete="Off"
+          >
+            <div className={styles.grid}>
+              <label className={styles.field}>
+                <span className={styles.fieldLabel}>{t("form.name")}</span>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Tu nombre"
+                  value={formData.name}
+                  onChange={handleNameChange}
+                  pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
+                  required
+                />
+              </label>
+              <label className={styles.field}>
+                <span className={styles.fieldLabel}>{t("form.lastName")}</span>
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Tu apellido"
+                  value={formData.lastName}
+                  onChange={(e) => handleFieldChange(e, "lastName")}
+                  pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
+                  required
+                />
+              </label>
+
+              <label className={styles.field}>
+                <span className={styles.fieldLabel}>{t("form.email")}</span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="correo@empresa.com"
+                  value={formData.email}
+                  onChange={handleEmailChange}
+                  required
+                />
+              </label>
+
+              <label className={styles.field}>
+                <span className={styles.fieldLabel}>{t("form.phone")}</span>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="+52 55 0000 0000"
+                  maxLength={10}
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  value={formData.phone}
+                  onChange={handlePhoneChange}
+                />
+              </label>
+
+              <label className={styles.field}>
+                <span className={styles.fieldLabel}>{t("form.company")}</span>
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Nombre de la empresa"
+                  value={formData.company}
+                  onChange={(e) => handleFieldChange(e, "company")}
+                />
+              </label>
+
+              <label className={styles.field}>
+                <span className={styles.fieldLabel}>{t("form.subject")}</span>
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Motivo del contacto"
+                  value={formData.subject}
+                  onChange={(e) => handleFieldChange(e, "subject")}
+                />
+              </label>
+            </div>
+
             <label className={styles.field}>
-              <span className={styles.fieldLabel}>{t("form.name")}</span>
-              <input
-                type="text"
-                name="name"
-                placeholder="Tu nombre"
-                value={formData.name}
-                onChange={handleNameChange}
-                pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
+              <span className={styles.fieldLabel}>{t("form.message")}</span>
+              <textarea
+                name="message"
+                rows={5}
+                placeholder="Escribe tu mensaje"
+                value={formData.message}
+                onChange={handleMessageChange}
+                maxLength={1000}
                 required
               />
             </label>
-            <label className={styles.field}>
-              <span className={styles.fieldLabel}>{t("form.lastName")}</span>
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Tu apellido"
-                value={formData.lastName}
-                onChange={(e) => handleFieldChange(e, "lastName")}
-                pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
-                required
-              />
-            </label>
 
-            <label className={styles.field}>
-              <span className={styles.fieldLabel}>{t("form.email")}</span>
-              <input
-                type="email"
-                name="email"
-                placeholder="correo@empresa.com"
-                value={formData.email}
-                onChange={handleEmailChange}
-                required
-              />
-            </label>
-
-            <label className={styles.field}>
-              <span className={styles.fieldLabel}>{t("form.phone")}</span>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="+52 55 0000 0000"
-                maxLength={10}
-                inputMode="numeric"
-                pattern="[0-9]*"
-                value={formData.phone}
-                onChange={handlePhoneChange}
-              />
-            </label>
-
-            <label className={styles.field}>
-              <span className={styles.fieldLabel}>{t("form.company")}</span>
-              <input
-                type="text"
-                name="company"
-                placeholder="Nombre de la empresa"
-                value={formData.company}
-                onChange={(e) => handleFieldChange(e, "company")}
-              />
-            </label>
-
-            <label className={styles.field}>
-              <span className={styles.fieldLabel}>{t("form.subject")}</span>
-              <input
-                type="text"
-                name="subject"
-                placeholder="Motivo del contacto"
-                value={formData.subject}
-                onChange={(e) => handleFieldChange(e, "subject")}
-              />
-            </label>
-          </div>
-
-          <label className={styles.field}>
-            <span className={styles.fieldLabel}>{t("form.message")}</span>
-            <textarea
-              name="message"
-              rows={5}
-              placeholder="Escribe tu mensaje"
-              value={formData.message}
-              onChange={handleMessageChange}
-              maxLength={1000}
-              required
-            />
-          </label>
-
-          {/* <ReCAPTCHA
+            {/* <ReCAPTCHA
             sitekey={"6LePk-QrAAAAAFlpNAgxCsrFufl4guBIivlYB5NZ"}
             ref={recaptchaRef}
           /> */}
 
-          {}
-          <ButtonComponent
-            colorPalette={loading ? "DISABLED" : "BROWN"}
-            type="submit"
-            title={titleBtn || "Enviar"}
-            disabled={loading}
-          />
+            {}
+            <ButtonComponent
+              colorPalette={loading ? "DISABLED" : "BROWN"}
+              type="submit"
+              title={titleBtn || "Enviar"}
+              disabled={loading}
+            />
 
-          {error && <span className={styles.error}>{error}</span>}
-          {success && (
-            <div className={styles.success}>
-              <p className={styles.successText}>
-                {t("form.success")}
-                <span>✅</span>
-              </p>
-            </div>
-          )}
-        </form>
-      </div>
-    </section>
+            {error && <span className={styles.error}>{error}</span>}
+          </form>
+        </div>
+      </section>
+
+      {showModal && (
+        <div className={styles.modal}>
+          <ModalConfirm onClose={() => setShowModal(false)} />
+        </div>
+      )}
+    </>
   );
 }

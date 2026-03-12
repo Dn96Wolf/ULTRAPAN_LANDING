@@ -8,6 +8,8 @@
   position: relative;
   background-image: url("/assets/images/mesaPan.png");
   background-position: center left;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .overlayContainer {
@@ -72,6 +74,7 @@
 
 .secondContent {
   width: 100vw;
+  max-height: 1080px;
 }
 
 .ribbonProducts {
@@ -123,6 +126,8 @@
   align-items: center;
   justify-content: center;
   gap: 24px;
+  min-height: 590px;
+
   /* background-color: var(--neutral-100); */
 }
 .contactTitle {
@@ -187,13 +192,17 @@
   }
 
   .contactTitle {
-    font-size: 48px;
+    font-size: 42px;
     max-width: 1116px;
   }
 
   .contactSubtitle {
-    font-size: 26px;
+    font-size: 22px;
     max-width: 910px;
+  }
+
+  .contactSpace {
+    min-height: 390px;
   }
 }
 

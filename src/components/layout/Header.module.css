@@ -71,9 +71,9 @@
   color: var(--color-white);
 }
 
-.header:not(.scrolled) .mobileToggle {
+/* .header:not(.scrolled) .mobileToggle {
   color: var(--color-primary);
-}
+} */
 
 .mobileToggle svg {
   width: 22px;

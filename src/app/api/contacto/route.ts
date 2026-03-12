@@ -26,6 +26,11 @@ export async function POST(req: Request) {
       },
     });
 
+    transporter
+      .verify()
+      .then(() => console.log("SMTP listo"))
+      .catch((err) => console.error(err));
+
     if (product) {
       await transporter.sendMail({
         from: `"Ultrapan Contacto"`,

@@ -56,15 +56,10 @@ export default function IndustrialPage() {
       </div>
 
       <div className={styles.contactSpace}>
-        <h2 className={styles.contactTitle}>
-          ¿Tienes dudas sobre qué mejorante es ideal para tu proceso?
-        </h2>
+        <h2 className={styles.contactTitle}>{t("contact.doubts")}</h2>
 
         <div className={styles.contactContent}>
-          <p className={styles.contactSubtitle}>
-            Deja que nuestros asesores comerciales se acerquen contigo para
-            brindarte atención personalizada
-          </p>
+          <p className={styles.contactSubtitle}>{t("contact.doubtSubtitle")}</p>
 
           <div className={styles.btnContent}>
             <ButtonComponent

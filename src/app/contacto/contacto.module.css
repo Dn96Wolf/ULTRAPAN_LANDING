@@ -2,19 +2,18 @@
   width: 100vw;
   min-height: 100vh;
   padding: 120px 0;
-  /* background-image: url("/assets/images/cintillo-artesanal.png"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: white;
-  background-image: url("/assets/images/ultrapan-g-fondo.webp");
+  background-image: url("/assets/images/contact-background.webp");
 }
 
 .container {
   top: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   height: 100%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -41,6 +40,8 @@
   width: 90%;
   margin: auto;
   background-color: var(--neutral-100);
+
+  background: white;
   padding: 16px;
   border-radius: 18px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -161,3 +162,4 @@
     text-align: center;
   }
 }
+
